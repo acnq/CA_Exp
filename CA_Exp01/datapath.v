@@ -98,9 +98,10 @@ module datapath (
 		end
 		else if (cpu_en) begin
 			case (pc_src_ctrl)
-				PC_JUMP: inst_addr <= {inst_addr_next[31:28],inst_data[25:0],2'b0};//
+				PC_JUMP: inst_addr <= {inst_addr[31:28],inst_data[25:0],2'b0};//
 				PC_JR: inst_addr <= addr_rs;//
 				PC_BEQ: inst_addr <= alu_out;//
+				PC_BNE: inst_addr <= alu_out;//
 				default: inst_addr <= inst_addr_next;
 			endcase
 		end
@@ -114,7 +115,7 @@ module datapath (
 		data_imm = imm_ext_ctrl ? {{16{inst_data[15]}}, inst_data[15:0]} : {16'b0, inst_data[15:0]};
 	
 	always @(*) begin
-		regw_addr = inst_data[15:11];
+		regw_addr = inst_data[15:11]; 
 		case (wb_addr_src_ctrl)
 			WB_ADDR_RD: regw_addr = addr_rd;//
 			WB_ADDR_RT: regw_addr = addr_rt;//
@@ -173,7 +174,7 @@ module datapath (
 		regw_data = alu_out;
 		case (wb_data_src_ctrl)
 			WB_DATA_ALU: regw_data = alu_out;//
-			WB_DATA_MEM: regw_data = mem_din;//
+			WB_DATA_MEM: regw_data = mem_dout;//
 		endcase
 	end
 	

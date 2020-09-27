@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.41 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.41 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Reading design: mips_top.prj
 
@@ -207,7 +207,7 @@ Elaborating module <controller>.
 Elaborating module <datapath>.
 
 Elaborating module <regfile>.
-WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp01\datapath.v" Line 141: Assignment to rs_rt_equal ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp01\datapath.v" Line 142: Assignment to rs_rt_equal ignored, since the identifier is never used
 
 Elaborating module <alu>.
 WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp01\mips.v" Line 41: Assignment to inst_ren ignored, since the identifier is never used
@@ -406,8 +406,8 @@ WARNING:Xst:653 - Signal <inst_ren> is used but never assigned. This sourceless 
     Found 32-bit register for signal <inst_addr>.
     Found 32-bit register for signal <debug_data_signal>.
     Found 32-bit adder for signal <inst_addr_next> created at line 93.
-    Found 5-bit 4-to-1 multiplexer for signal <regw_addr> created at line 118.
-    Found 32-bit 4-to-1 multiplexer for signal <opb> created at line 151.
+    Found 5-bit 4-to-1 multiplexer for signal <regw_addr> created at line 119.
+    Found 32-bit 4-to-1 multiplexer for signal <opb> created at line 152.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  64 D-type flip-flop(s).
@@ -1011,17 +1011,17 @@ Top Level Output File Name         : mips_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1371
+# BELS                             : 1369
 #      GND                         : 11
 #      INV                         : 35
 #      LUT1                        : 85
-#      LUT2                        : 48
-#      LUT3                        : 172
-#      LUT4                        : 107
-#      LUT5                        : 201
-#      LUT6                        : 433
+#      LUT2                        : 47
+#      LUT3                        : 173
+#      LUT4                        : 106
+#      LUT5                        : 197
+#      LUT6                        : 435
 #      MUXCY                       : 131
-#      MUXF7                       : 13
+#      MUXF7                       : 14
 #      VCC                         : 13
 #      XORCY                       : 122
 # FlipFlops/Latches                : 308
@@ -1050,16 +1050,16 @@ Selected Device : 7k325tfbg676-2l
 
 Slice Logic Utilization: 
  Number of Slice Registers:             308  out of  407600     0%  
- Number of Slice LUTs:                 1177  out of  203800     0%  
-    Number used as Logic:              1081  out of  203800     0%  
+ Number of Slice LUTs:                 1174  out of  203800     0%  
+    Number used as Logic:              1078  out of  203800     0%  
     Number used as Memory:               96  out of  64000     0%  
        Number used as RAM:               96
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1236
-   Number with an unused Flip Flop:     928  out of   1236    75%  
-   Number with an unused LUT:            59  out of   1236     4%  
-   Number of fully used LUT-FF pairs:   249  out of   1236    20%  
+ Number of LUT Flip Flop pairs used:   1233
+   Number with an unused Flip Flop:     925  out of   1233    75%  
+   Number with an unused LUT:            59  out of   1233     4%  
+   Number of fully used LUT-FF pairs:   249  out of   1233    20%  
    Number of unique control sets:        23
 
 IO Utilization: 
@@ -1112,8 +1112,8 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 12.622ns (Maximum Frequency: 79.227MHz)
-   Minimum input arrival time before clock: 2.581ns
+   Minimum period: 12.570ns (Maximum Frequency: 79.557MHz)
+   Minimum input arrival time before clock: 2.665ns
    Maximum output required time after clock: 0.711ns
    Maximum combinational path delay: 0.000ns
 
@@ -1123,10 +1123,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_GEN/clkout3'
-  Clock period: 12.622ns (frequency: 79.227MHz)
-  Total number of paths / destination ports: 185448584 / 432
+  Clock period: 12.570ns (frequency: 79.557MHz)
+  Total number of paths / destination ports: 182303964 / 432
 -------------------------------------------------------------------------
-Delay:               6.311ns (Levels of Logic = 24)
+Delay:               6.285ns (Levels of Logic = 28)
   Source:            MIPS/MIPS_CORE/DATAPATH/inst_addr_19 (FF)
   Destination:       MIPS/DATA_RAM/Mram_data1 (RAM)
   Source Clock:      CLK_GEN/clkout3 rising
@@ -1159,18 +1159,30 @@ Delay:               6.311ns (Levels of Logic = 24)
      MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<4> (Mmux__n00371_rs_cy<4>)
      MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<5> (Mmux__n00371_rs_cy<5>)
      MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<6> (Mmux__n00371_rs_cy<6>)
-     XORCY:CI->O           1   0.262   0.350  Mmux__n00371_rs_xor<7> (Mmux__n00371_split<25>)
-     LUT6:I5->O            4   0.043   0.620  Mmux_result311 (result<7>)
-     end scope: 'MIPS/MIPS_CORE/DATAPATH/ALU:result<7>'
-     end scope: 'MIPS/MIPS_CORE/DATAPATH:mem_addr<7>'
-     end scope: 'MIPS/MIPS_CORE:mem_addr<7>'
-     begin scope: 'MIPS/DATA_RAM:addr<5>'
-     LUT5:I0->O            2   0.043   0.608  GND_18_o_GND_18_o_equal_2_o<31>3 (GND_18_o_GND_18_o_equal_2_o<31>2)
-     LUT6:I1->O            0   0.043   0.000  we_GND_18_o_AND_72_o1 (we_GND_18_o_AND_72_o)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<7> (Mmux__n00371_rs_cy<7>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<8> (Mmux__n00371_rs_cy<8>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<9> (Mmux__n00371_rs_cy<9>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<10> (Mmux__n00371_rs_cy<10>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<11> (Mmux__n00371_rs_cy<11>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<12> (Mmux__n00371_rs_cy<12>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<13> (Mmux__n00371_rs_cy<13>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<14> (Mmux__n00371_rs_cy<14>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<15> (Mmux__n00371_rs_cy<15>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<16> (Mmux__n00371_rs_cy<16>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<17> (Mmux__n00371_rs_cy<17>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<18> (Mmux__n00371_rs_cy<18>)
+     XORCY:CI->O           1   0.262   0.350  Mmux__n00371_rs_xor<19> (Mmux__n00371_split<13>)
+     LUT6:I5->O            5   0.043   0.518  Mmux_result121 (result<19>)
+     end scope: 'MIPS/MIPS_CORE/DATAPATH/ALU:result<19>'
+     end scope: 'MIPS/MIPS_CORE/DATAPATH:mem_addr<19>'
+     end scope: 'MIPS/MIPS_CORE:mem_addr<19>'
+     begin scope: 'MIPS/DATA_RAM:addr<17>'
+     LUT6:I3->O            1   0.043   0.522  GND_18_o_GND_18_o_equal_2_o<31>5_SW0 (N2)
+     LUT6:I2->O            0   0.043   0.000  we_GND_18_o_AND_72_o1 (we_GND_18_o_AND_72_o)
      RAMB18E1:WEA0             0.404          Mram_data1
     ----------------------------------------
-    Total                      6.311ns (1.864ns logic, 4.447ns route)
-                                       (29.5% logic, 70.5% route)
+    Total                      6.285ns (2.026ns logic, 4.259ns route)
+                                       (32.2% logic, 67.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_GEN/clkout2'
@@ -1211,12 +1223,12 @@ Delay:               6.282ns (Levels of Logic = 12)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_GEN/clkout3'
   Total number of paths / destination ports: 62 / 62
 -------------------------------------------------------------------------
-Offset:              2.581ns (Levels of Logic = 7)
+Offset:              2.665ns (Levels of Logic = 9)
   Source:            SW<0> (PAD)
-  Destination:       MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13 (RAM)
-  Destination Clock: CLK_GEN/clkout3 rising
+  Destination:       MIPS/DATA_RAM/Mram_data1 (RAM)
+  Destination Clock: CLK_GEN/clkout3 falling
 
-  Data Path: SW<0> to MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13
+  Data Path: SW<0> to MIPS/DATA_RAM/Mram_data1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -1227,13 +1239,16 @@ Offset:              2.581ns (Levels of Logic = 7)
      LUT4:I3->O           36   0.043   0.626  Mmux_cpu_en11 (cpu_en)
      end scope: 'MIPS/MIPS_CORE/CONTROLLER:cpu_en'
      begin scope: 'MIPS/MIPS_CORE/DATAPATH:cpu_en'
-     LUT3:I0->O            1   0.043   0.613  wb_wen_ctrl_cpu_rst_AND_35_o1 (wb_wen_ctrl_cpu_rst_AND_35_o)
-     begin scope: 'MIPS/MIPS_CORE/DATAPATH/REGFILE:en_w'
-     LUT6:I0->O           21   0.043   0.450  en_w_GND_15_o_AND_33_o1 (en_w_GND_15_o_AND_33_o)
-     RAM32M:WE                 0.408          Mram_regfile13
+     LUT3:I0->O            1   0.043   0.613  mem_wen1 (mem_wen)
+     end scope: 'MIPS/MIPS_CORE/DATAPATH:mem_wen'
+     end scope: 'MIPS/MIPS_CORE:mem_wen'
+     begin scope: 'MIPS/DATA_RAM:we'
+     LUT6:I0->O            1   0.043   0.495  we_GND_18_o_AND_72_o1_SW0 (N4)
+     LUT6:I3->O            0   0.043   0.000  we_GND_18_o_AND_72_o1 (we_GND_18_o_AND_72_o)
+     RAMB18E1:WEA0             0.404          Mram_data1
     ----------------------------------------
-    Total                      2.581ns (0.537ns logic, 2.044ns route)
-                                       (20.8% logic, 79.2% route)
+    Total                      2.665ns (0.576ns logic, 2.089ns route)
+                                       (21.6% logic, 78.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_GEN/clkout2'
@@ -1319,19 +1334,19 @@ Clock to Setup on destination clock CLK_GEN/clkout3
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_GEN/clkout2|    3.840|         |    2.877|         |
-CLK_GEN/clkout3|    8.361|    3.703|    6.311|         |
+CLK_GEN/clkout2|    3.840|         |    3.058|         |
+CLK_GEN/clkout3|    8.476|    3.703|    6.285|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 44.00 secs
-Total CPU time to Xst completion: 43.76 secs
+Total REAL time to Xst completion: 28.00 secs
+Total CPU time to Xst completion: 27.93 secs
  
 --> 
 
-Total memory usage is 412904 kilobytes
+Total memory usage is 344872 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   87 (   0 filtered)

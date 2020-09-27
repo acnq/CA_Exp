@@ -9,7 +9,6 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Automatic `includes</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp01|mips_top.v/DISPLAY - display</ClosedNode>
-         <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp01|mips_top.v/MIPS - mips/MIPS_CORE - mips_core</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp01|mips_top.v/MIPS - mips/MIPS_CORE - mips_core/DATAPATH - datapath</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp01|mips_top.v/VGA_DEBUG - vga_debug</ClosedNode>
          <ClosedNode>/sim_mips D:|00a|CA|CA_Exp|CA_Exp01|sim_mips.v</ClosedNode>
@@ -19,7 +18,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000148000000020000000000000000000000000200000064ffffffff000000810000000300000002000001480000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000160000000020000000000000000000000000200000064ffffffff000000810000000300000002000001600000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>mips_top (D:/00a/CA/CA_Exp/CA_Exp01/mips_top.v)</CurrentItem>
    </ItemView>
@@ -35,13 +34,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Design Summary/Reports</SelectedItem>
+         <SelectedItem>Synthesize - XST</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000115000000010000000100000000000000000000000064ffffffff000000810000000000000001000001150000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Design Summary/Reports</CurrentItem>
+      <CurrentItem>Synthesize - XST</CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -86,6 +85,7 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Automatic `includes</ClosedNode>
+         <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp01|mips_top.v</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp01|mips_top.v/DISPLAY - display</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp01|mips_top.v/MIPS - mips/MIPS_CORE - mips_core/DATAPATH - datapath</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp01|mips_top.v/VGA_DEBUG - vga_debug</ClosedNode>
@@ -94,9 +94,9 @@
       <SelectedItems>
          <SelectedItem>sim_mips (D:/00a/CA/CA_Exp/CA_Exp01/sim_mips.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >12</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000160000000020000000000000000000000000200000064ffffffff000000810000000300000002000001600000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000c4000000020000000000000000000000000200000064ffffffff000000810000000300000002000000c40000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>sim_mips (D:/00a/CA/CA_Exp/CA_Exp01/sim_mips.v)</CurrentItem>
    </ItemView>
@@ -106,19 +106,6 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
-      </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
-      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
-      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
-   </ItemView>
-   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
-      <ClosedNodes>
-         <ClosedNodesVersion>1</ClosedNodesVersion>
-      </ClosedNodes>
-      <SelectedItems>
          <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
@@ -126,5 +113,18 @@
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000126000000010000000100000000000000000000000064ffffffff000000810000000000000001000001260000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
 </Project>

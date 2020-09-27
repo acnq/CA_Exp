@@ -91,7 +91,7 @@ module controller (/*AUTOARG*/
 				pc_src = PC_JUMP;
 			end
 			INST_JAL: begin
-				pc_src = PC_JR;//
+				pc_src = PC_JUMP;//
 				exe_a_src = EXE_A_LINK;//
 				exe_b_src = EXE_B_LINK;//
 				exe_alu_oper = EXE_ALU_ADD;//
@@ -103,7 +103,14 @@ module controller (/*AUTOARG*/
 				pc_src = PC_BEQ;//
 				exe_a_src = EXE_A_BRANCH;//
 				exe_b_src = EXE_B_BRANCH;//
-				exe_alu_oper = EXE_ALU_SUB;//??
+				exe_alu_oper = EXE_ALU_ADD;//
+				imm_ext = 1;
+			end
+			INST_BNE: begin//add myself
+				pc_src = PC_BNE;//
+				exe_a_src = EXE_A_BRANCH;//
+				exe_b_src = EXE_B_BRANCH;//
+				exe_alu_oper = EXE_ALU_ADD;//
 				imm_ext = 1;
 			end
 			INST_ADDI: begin
@@ -123,7 +130,7 @@ module controller (/*AUTOARG*/
 				wb_wen = 1;//
 			end
 			INST_ORI: begin
-				imm_ext = 0;//原来就写着0,迷惑
+				imm_ext = 1;//原来写着0,迷惑
 				exe_b_src = EXE_B_IMM;
 				exe_alu_oper = EXE_ALU_OR;
 				wb_addr_src = WB_ADDR_RT;
@@ -141,7 +148,7 @@ module controller (/*AUTOARG*/
 			end
 			INST_SW: begin
 				imm_ext = 1;//
-				exe_b_src = EXE_B_IMM;//
+				exe_b_src = EXE_B_RT;//
 				exe_alu_oper = EXE_ALU_ADD;//
 				mem_wen = 1;//
 			end

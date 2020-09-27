@@ -59,7 +59,7 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\00a\CA\CA_Exp\CA_Exp01\my_clk_gen.v" Line 168: Assignment to <arg fmt="%s" index="1">clkfbstopped_unused</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\00a\CA\CA_Exp\CA_Exp01\datapath.v" Line 141: Assignment to <arg fmt="%s" index="1">rs_rt_equal</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\00a\CA\CA_Exp\CA_Exp01\datapath.v" Line 142: Assignment to <arg fmt="%s" index="1">rs_rt_equal</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\00a\CA\CA_Exp\CA_Exp01\mips.v" Line 41: Assignment to <arg fmt="%s" index="1">inst_ren</arg> ignored, since the identifier is never used
@@ -241,7 +241,7 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">strdata_55</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">vga_debug</arg>&gt;.
 </msg>
 
-<msg type="info" file="Xst" num="1901" delta="new" >Instance <arg fmt="%s" index="1">BRAM_PC_VGA_0</arg> in unit <arg fmt="%s" index="2">BRAM_PC_VGA_0</arg> of type <arg fmt="%s" index="3">RAMB16_S1</arg> has been replaced by <arg fmt="%s" index="4">RAMB18E1</arg>
+<msg type="info" file="Xst" num="1901" delta="old" >Instance <arg fmt="%s" index="1">BRAM_PC_VGA_0</arg> in unit <arg fmt="%s" index="2">BRAM_PC_VGA_0</arg> of type <arg fmt="%s" index="3">RAMB16_S1</arg> has been replaced by <arg fmt="%s" index="4">RAMB18E1</arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">strdata_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">vga_debug</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;strdata_21&gt; </arg>
@@ -262,22 +262,22 @@
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">state_FSM_FFd2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">parallel2serial_2</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;busy&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">buff_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">buff_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">buff_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">buff_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">buff_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">buff_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">buff_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">buff_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">buff_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">buff_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">buff_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">buff_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">P2S_SEG</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">result_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BTN_SCAN</arg>&gt;.
@@ -334,16 +334,16 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">result_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">BTN_SCAN</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">s_clr</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">P2S_LED</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">s_clr</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">P2S_LED</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">finish</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">P2S_LED</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">finish</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">P2S_LED</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">s_clr</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">P2S_SEG</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">s_clr</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">P2S_SEG</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">finish</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">P2S_SEG</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">finish</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">P2S_SEG</arg>&gt;.
 </msg>
 
 <msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
