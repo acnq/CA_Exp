@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.39 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.39 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Reading design: mips_top.prj
 
@@ -83,7 +83,7 @@ Equivalent register Removal        : YES
 Optimization Goal                  : Speed
 Optimization Effort                : 1
 Power Reduction                    : NO
-Keep Hierarchy                     : No
+Keep Hierarchy                     : Soft
 Netlist Hierarchy                  : As_Optimized
 RTL Output                         : Yes
 Global Optimization                : AllClockNets
@@ -892,12 +892,6 @@ Optimizing FSM <DISPLAY/P2S_SEG/FSM_3> on signal <state[1:2]> with gray encoding
  011   | 10
 -------------------
 WARNING:Xst:1293 - FF/Latch <cycle_count_0> has a constant value of 0 in block <parallel2serial_1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <buff_0> (without init value) has a constant value of 0 in block <parallel2serial_2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <buff_1> (without init value) has a constant value of 0 in block <parallel2serial_2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <buff_2> (without init value) has a constant value of 0 in block <parallel2serial_2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <buff_3> (without init value) has a constant value of 0 in block <parallel2serial_2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <buff_4> (without init value) has a constant value of 0 in block <parallel2serial_2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <buff_5> (without init value) has a constant value of 0 in block <parallel2serial_2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <cycle_count_0> has a constant value of 0 in block <parallel2serial_2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <strdata_56> (without init value) has a constant value of 0 in block <vga_debug>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <strdata_7> of sequential type is unconnected in block <vga_debug>.
@@ -907,11 +901,19 @@ WARNING:Xst:2677 - Node <strdata_31> of sequential type is unconnected in block 
 WARNING:Xst:2677 - Node <strdata_39> of sequential type is unconnected in block <vga_debug>.
 WARNING:Xst:2677 - Node <strdata_47> of sequential type is unconnected in block <vga_debug>.
 WARNING:Xst:2677 - Node <strdata_55> of sequential type is unconnected in block <vga_debug>.
-INFO:Xst:1901 - Instance FONT_8X16/BRAM_PC_VGA_0 in unit FONT_8X16/BRAM_PC_VGA_0 of type RAMB16_S1 has been replaced by RAMB18E1
+INFO:Xst:1901 - Instance BRAM_PC_VGA_0 in unit BRAM_PC_VGA_0 of type RAMB16_S1 has been replaced by RAMB18E1
 INFO:Xst:2261 - The FF/Latch <strdata_13> in Unit <vga_debug> is equivalent to the following FF/Latch, which will be removed : <strdata_21> 
 INFO:Xst:2261 - The FF/Latch <strdata_14> in Unit <vga_debug> is equivalent to the following FF/Latch, which will be removed : <strdata_22> 
 INFO:Xst:2261 - The FF/Latch <strdata_45> in Unit <vga_debug> is equivalent to the following FF/Latch, which will be removed : <strdata_53> 
 INFO:Xst:2261 - The FF/Latch <strdata_46> in Unit <vga_debug> is equivalent to the following FF/Latch, which will be removed : <strdata_54> 
+
+Optimizing unit <clk_diff> ...
+
+Optimizing unit <mips> ...
+
+Optimizing unit <mips_core> ...
+
+Optimizing unit <my_clk_gen> ...
 
 Optimizing unit <mips_top> ...
 
@@ -925,6 +927,10 @@ Optimizing unit <regfile> ...
 
 Optimizing unit <controller> ...
 
+Optimizing unit <inst_rom> ...
+
+Optimizing unit <data_ram> ...
+
 Optimizing unit <display> ...
 
 Optimizing unit <parallel2serial_1> ...
@@ -935,31 +941,41 @@ INFO:Xst:2261 - The FF/Latch <state_FSM_FFd2> in Unit <parallel2serial_2> is equ
 
 Optimizing unit <vga_debug> ...
 
+Optimizing unit <pc_vga_8x16_00_7F> ...
+
+Optimizing unit <div_7u_5u> ...
+
+Optimizing unit <mod_7u_5u> ...
+
 Optimizing unit <vga> ...
-WARNING:Xst:2677 - Node <BTN_SCAN/result_18> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_17> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_15> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_14> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_13> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_12> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_11> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_10> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_9> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_8> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_7> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_6> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_5> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_4> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_3> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_2> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_1> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <BTN_SCAN/result_0> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <DISPLAY/P2S_LED/finish> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <DISPLAY/P2S_LED/s_clr> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <DISPLAY/P2S_SEG/finish> of sequential type is unconnected in block <mips_top>.
-WARNING:Xst:2677 - Node <DISPLAY/P2S_SEG/s_clr> of sequential type is unconnected in block <mips_top>.
-INFO:Xst:2261 - The FF/Latch <VGA/B_3> in Unit <mips_top> is equivalent to the following 3 FFs/Latches, which will be removed : <VGA/B_2> <VGA/B_1> <VGA/B_0> 
-INFO:Xst:2261 - The FF/Latch <VGA/G_3> in Unit <mips_top> is equivalent to the following 7 FFs/Latches, which will be removed : <VGA/G_2> <VGA/G_1> <VGA/G_0> <VGA/R_3> <VGA/R_2> <VGA/R_1> <VGA/R_0> 
+WARNING:Xst:1710 - FF/Latch <buff_0> (without init value) has a constant value of 0 in block <P2S_SEG>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <buff_1> (without init value) has a constant value of 0 in block <P2S_SEG>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <buff_2> (without init value) has a constant value of 0 in block <P2S_SEG>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <buff_3> (without init value) has a constant value of 0 in block <P2S_SEG>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <buff_4> (without init value) has a constant value of 0 in block <P2S_SEG>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <buff_5> (without init value) has a constant value of 0 in block <P2S_SEG>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <result_0> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_1> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_2> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_3> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_4> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_5> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_6> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_7> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_8> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_9> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_10> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_11> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_12> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_13> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_14> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_15> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_17> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <result_18> of sequential type is unconnected in block <BTN_SCAN>.
+WARNING:Xst:2677 - Node <s_clr> of sequential type is unconnected in block <P2S_LED>.
+WARNING:Xst:2677 - Node <finish> of sequential type is unconnected in block <P2S_LED>.
+WARNING:Xst:2677 - Node <s_clr> of sequential type is unconnected in block <P2S_SEG>.
+WARNING:Xst:2677 - Node <finish> of sequential type is unconnected in block <P2S_SEG>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -971,8 +987,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 298
- Flip-Flops                                            : 298
+# Registers                                            : 308
+ Flip-Flops                                            : 308
 
 =========================================================================
 
@@ -995,23 +1011,23 @@ Top Level Output File Name         : mips_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1403
-#      GND                         : 2
-#      INV                         : 11
+# BELS                             : 1371
+#      GND                         : 11
+#      INV                         : 35
 #      LUT1                        : 85
-#      LUT2                        : 71
-#      LUT3                        : 31
-#      LUT4                        : 211
-#      LUT5                        : 195
-#      LUT6                        : 518
+#      LUT2                        : 48
+#      LUT3                        : 172
+#      LUT4                        : 107
+#      LUT5                        : 201
+#      LUT6                        : 433
 #      MUXCY                       : 131
-#      MUXF7                       : 24
-#      VCC                         : 2
+#      MUXF7                       : 13
+#      VCC                         : 13
 #      XORCY                       : 122
-# FlipFlops/Latches                : 298
+# FlipFlops/Latches                : 308
 #      FD                          : 96
 #      FDE                         : 90
-#      FDR                         : 58
+#      FDR                         : 68
 #      FDRE                        : 54
 # RAMS                             : 30
 #      RAM32M                      : 20
@@ -1033,22 +1049,22 @@ Selected Device : 7k325tfbg676-2l
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             298  out of  407600     0%  
- Number of Slice LUTs:                 1218  out of  203800     0%  
-    Number used as Logic:              1122  out of  203800     0%  
+ Number of Slice Registers:             308  out of  407600     0%  
+ Number of Slice LUTs:                 1177  out of  203800     0%  
+    Number used as Logic:              1081  out of  203800     0%  
     Number used as Memory:               96  out of  64000     0%  
        Number used as RAM:               96
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1257
-   Number with an unused Flip Flop:     959  out of   1257    76%  
-   Number with an unused LUT:            39  out of   1257     3%  
-   Number of fully used LUT-FF pairs:   259  out of   1257    20%  
-   Number of unique control sets:        19
+ Number of LUT Flip Flop pairs used:   1236
+   Number with an unused Flip Flop:     928  out of   1236    75%  
+   Number with an unused LUT:            59  out of   1236     4%  
+   Number of fully used LUT-FF pairs:   249  out of   1236    20%  
+   Number of unique control sets:        23
 
 IO Utilization: 
  Number of IOs:                          40
- Number of bonded IOBs:                  38  out of    400     9%  
+ Number of bonded IOBs:                  36  out of    400     9%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of    445     0%  
@@ -1073,31 +1089,31 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
--------------------------------------+----------------------------------------------------------------+-------+
-Clock Signal                         | Clock buffer(FF name)                                          | Load  |
--------------------------------------+----------------------------------------------------------------+-------+
-CLK_GEN/clkout3                      | BUFG                                                           | 104   |
-CLK_GEN/clkout2                      | BUFG                                                           | 224   |
-VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N01| NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/FONT_8X16/BRAM_PC_VGA_0)| 1     |
--------------------------------------+----------------------------------------------------------------+-------+
+-------------------------------------+------------------------------------------------------+-------+
+Clock Signal                         | Clock buffer(FF name)                                | Load  |
+-------------------------------------+------------------------------------------------------+-------+
+CLK_GEN/clkout3                      | BUFG                                                 | 104   |
+CLK_GEN/clkout2                      | BUFG                                                 | 234   |
+VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N01| NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/BRAM_PC_VGA_0)| 1     |
+-------------------------------------+------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-----------------------------------------------------------------------------------+----------------------------------------------------------------+-------+
-Control Signal                                                                    | Buffer(FF name)                                                | Load  |
-----------------------------------------------------------------------------------+----------------------------------------------------------------+-------+
-VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N01(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/XST_GND:G)| NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/FONT_8X16/BRAM_PC_VGA_0)| 12    |
-VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N1(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/XST_VCC:P) | NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/FONT_8X16/BRAM_PC_VGA_0)| 8     |
-MIPS/DATA_RAM/we_GND_18_o_AND_72_o(MIPS/DATA_RAM/we_GND_18_o_AND_72_o1:O)         | NONE(MIPS/DATA_RAM/Mram_data1)                                 | 2     |
-----------------------------------------------------------------------------------+----------------------------------------------------------------+-------+
+----------------------------------------------------------------------------------+------------------------------------------------------+-------+
+Control Signal                                                                    | Buffer(FF name)                                      | Load  |
+----------------------------------------------------------------------------------+------------------------------------------------------+-------+
+VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N01(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/XST_GND:G)| NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/BRAM_PC_VGA_0)| 12    |
+VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N11(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/XST_VCC:P)| NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/BRAM_PC_VGA_0)| 8     |
+MIPS/DATA_RAM/we_GND_18_o_AND_72_o(MIPS/DATA_RAM/we_GND_18_o_AND_72_o1:O)         | NONE(MIPS/DATA_RAM/Mram_data1)                       | 2     |
+----------------------------------------------------------------------------------+------------------------------------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 11.998ns (Maximum Frequency: 83.349MHz)
-   Minimum input arrival time before clock: 2.711ns
+   Minimum period: 12.622ns (Maximum Frequency: 79.227MHz)
+   Minimum input arrival time before clock: 2.581ns
    Maximum output required time after clock: 0.711ns
    Maximum combinational path delay: 0.000ns
 
@@ -1107,102 +1123,123 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_GEN/clkout3'
-  Clock period: 11.998ns (frequency: 83.349MHz)
-  Total number of paths / destination ports: 188578439 / 432
+  Clock period: 12.622ns (frequency: 79.227MHz)
+  Total number of paths / destination ports: 185448584 / 432
 -------------------------------------------------------------------------
-Delay:               5.999ns (Levels of Logic = 20)
-  Source:            MIPS/MIPS_CORE/DATAPATH/inst_addr_17 (FF)
+Delay:               6.311ns (Levels of Logic = 24)
+  Source:            MIPS/MIPS_CORE/DATAPATH/inst_addr_19 (FF)
   Destination:       MIPS/DATA_RAM/Mram_data1 (RAM)
   Source Clock:      CLK_GEN/clkout3 rising
   Destination Clock: CLK_GEN/clkout3 falling
 
-  Data Path: MIPS/MIPS_CORE/DATAPATH/inst_addr_17 to MIPS/DATA_RAM/Mram_data1
+  Data Path: MIPS/MIPS_CORE/DATAPATH/inst_addr_19 to MIPS/DATA_RAM/Mram_data1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             5   0.236   0.636  MIPS/MIPS_CORE/DATAPATH/inst_addr_17 (MIPS/MIPS_CORE/DATAPATH/inst_addr_17)
-     LUT6:I0->O            3   0.043   0.615  MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4_2 (MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o42)
-     LUT5:I0->O           10   0.043   0.545  MIPS/INST_ROM/Mmux_dout201 (MIPS/inst_data<27>)
-     LUT6:I3->O            1   0.043   0.350  MIPS/MIPS_CORE/CONTROLLER/inst[31]_GND_13_o_equal_16_o<31>1_1 (MIPS/MIPS_CORE/CONTROLLER/inst[31]_GND_13_o_equal_16_o<31>1)
-     LUT4:I3->O            1   0.043   0.495  MIPS/MIPS_CORE/DATAPATH/REGFILE/Mmux_data_b51_SW1 (N177)
-     LUT5:I2->O            5   0.043   0.373  MIPS/MIPS_CORE/DATAPATH/Mmux_opb51 (MIPS/MIPS_CORE/DATAPATH/opb<13>)
-     LUT6:I5->O            1   0.043   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_lut<13> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_lut<13>)
-     MUXCY:S->O            1   0.238   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<13> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<13>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<14> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<14>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<15> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<15>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<16> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<16>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<17> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<17>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<18> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<18>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<19> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<19>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<20> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<20>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<21> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<21>)
-     MUXCY:CI->O           1   0.013   0.000  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<22> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<22>)
-     XORCY:CI->O           1   0.262   0.350  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_xor<23> (MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_split<9>)
-     LUT6:I5->O            4   0.043   0.630  MIPS/MIPS_CORE/DATAPATH/ALU/Mmux_result171 (MIPS/mem_addr<23>)
-     LUT6:I0->O            2   0.043   0.355  MIPS/DATA_RAM/GND_18_o_GND_18_o_equal_2_o<31>1 (MIPS/DATA_RAM/GND_18_o_GND_18_o_equal_2_o<31>)
-     LUT6:I5->O            0   0.043   0.000  MIPS/DATA_RAM/we_GND_18_o_AND_72_o1 (MIPS/DATA_RAM/we_GND_18_o_AND_72_o)
-     RAMB18E1:WEA0             0.404          MIPS/DATA_RAM/Mram_data1
+     FDRE:C->Q             5   0.236   0.636  inst_addr_19 (inst_addr_19)
+     end scope: 'MIPS/MIPS_CORE/DATAPATH:inst_addr<19>'
+     end scope: 'MIPS/MIPS_CORE:inst_addr<19>'
+     begin scope: 'MIPS/INST_ROM:addr<17>'
+     LUT6:I0->O            5   0.043   0.626  GND_17_o_GND_17_o_not_equal_0_o4_1 (GND_17_o_GND_17_o_not_equal_0_o41)
+     LUT5:I0->O           53   0.043   0.473  Mmux_dout181 (dout<25>)
+     end scope: 'MIPS/INST_ROM:dout<25>'
+     begin scope: 'MIPS/MIPS_CORE:inst_data<25>'
+     begin scope: 'MIPS/MIPS_CORE/DATAPATH:inst_data<25>'
+     begin scope: 'MIPS/MIPS_CORE/DATAPATH/REGFILE:addr_a<4>'
+     RAM32M:ADDRA4->DOA0    1   0.299   0.350  Mram_regfile1 (addr_a[4]_read_port_4_OUT<0>)
+     LUT6:I5->O            2   0.043   0.355  Mmux_data_a11 (data_a<0>)
+     end scope: 'MIPS/MIPS_CORE/DATAPATH/REGFILE:data_a<0>'
+     LUT3:I2->O            5   0.043   0.428  Mmux_opa11 (opa<0>)
+     begin scope: 'MIPS/MIPS_CORE/DATAPATH/ALU:a<0>'
+     LUT3:I1->O            1   0.043   0.000  Mmux__n00371_rs_lut<0> (Mmux__n00371_rs_lut<0>)
+     MUXCY:S->O            1   0.238   0.000  Mmux__n00371_rs_cy<0> (Mmux__n00371_rs_cy<0>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<1> (Mmux__n00371_rs_cy<1>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<2> (Mmux__n00371_rs_cy<2>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<3> (Mmux__n00371_rs_cy<3>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<4> (Mmux__n00371_rs_cy<4>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<5> (Mmux__n00371_rs_cy<5>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<6> (Mmux__n00371_rs_cy<6>)
+     XORCY:CI->O           1   0.262   0.350  Mmux__n00371_rs_xor<7> (Mmux__n00371_split<25>)
+     LUT6:I5->O            4   0.043   0.620  Mmux_result311 (result<7>)
+     end scope: 'MIPS/MIPS_CORE/DATAPATH/ALU:result<7>'
+     end scope: 'MIPS/MIPS_CORE/DATAPATH:mem_addr<7>'
+     end scope: 'MIPS/MIPS_CORE:mem_addr<7>'
+     begin scope: 'MIPS/DATA_RAM:addr<5>'
+     LUT5:I0->O            2   0.043   0.608  GND_18_o_GND_18_o_equal_2_o<31>3 (GND_18_o_GND_18_o_equal_2_o<31>2)
+     LUT6:I1->O            0   0.043   0.000  we_GND_18_o_AND_72_o1 (we_GND_18_o_AND_72_o)
+     RAMB18E1:WEA0             0.404          Mram_data1
     ----------------------------------------
-    Total                      5.999ns (1.649ns logic, 4.350ns route)
-                                       (27.5% logic, 72.5% route)
+    Total                      6.311ns (1.864ns logic, 4.447ns route)
+                                       (29.5% logic, 70.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_GEN/clkout2'
-  Clock period: 5.764ns (frequency: 173.500MHz)
-  Total number of paths / destination ports: 48769 / 460
+  Clock period: 6.282ns (frequency: 159.176MHz)
+  Total number of paths / destination ports: 132459 / 477
 -------------------------------------------------------------------------
-Delay:               5.764ns (Levels of Logic = 9)
-  Source:            VGA/h_count_4 (FF)
-  Destination:       VGA_DEBUG/ascii_code_1 (FF)
+Delay:               6.282ns (Levels of Logic = 12)
+  Source:            VGA/h_count_3 (FF)
+  Destination:       VGA_DEBUG/ascii_code_5 (FF)
   Source Clock:      CLK_GEN/clkout2 rising
   Destination Clock: CLK_GEN/clkout2 rising
 
-  Data Path: VGA/h_count_4 to VGA_DEBUG/ascii_code_1
+  Data Path: VGA/h_count_3 to VGA_DEBUG/ascii_code_5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q            122   0.236   0.552  VGA/h_count_4 (VGA/h_count_4)
-     LUT3:I1->O            4   0.043   0.620  VGA_DEBUG/Mmux_n00691111 (VGA_DEBUG/Mmux_n0069111)
-     LUT6:I1->O            6   0.043   0.641  VGA_DEBUG/Mmux_n0069211 (VGA_DEBUG/Mmux_n006921)
-     LUT6:I0->O           14   0.043   0.477  VGA_DEBUG/Mmux_n006941 (VGA_DEBUG/char_index_col[6]_PWR_21_o_div_9/Madd_a[6]_GND_21_o_add_13_OUT[6:0]_cy<3>)
-     LUT4:I2->O           48   0.043   0.472  VGA_DEBUG/n0070<1>1 (VGA_DEBUG/n0070<1>)
-     RAM32M:ADDRC1->DOC1    1   0.299   0.522  VGA_DEBUG/Mram_data_buf3 (VGA_DEBUG/Sh45)
-     LUT6:I2->O            1   0.043   0.613  VGA_DEBUG/Sh1492 (VGA_DEBUG/Sh1492)
-     LUT6:I0->O            7   0.043   0.637  VGA_DEBUG/Sh1493 (VGA_DEBUG/Sh149)
-     LUT5:I0->O            1   0.043   0.350  VGA_DEBUG/Mmux_GND_20_o_GND_20_o_mux_39_OUT24_SW0 (N258)
-     LUT6:I5->O            1   0.043   0.000  VGA_DEBUG/Mmux_GND_20_o_GND_20_o_mux_39_OUT24 (VGA_DEBUG/GND_20_o_GND_20_o_mux_39_OUT<1>)
-     FDE:D                    -0.000          VGA_DEBUG/ascii_code_1
+     FDR:C->Q            145   0.236   0.754  h_count_3 (h_count_3)
+     end scope: 'VGA:h_count<3>'
+     begin scope: 'VGA_DEBUG:h_count<3>'
+     LUT5:I0->O            1   0.043   0.522  h_count[9]_GND_20_o_LessThan_7_o1_SW0 (N2)
+     LUT6:I2->O            8   0.043   0.652  h_count[9]_GND_20_o_LessThan_7_o1 (h_count[9]_GND_20_o_LessThan_7_o)
+     LUT6:I0->O            5   0.043   0.626  Mmux_n00695 (n0069<4>)
+     begin scope: 'VGA_DEBUG/char_index_col[6]_PWR_21_o_div_9:a<4>'
+     LUT5:I0->O           50   0.043   0.472  o<0>1 (o<0>)
+     end scope: 'VGA_DEBUG/char_index_col[6]_PWR_21_o_div_9:o<0>'
+     RAM32M:ADDRC0->DOC1    1   0.299   0.522  Mram_data_buf5 (Sh57)
+     LUT6:I2->O            1   0.043   0.405  Sh1492 (Sh1492)
+     LUT3:I1->O            7   0.043   0.556  Sh1493 (Sh149)
+     LUT6:I2->O            2   0.043   0.500  char_page[1]_PWR_21_o_LessThan_27_o1 (char_page[1]_PWR_21_o_LessThan_27_o)
+     LUT6:I3->O            1   0.043   0.350  Mmux_GND_20_o_GND_20_o_mux_39_OUT61 (Mmux_GND_20_o_GND_20_o_mux_39_OUT6)
+     LUT4:I3->O            1   0.043   0.000  Mmux_GND_20_o_GND_20_o_mux_39_OUT64 (GND_20_o_GND_20_o_mux_39_OUT<5>)
+     FDE:D                    -0.000          ascii_code_5
     ----------------------------------------
-    Total                      5.764ns (0.879ns logic, 4.885ns route)
-                                       (15.3% logic, 84.7% route)
+    Total                      6.282ns (0.922ns logic, 5.360ns route)
+                                       (14.7% logic, 85.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_GEN/clkout3'
-  Total number of paths / destination ports: 74 / 62
+  Total number of paths / destination ports: 62 / 62
 -------------------------------------------------------------------------
-Offset:              2.711ns (Levels of Logic = 4)
+Offset:              2.581ns (Levels of Logic = 7)
   Source:            SW<0> (PAD)
-  Destination:       MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile5 (RAM)
+  Destination:       MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13 (RAM)
   Destination Clock: CLK_GEN/clkout3 rising
 
-  Data Path: SW<0> to MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile5
+  Data Path: SW<0> to MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             6   0.000   0.378  SW_0_IBUF (SW_0_IBUF)
-     LUT4:I3->O           34   0.043   0.733  MIPS/MIPS_CORE/CONTROLLER/Mmux_cpu_en11 (MIPS/MIPS_CORE/cpu_en)
-     LUT5:I0->O            1   0.043   0.613  MIPS/MIPS_CORE/DATAPATH/REGFILE/en_w_GND_15_o_AND_33_o3 (MIPS/MIPS_CORE/DATAPATH/REGFILE/en_w_GND_15_o_AND_33_o3)
-     LUT6:I0->O           21   0.043   0.450  MIPS/MIPS_CORE/DATAPATH/REGFILE/en_w_GND_15_o_AND_33_o4 (MIPS/MIPS_CORE/DATAPATH/REGFILE/en_w_GND_15_o_AND_33_o)
-     RAM32M:WE                 0.408          MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13
+     IBUF:I->O             2   0.000   0.355  SW_0_IBUF (SW_0_IBUF)
+     begin scope: 'MIPS:debug_en'
+     begin scope: 'MIPS/MIPS_CORE:debug_en'
+     begin scope: 'MIPS/MIPS_CORE/CONTROLLER:debug_en'
+     LUT4:I3->O           36   0.043   0.626  Mmux_cpu_en11 (cpu_en)
+     end scope: 'MIPS/MIPS_CORE/CONTROLLER:cpu_en'
+     begin scope: 'MIPS/MIPS_CORE/DATAPATH:cpu_en'
+     LUT3:I0->O            1   0.043   0.613  wb_wen_ctrl_cpu_rst_AND_35_o1 (wb_wen_ctrl_cpu_rst_AND_35_o)
+     begin scope: 'MIPS/MIPS_CORE/DATAPATH/REGFILE:en_w'
+     LUT6:I0->O           21   0.043   0.450  en_w_GND_15_o_AND_33_o1 (en_w_GND_15_o_AND_33_o)
+     RAM32M:WE                 0.408          Mram_regfile13
     ----------------------------------------
-    Total                      2.711ns (0.537ns logic, 2.174ns route)
-                                       (19.8% logic, 80.2% route)
+    Total                      2.581ns (0.537ns logic, 2.044ns route)
+                                       (20.8% logic, 79.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_GEN/clkout2'
   Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              0.593ns (Levels of Logic = 2)
+Offset:              1.438ns (Levels of Logic = 5)
   Source:            SW<0> (PAD)
   Destination:       DISPLAY/P2S_LED/buff_0 (FF)
   Destination Clock: CLK_GEN/clkout2 rising
@@ -1211,18 +1248,22 @@ Offset:              0.593ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             6   0.000   0.550  SW_0_IBUF (SW_0_IBUF)
-     LUT5:I1->O            1   0.043   0.000  DISPLAY/P2S_LED/Mmux__n011011 (DISPLAY/P2S_LED/_n0110<0>)
-     FDE:D                    -0.000          DISPLAY/P2S_LED/buff_0
+     IBUF:I->O             2   0.000   0.344  SW_0_IBUF (SW_0_IBUF)
+     INV:I->O              1   0.054   0.339  btn_step_inv_3_OUT<0>1_INV_0 (btn_step_inv_3_OUT<0>)
+     begin scope: 'DISPLAY:led<0>'
+     INV:I->O              1   0.054   0.603  led[15]_inv_16_OUT<0>1_INV_0 (led[15]_inv_16_OUT<0>)
+     begin scope: 'DISPLAY/P2S_LED:data<0>'
+     LUT5:I0->O            1   0.043   0.000  Mmux__n011018 (_n0110<0>)
+     FDE:D                    -0.000          buff_0
     ----------------------------------------
-    Total                      0.593ns (0.043ns logic, 0.550ns route)
-                                       (7.2% logic, 92.8% route)
+    Total                      1.438ns (0.151ns logic, 1.287ns route)
+                                       (10.5% logic, 89.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_GEN/clkout2'
   Total number of paths / destination ports: 23 / 23
 -------------------------------------------------------------------------
-Offset:              0.711ns (Levels of Logic = 1)
+Offset:              0.711ns (Levels of Logic = 2)
   Source:            DISPLAY/P2S_SEG/s_clk (FF)
   Destination:       SEGLED_CLK (PAD)
   Source Clock:      CLK_GEN/clkout2 rising
@@ -1231,7 +1272,9 @@ Offset:              0.711ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            65   0.236   0.475  DISPLAY/P2S_SEG/s_clk (DISPLAY/P2S_SEG/s_clk)
+     FDRE:C->Q            65   0.236   0.475  s_clk (s_clk)
+     end scope: 'DISPLAY/P2S_SEG:s_clk'
+     end scope: 'DISPLAY:seg_clk'
      OBUF:I->O                 0.000          SEGLED_CLK_OBUF (SEGLED_CLK)
     ----------------------------------------
     Total                      0.711ns (0.236ns logic, 0.475ns route)
@@ -1241,7 +1284,7 @@ Offset:              0.711ns (Levels of Logic = 1)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 2 / 1
 -------------------------------------------------------------------------
-Delay:               0.000ns (Levels of Logic = 1)
+Delay:               0.000ns (Levels of Logic = 3)
   Source:            CLK_200M_P (PAD)
   Destination:       CLK_GEN/mmcm_adv_inst:CLKIN1 (PAD)
 
@@ -1249,8 +1292,11 @@ Delay:               0.000ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUFGDS:I->O          0   0.000   0.000  CLK_DIFF/IBUFGDS_inst (clk200MHz)
-    MMCME2_ADV:CLKIN1          0.000          CLK_GEN/mmcm_adv_inst
+     begin scope: 'CLK_DIFF:clk200P'
+     IBUFGDS:I->O          0   0.000   0.000  IBUFGDS_inst (clk200MHz)
+     end scope: 'CLK_DIFF:clk200MHz'
+     begin scope: 'CLK_GEN:clkin1'
+    MMCME2_ADV:CLKIN1          0.000          mmcm_adv_inst
     ----------------------------------------
     Total                      0.000ns (0.000ns logic, 0.000ns route)
 
@@ -1264,8 +1310,8 @@ Clock to Setup on destination clock CLK_GEN/clkout2
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_GEN/clkout2|    5.764|         |         |         |
-CLK_GEN/clkout3|    2.416|         |         |         |
+CLK_GEN/clkout2|    6.282|         |         |         |
+CLK_GEN/clkout3|    3.072|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CLK_GEN/clkout3
@@ -1273,21 +1319,21 @@ Clock to Setup on destination clock CLK_GEN/clkout3
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_GEN/clkout2|    4.340|         |    2.893|         |
-CLK_GEN/clkout3|    7.938|    3.605|    5.999|         |
+CLK_GEN/clkout2|    3.840|         |    2.877|         |
+CLK_GEN/clkout3|    8.361|    3.703|    6.311|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 41.00 secs
-Total CPU time to Xst completion: 40.81 secs
+Total REAL time to Xst completion: 44.00 secs
+Total CPU time to Xst completion: 43.76 secs
  
 --> 
 
-Total memory usage is 378472 kilobytes
+Total memory usage is 412904 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   87 (   0 filtered)
-Number of infos    :   30 (   0 filtered)
+Number of infos    :   28 (   0 filtered)
 

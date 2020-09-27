@@ -44,7 +44,7 @@ module controller (/*AUTOARG*/
 		mem_wen = 0;
 		wb_addr_src = WB_ADDR_RD;
 		wb_data_src = WB_DATA_ALU;
-		wb_wen = 0;//???
+		wb_wen = 0;
 		unrecognized = 0;
 		case (inst[31:26])
 			INST_R: begin
@@ -59,9 +59,9 @@ module controller (/*AUTOARG*/
 						wb_wen = 1;
 					end
 					R_FUNC_SUB: begin
-						exe_alu_oper = EXE_ALU_SUB;
-						wb_addr_src = WB_ADDR_RD;
-						wb_data_src = WB_DATA_ALU;
+						exe_alu_oper = EXE_ALU_SUB;//
+						wb_addr_src = WB_ADDR_RD;//
+						wb_data_src = WB_DATA_ALU;//
 						wb_wen = 1;
 					end
 					R_FUNC_AND: begin
@@ -91,19 +91,19 @@ module controller (/*AUTOARG*/
 				pc_src = PC_JUMP;
 			end
 			INST_JAL: begin
-				pc_src = PC_JR;
-				exe_a_src = EXE_A_LINK;
-				exe_b_src = EXE_B_LINK;
-				exe_alu_oper = EXE_ALU_ADD;
-				wb_addr_src = WB_ADDR_LINK;
-				wb_data_src = WB_DATA_ALU;
+				pc_src = PC_JR;//
+				exe_a_src = EXE_A_LINK;//
+				exe_b_src = EXE_B_LINK;//
+				exe_alu_oper = EXE_ALU_ADD;//
+				wb_addr_src = WB_ADDR_LINK;//
+				wb_data_src = WB_DATA_ALU;//
 				wb_wen = 1;
 			end
 			INST_BEQ: begin
-				pc_src = PC_BEQ;
-				exe_a_src = EXE_A_BRANCH;
-				exe_b_src = EXE_B_BRANCH;
-				exe_alu_oper = EXE_ALU_SUB;
+				pc_src = PC_BEQ;//
+				exe_a_src = EXE_A_BRANCH;//
+				exe_b_src = EXE_B_BRANCH;//
+				exe_alu_oper = EXE_ALU_SUB;//??
 				imm_ext = 1;
 			end
 			INST_ADDI: begin
@@ -115,15 +115,15 @@ module controller (/*AUTOARG*/
 				wb_wen = 1;
 			end
 			INST_ANDI: begin
-				imm_ext = 1;
-				exe_b_src = EXE_B_IMM;
-				exe_alu_oper = EXE_ALU_AND;
-				wb_addr_src = WB_ADDR_RT;
-				wb_data_src = WB_DATA_ALU;
-				wb_wen = 1;
+				imm_ext = 1;//
+				exe_b_src = EXE_B_IMM;//
+				exe_alu_oper = EXE_ALU_AND;//
+				wb_addr_src = WB_ADDR_RT;//
+				wb_data_src = WB_DATA_ALU;//
+				wb_wen = 1;//
 			end
 			INST_ORI: begin
-				imm_ext = 1;//??,原来写着0
+				imm_ext = 0;//原来就写着0,迷惑
 				exe_b_src = EXE_B_IMM;
 				exe_alu_oper = EXE_ALU_OR;
 				wb_addr_src = WB_ADDR_RT;
@@ -131,19 +131,19 @@ module controller (/*AUTOARG*/
 				wb_wen = 1;
 			end
 			INST_LW: begin
-				imm_ext = 1;
-				exe_b_src = EXE_B_IMM;
-				exe_alu_oper = EXE_ALU_ADD;
-				mem_ren = 1;
+				imm_ext = 1;//
+				exe_b_src = EXE_B_IMM;//
+				exe_alu_oper = EXE_ALU_ADD;//
+				mem_ren = 1;//
 				wb_addr_src = WB_ADDR_RT;//
-				wb_data_src = WB_DATA_MEM;
+				wb_data_src = WB_DATA_MEM;//
 				wb_wen = 1;
 			end
 			INST_SW: begin
-				imm_ext = 1;
-				exe_b_src = EXE_B_IMM;
-				exe_alu_oper = EXE_ALU_ADD;
-				mem_wen = 1;
+				imm_ext = 1;//
+				exe_b_src = EXE_B_IMM;//
+				exe_alu_oper = EXE_ALU_ADD;//
+				mem_wen = 1;//
 			end
 			default: begin
 				unrecognized = 1;

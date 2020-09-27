@@ -24,16 +24,16 @@ module sim_mips;
 		.rst(rst), 
 		.interrupter(interrupter)
 	);
-	
 	initial begin
 		// Initialize Inputs
-		debug_en = 0;
+		debug_en = 1;
 		debug_step = 0;
 		debug_addr = 0;
 		clk = 0;
 		rst = 0;
 		interrupter = 0;
 
+		
 		#100 rst = 1;
 		#100 rst = 0;
 
