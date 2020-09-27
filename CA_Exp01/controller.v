@@ -119,7 +119,7 @@ module controller (/*AUTOARG*/
 				exe_b_src = EXE_B_IMM;
 				exe_alu_oper = EXE_ALU_AND;
 				wb_addr_src = WB_ADDR_RT;
-				wb_data_src = AB_DATA_ALU;
+				wb_data_src = WB_DATA_ALU;
 				wb_wen = 1;
 			end
 			INST_ORI: begin

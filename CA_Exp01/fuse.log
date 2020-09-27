@@ -1,0 +1,35 @@
+Running: D:\ISE\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/00a/CA/CA_Exp/CA_Exp01/sim_mips_isim_beh.exe -prj D:/00a/CA/CA_Exp/CA_Exp01/sim_mips_beh.prj work.sim_mips work.glbl 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/regfile.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/alu.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/datapath.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/controller.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/mips_core.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/inst_rom.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/data_ram.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/mips.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/sim_mips.v" into library work
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 160480 KB
+Fuse CPU Usage: 1203 ms
+Compiling module controller
+Compiling module regfile
+Compiling module alu
+Compiling module datapath
+Compiling module mips_core
+Compiling module inst_rom
+Compiling module data_ram
+Compiling module mips
+Compiling module sim_mips
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 3 sub-compilation(s) to finish...
+Compiled 10 Verilog Units
+Built simulation executable D:/00a/CA/CA_Exp/CA_Exp01/sim_mips_isim_beh.exe
+Fuse Memory Usage: 167084 KB
+Fuse CPU Usage: 1718 ms

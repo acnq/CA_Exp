@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "D:/00a/CA/CA_Exp/CA_Exp01/mips_top.xst" -ofn "D:/00a/CA/CA_Exp/CA_Exp01/mips_top.syr" 
+xst -intstyle ise -ifn "D:/00a/CA/CA_Exp/CA_Exp01/mips_top.xst" -ofn "D:/00a/CA/CA_Exp/CA_Exp01/mips_top.syr" 
+xst -intstyle ise -ifn "D:/00a/CA/CA_Exp/CA_Exp01/mips_top.xst" -ofn "D:/00a/CA/CA_Exp/CA_Exp01/mips_top.syr" 
+xst -intstyle ise -ifn "D:/00a/CA/CA_Exp/CA_Exp01/mips_top.xst" -ofn "D:/00a/CA/CA_Exp/CA_Exp01/mips_top.syr" 
