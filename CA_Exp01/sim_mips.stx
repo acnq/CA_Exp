@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.33 secs
+Total CPU time to Xst completion: 0.52 secs
  
 --> Parameter xsthdpdir set to D:/00a/CA/CA_Exp/CA_Exp01/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.35 secs
+Total CPU time to Xst completion: 0.52 secs
  
 --> Reading design: sim_mips.prj
 
@@ -68,12 +68,12 @@ Analyzing Verilog file "D:\00a\CA\CA_Exp\CA_Exp01\sim_mips.v" into library work
 Parsing module <sim_mips>.
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.72 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.79 secs
  
 --> 
 
-Total memory usage is 211248 kilobytes
+Total memory usage is 211184 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

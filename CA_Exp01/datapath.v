@@ -98,10 +98,10 @@ module datapath (
 		end
 		else if (cpu_en) begin
 			case (pc_src_ctrl)
-				PC_JUMP: inst_addr <= {inst_addr[31:28],inst_data[25:0],2'b0};//
+				PC_JUMP: inst_addr <= {inst_addr_next[31:28],inst_data[25:0],2'b0};//
 				PC_JR: inst_addr <= addr_rs;//
-				PC_BEQ: inst_addr <= alu_out;//
-				PC_BNE: inst_addr <= alu_out;//
+				PC_BEQ: inst_addr <= rs_rt_equal ? alu_out : inst_addr_next;//判断分支！！
+				PC_BNE: inst_addr <= rs_rt_equal ? inst_addr_next : alu_out;//判断分支！！
 				default: inst_addr <= inst_addr_next;
 			endcase
 		end
@@ -174,7 +174,7 @@ module datapath (
 		regw_data = alu_out;
 		case (wb_data_src_ctrl)
 			WB_DATA_ALU: regw_data = alu_out;//
-			WB_DATA_MEM: regw_data = mem_dout;//
+			WB_DATA_MEM: regw_data = mem_din;//
 		endcase
 	end
 	
