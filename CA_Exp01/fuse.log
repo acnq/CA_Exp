@@ -15,8 +15,8 @@ Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp01/sim_mips.v" into library work
 Analyzing Verilog file "D:/ISE/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 160036 KB
-Fuse CPU Usage: 1359 ms
+Fuse Memory Usage: 160420 KB
+Fuse CPU Usage: 1234 ms
 Compiling module controller
 Compiling module regfile
 Compiling module alu
@@ -29,4 +29,7 @@ Compiling module sim_mips
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 3 sub-compilation(s) to finish...
-ERROR:Simulator:904 - Unable to remove previous simulation file D:/00a/CA/CA_Exp/CA_Exp01/sim_mips_isim_beh.exe. Please check if you have another instance of this simulation running on your system, terminate it and then recompile your design. System Error Message: boost::filesystem::remove: ¾Ü¾ø·ÃÎÊ¡£: "D:\00a\CA\CA_Exp\CA_Exp01\sim_mips_isim_beh.exe"
+Compiled 10 Verilog Units
+Built simulation executable D:/00a/CA/CA_Exp/CA_Exp01/sim_mips_isim_beh.exe
+Fuse Memory Usage: 167024 KB
+Fuse CPU Usage: 1874 ms

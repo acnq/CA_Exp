@@ -88,7 +88,7 @@ module controller (/*AUTOARG*/
 				endcase
 			end
 			INST_J: begin
-				pc_src = PC_JUMP;
+				pc_src = PC_JUMP;//
 			end
 			INST_JAL: begin
 				pc_src = PC_JUMP;//
@@ -122,7 +122,7 @@ module controller (/*AUTOARG*/
 				wb_wen = 1;
 			end
 			INST_ANDI: begin
-				imm_ext = 1;//
+				imm_ext = 0;//为啥是0?
 				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper = EXE_ALU_AND;//
 				wb_addr_src = WB_ADDR_RT;//
@@ -130,7 +130,7 @@ module controller (/*AUTOARG*/
 				wb_wen = 1;//
 			end
 			INST_ORI: begin
-				imm_ext = 1;//原来写着0,迷惑
+				imm_ext = 0;//为啥是0?
 				exe_b_src = EXE_B_IMM;
 				exe_alu_oper = EXE_ALU_OR;
 				wb_addr_src = WB_ADDR_RT;
@@ -148,7 +148,7 @@ module controller (/*AUTOARG*/
 			end
 			INST_SW: begin
 				imm_ext = 1;//
-				exe_b_src = EXE_B_RT;//
+				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper = EXE_ALU_ADD;//
 				mem_wen = 1;//
 			end

@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.31 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.44 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.31 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.44 secs
  
 --> Reading design: mips_top.prj
 
@@ -1014,17 +1014,17 @@ Top Level Output File Name         : mips_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1398
+# BELS                             : 1396
 #      GND                         : 11
 #      INV                         : 35
 #      LUT1                        : 85
-#      LUT2                        : 47
-#      LUT3                        : 177
+#      LUT2                        : 48
+#      LUT3                        : 174
 #      LUT4                        : 111
-#      LUT5                        : 193
-#      LUT6                        : 447
+#      LUT5                        : 190
+#      LUT6                        : 451
 #      MUXCY                       : 142
-#      MUXF7                       : 15
+#      MUXF7                       : 14
 #      VCC                         : 13
 #      XORCY                       : 122
 # FlipFlops/Latches                : 308
@@ -1053,16 +1053,16 @@ Selected Device : 7k325tfbg676-2l
 
 Slice Logic Utilization: 
  Number of Slice Registers:             308  out of  407600     0%  
- Number of Slice LUTs:                 1191  out of  203800     0%  
-    Number used as Logic:              1095  out of  203800     0%  
+ Number of Slice LUTs:                 1190  out of  203800     0%  
+    Number used as Logic:              1094  out of  203800     0%  
     Number used as Memory:               96  out of  64000     0%  
        Number used as RAM:               96
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1249
-   Number with an unused Flip Flop:     941  out of   1249    75%  
-   Number with an unused LUT:            58  out of   1249     4%  
-   Number of fully used LUT-FF pairs:   250  out of   1249    20%  
+ Number of LUT Flip Flop pairs used:   1248
+   Number with an unused Flip Flop:     940  out of   1248    75%  
+   Number with an unused LUT:            58  out of   1248     4%  
+   Number of fully used LUT-FF pairs:   250  out of   1248    20%  
    Number of unique control sets:        23
 
 IO Utilization: 
@@ -1127,7 +1127,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_GEN/clkout3'
   Clock period: 12.583ns (frequency: 79.471MHz)
-  Total number of paths / destination ports: 186189200 / 432
+  Total number of paths / destination ports: 172204584 / 432
 -------------------------------------------------------------------------
 Delay:               6.292ns (Levels of Logic = 28)
   Source:            MIPS/MIPS_CORE/DATAPATH/inst_addr_19 (FF)
@@ -1344,12 +1344,12 @@ CLK_GEN/clkout3|    8.483|    3.703|    6.292|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.38 secs
+Total REAL time to Xst completion: 38.00 secs
+Total CPU time to Xst completion: 38.53 secs
  
 --> 
 
-Total memory usage is 379176 kilobytes
+Total memory usage is 377384 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   86 (   0 filtered)

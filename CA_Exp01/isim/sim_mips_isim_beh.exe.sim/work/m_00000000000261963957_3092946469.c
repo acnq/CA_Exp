@@ -415,7 +415,7 @@ LAB58:    xsi_set_current_line(117, ng0);
 LAB19:    xsi_set_current_line(124, ng0);
 
 LAB59:    xsi_set_current_line(125, ng0);
-    t3 = ((char*)((ng5)));
+    t3 = ((char*)((ng1)));
     t4 = (t0 + 6968);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
     xsi_set_current_line(126, ng0);
@@ -447,7 +447,7 @@ LAB59:    xsi_set_current_line(125, ng0);
 LAB21:    xsi_set_current_line(132, ng0);
 
 LAB60:    xsi_set_current_line(133, ng0);
-    t3 = ((char*)((ng5)));
+    t3 = ((char*)((ng1)));
     t4 = (t0 + 6968);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
     xsi_set_current_line(134, ng0);
@@ -519,7 +519,7 @@ LAB62:    xsi_set_current_line(150, ng0);
     t4 = (t0 + 6968);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
     xsi_set_current_line(151, ng0);
-    t2 = (t0 + 904);
+    t2 = (t0 + 984);
     t3 = *((char **)t2);
     t2 = (t0 + 7152);
     xsi_vlogvar_assign_value(t2, t3, 0, 0, 2);

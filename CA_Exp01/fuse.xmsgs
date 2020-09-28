@@ -5,8 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="Simulator" num="904" delta="unknown" >Unable to remove previous simulation file <arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp01/sim_mips_isim_beh.exe</arg>. Please check if you have another instance of this simulation running on your system, terminate it and then recompile your design. System Error Message: <arg fmt="%s" index="2">boost::filesystem::remove: ﾾￜﾾ￸ﾷￃￎￊﾡﾣ: &quot;D:\00a\CA\CA_Exp\CA_Exp01\sim_mips_isim_beh.exe&quot;</arg>
-</msg>
-
 </messages>
 
