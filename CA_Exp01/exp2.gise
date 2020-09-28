@@ -127,7 +127,7 @@
       <outfile xil_pn:name="vga_8x16.v"/>
       <outfile xil_pn:name="vga_debug.v"/>
     </transform>
-    <transform xil_pn:end_ts="1601297118" xil_pn:in_ck="-3560619775278924142" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1190306590360935670" xil_pn:start_ts="1601297109">
+    <transform xil_pn:end_ts="1601302534" xil_pn:in_ck="-3560619775278924142" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1190306590360935670" xil_pn:start_ts="1601302526">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -139,7 +139,7 @@
       <outfile xil_pn:name="sim_mips_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1601297119" xil_pn:in_ck="4704001905564406324" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3455278457278395987" xil_pn:start_ts="1601297118">
+    <transform xil_pn:end_ts="1601304689" xil_pn:in_ck="4704001905564406324" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3455278457278395987" xil_pn:start_ts="1601304689">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>

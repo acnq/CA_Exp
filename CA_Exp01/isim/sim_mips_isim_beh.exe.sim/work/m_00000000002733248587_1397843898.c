@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0x8ef4fb42 */
+/* This file is designed for use with ISim build 0x7708f090 */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/00a/CA/CA_Exp/CA_Exp01/inst_rom.v";
+static const char *ng0 = "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap1Exp/CA_Exp/CA_Exp/CA_Exp01/inst_rom.v";
 static const char *ng1 = "inst_mem.hex";
 static int ng2[] = {0, 0};
 static unsigned int ng3[] = {0U, 0U};
@@ -35,7 +35,7 @@ static void Initial_12_0(char *t0)
 LAB0:    xsi_set_current_line(12, ng0);
 
 LAB2:    xsi_set_current_line(13, ng0);
-    t1 = (t0 + 1092);
+    t1 = (t0 + 1904);
     xsi_vlogfile_readmemh(ng1, 0, t1, 0, 0, 0, 0);
 
 LAB1:    return;
@@ -116,7 +116,7 @@ static void Cont_16_1(char *t0)
     char *t71;
     char *t72;
 
-LAB0:    t1 = (t0 + 1760U);
+LAB0:    t1 = (t0 + 3072U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
@@ -124,7 +124,7 @@ LAB0:    t1 = (t0 + 1760U);
 LAB3:    goto *t2;
 
 LAB2:    xsi_set_current_line(16, ng0);
-    t2 = (t0 + 772U);
+    t2 = (t0 + 1344U);
     t6 = *((char **)t2);
     memset(t5, 0, 8);
     t2 = (t5 + 4);
@@ -196,14 +196,14 @@ LAB17:    if (*((unsigned int *)t4) > 0)
 
 LAB19:    memcpy(t3, t50, 8);
 
-LAB20:    t67 = (t0 + 2000);
-    t68 = (t67 + 32U);
+LAB20:    t67 = (t0 + 3472);
+    t68 = (t67 + 56U);
     t69 = *((char **)t68);
-    t70 = (t69 + 40U);
+    t70 = (t69 + 56U);
     t71 = *((char **)t70);
     memcpy(t71, t3, 8);
     xsi_driver_vfirst_trans(t67, 0, 31);
-    t72 = (t0 + 1956);
+    t72 = (t0 + 3392);
     *((int *)t72) = 1;
 
 LAB1:    return;
@@ -226,16 +226,16 @@ LAB10:    t37 = (t4 + 4);
 LAB12:    t42 = ((char*)((ng3)));
     goto LAB13;
 
-LAB14:    t47 = (t0 + 1092);
-    t48 = (t47 + 36U);
+LAB14:    t47 = (t0 + 1904);
+    t48 = (t47 + 56U);
     t49 = *((char **)t48);
-    t51 = (t0 + 1092);
-    t52 = (t51 + 44U);
+    t51 = (t0 + 1904);
+    t52 = (t51 + 72U);
     t53 = *((char **)t52);
-    t54 = (t0 + 1092);
-    t55 = (t54 + 40U);
+    t54 = (t0 + 1904);
+    t55 = (t54 + 64U);
     t56 = *((char **)t55);
-    t58 = (t0 + 772U);
+    t58 = (t0 + 1344U);
     t59 = *((char **)t58);
     memset(t57, 0, 8);
     t58 = (t57 + 4);
