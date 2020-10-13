@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2020-09-29T15:55:12</DateModified>
+  <DateModified>2020-10-13T15:44:41</DateModified>
   <ModuleName>mips_top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap1Exp/CA_Exp/CA_Exp01/iseconfig/mips_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap1Exp/CA_Exp/CA_Exp01\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/00a/CA/CA_Exp/CA_Exp01/iseconfig/mips_top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/00a/CA/CA_Exp/CA_Exp01\</ImplementationReportsDirectory>
   <DateInitialized>2020-09-22T16:11:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

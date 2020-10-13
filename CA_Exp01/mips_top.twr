@@ -1,0 +1,1186 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+D:\ISE\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 2L -n 3
+-fastpaths -xml mips_top.twx mips_top.ncd -o mips_top.twr mips_top.pcf -ucf
+mips_top.ucf
+
+Design file:              mips_top.ncd
+Physical constraint file: mips_top.pcf
+Device,package,speed:     xc7k325t,fbg676,C,-2L (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_CLKIN = PERIOD TIMEGRP "TM_CLK" 5 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   2.800ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLKIN = PERIOD TIMEGRP "TM_CLK" 5 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 2.200ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 5.000ns
+  Low pulse: 2.500ns
+  Low pulse limit: 1.400ns (Tmmcmpw_CLKIN1_200_250)
+  Physical resource: CLK_GEN/mmcm_adv_inst/CLKIN1
+  Logical resource: CLK_GEN/mmcm_adv_inst/CLKIN1
+  Location pin: MMCME2_ADV_X1Y0.CLKIN1
+  Clock network: clk200MHz
+--------------------------------------------------------------------------------
+Slack: 2.200ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 5.000ns
+  High pulse: 2.500ns
+  High pulse limit: 1.400ns (Tmmcmpw_CLKIN1_200_250)
+  Physical resource: CLK_GEN/mmcm_adv_inst/CLKIN1
+  Logical resource: CLK_GEN/mmcm_adv_inst/CLKIN1
+  Location pin: MMCME2_ADV_X1Y0.CLKIN1
+  Clock network: clk200MHz
+--------------------------------------------------------------------------------
+Slack: 3.929ns (period - min period limit)
+  Period: 5.000ns
+  Min period limit: 1.071ns (933.707MHz) (Tmmcmper_CLKIN(Finmax))
+  Physical resource: CLK_GEN/mmcm_adv_inst/CLKIN1
+  Logical resource: CLK_GEN/mmcm_adv_inst/CLKIN1
+  Location pin: MMCME2_ADV_X1Y0.CLKIN1
+  Clock network: clk200MHz
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_CLK_GEN_clkout3 = PERIOD TIMEGRP "CLK_GEN_clkout3" 
+TS_CLKIN / 0.05 HIGH         50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 180945429 paths analyzed, 1351 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  60.920ns.
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS/DATA_RAM/Mram_data1 (RAMB18_X2Y19.WEBWE0), 992129 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.908ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               BTN_SCAN/result_16 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      5.497ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.380ns (4.050 - 4.430)
+  Source Clock:         clk_disp rising at 40.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: BTN_SCAN/result_16 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X150Y13.AQ       Tcko                  0.223   BTN_X_4_OBUF
+                                                         BTN_SCAN/result_16
+    SLICE_X122Y41.A2       net (fanout=4)        1.288   btn<16>
+    SLICE_X122Y41.A        Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/debug_step_prev
+                                                         MIPS/MIPS_CORE/CONTROLLER/Mmux_cpu_en11
+    SLICE_X50Y47.B2        net (fanout=21)       1.806   MIPS/MIPS_CORE/cpu_en
+    SLICE_X50Y47.BMUX      Tilo                  0.146   MIPS/MIPS_CORE/DATAPATH/regw_addr<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/mem_wen1
+    SLICE_X51Y50.D5        net (fanout=1)        0.328   MIPS/mem_wen
+    SLICE_X51Y50.D         Tilo                  0.043   MIPS/DATA_RAM/N4
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1_SW0
+    SLICE_X50Y55.A1        net (fanout=1)        0.588   MIPS/DATA_RAM/N4
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE0    net (fanout=8)        0.585   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        5.497ns (0.902ns logic, 4.595ns route)
+                                                         (16.4% logic, 83.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     41.613ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS/MIPS_CORE/DATAPATH/inst_addr_2 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          50.000ns
+  Data Path Delay:      8.374ns (Levels of Logic = 10)
+  Clock Path Skew:      0.082ns (1.186 - 1.104)
+  Source Clock:         clk_cpu rising at 0.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.095ns
+
+  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS/MIPS_CORE/DATAPATH/inst_addr_2 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X58Y52.CMUX      Tshcko                0.317   MIPS/inst_addr<29>
+                                                         MIPS/MIPS_CORE/DATAPATH/inst_addr_2
+    SLICE_X55Y40.A4        net (fanout=26)       1.377   MIPS/inst_addr<2>
+    SLICE_X55Y40.A         Tilo                  0.043   MIPS/INST_ROM/_n0008<27>
+                                                         MIPS/INST_ROM/Mram_data271
+    SLICE_X54Y40.C2        net (fanout=1)        0.436   MIPS/INST_ROM/_n0008<27>
+    SLICE_X54Y40.C         Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/out32
+                                                         MIPS/INST_ROM/Mmux_dout201
+    SLICE_X58Y43.D2        net (fanout=10)       0.753   MIPS/inst_data<27>
+    SLICE_X58Y43.D         Tilo                  0.043   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+                                                         MIPS/MIPS_CORE/CONTROLLER/exe_b_src<2>1
+    SLICE_X47Y44.C2        net (fanout=32)       0.912   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+    SLICE_X47Y44.C         Tilo                  0.043   MIPS/mem_data_w<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/Mmux_opb231
+    SLICE_X52Y47.C2        net (fanout=4)        0.731   MIPS/MIPS_CORE/DATAPATH/opb<2>
+    SLICE_X52Y47.COUT      Topcyc                0.226   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_lut<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.COUT      Tbyp                  0.054   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.DMUX      Tcind                 0.228   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+    SLICE_X55Y45.B4        net (fanout=1)        0.564   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_split<21>
+    SLICE_X55Y45.B         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/pc_src_ctrl[2]_inst_addr[31]_select_13_OUT<9>2
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux_result41
+    SLICE_X51Y51.A1        net (fanout=5)        1.019   MIPS/mem_addr<11>
+    SLICE_X51Y51.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<19>
+                                                         MIPS/DATA_RAM/GND_18_o_GND_18_o_equal_2_o<31>5_SW0
+    SLICE_X50Y55.A3        net (fanout=1)        0.467   MIPS/DATA_RAM/N2
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE0    net (fanout=8)        0.585   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        8.374ns (1.530ns logic, 6.844ns route)
+                                                         (18.3% logic, 81.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     41.645ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS/MIPS_CORE/DATAPATH/inst_addr_20 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          50.000ns
+  Data Path Delay:      8.342ns (Levels of Logic = 10)
+  Clock Path Skew:      0.082ns (1.186 - 1.104)
+  Source Clock:         clk_cpu rising at 0.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.095ns
+
+  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS/MIPS_CORE/DATAPATH/inst_addr_20 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X55Y55.DMUX      Tshcko                0.286   MIPS/inst_addr<24>
+                                                         MIPS/MIPS_CORE/DATAPATH/inst_addr_20
+    SLICE_X56Y51.D1        net (fanout=5)        0.764   MIPS/inst_addr<20>
+    SLICE_X56Y51.D         Tilo                  0.043   MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+                                                         MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+    SLICE_X54Y40.C3        net (fanout=21)       1.048   MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+    SLICE_X54Y40.C         Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/out32
+                                                         MIPS/INST_ROM/Mmux_dout201
+    SLICE_X58Y43.D2        net (fanout=10)       0.753   MIPS/inst_data<27>
+    SLICE_X58Y43.D         Tilo                  0.043   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+                                                         MIPS/MIPS_CORE/CONTROLLER/exe_b_src<2>1
+    SLICE_X47Y44.C2        net (fanout=32)       0.912   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+    SLICE_X47Y44.C         Tilo                  0.043   MIPS/mem_data_w<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/Mmux_opb231
+    SLICE_X52Y47.C2        net (fanout=4)        0.731   MIPS/MIPS_CORE/DATAPATH/opb<2>
+    SLICE_X52Y47.COUT      Topcyc                0.226   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_lut<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.COUT      Tbyp                  0.054   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.DMUX      Tcind                 0.228   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+    SLICE_X55Y45.B4        net (fanout=1)        0.564   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_split<21>
+    SLICE_X55Y45.B         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/pc_src_ctrl[2]_inst_addr[31]_select_13_OUT<9>2
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux_result41
+    SLICE_X51Y51.A1        net (fanout=5)        1.019   MIPS/mem_addr<11>
+    SLICE_X51Y51.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<19>
+                                                         MIPS/DATA_RAM/GND_18_o_GND_18_o_equal_2_o<31>5_SW0
+    SLICE_X50Y55.A3        net (fanout=1)        0.467   MIPS/DATA_RAM/N2
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE0    net (fanout=8)        0.585   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        8.342ns (1.499ns logic, 6.843ns route)
+                                                         (18.0% logic, 82.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS/DATA_RAM/Mram_data1 (RAMB18_X2Y19.WEBWE1), 992129 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.951ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               BTN_SCAN/result_16 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      5.454ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.380ns (4.050 - 4.430)
+  Source Clock:         clk_disp rising at 40.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: BTN_SCAN/result_16 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X150Y13.AQ       Tcko                  0.223   BTN_X_4_OBUF
+                                                         BTN_SCAN/result_16
+    SLICE_X122Y41.A2       net (fanout=4)        1.288   btn<16>
+    SLICE_X122Y41.A        Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/debug_step_prev
+                                                         MIPS/MIPS_CORE/CONTROLLER/Mmux_cpu_en11
+    SLICE_X50Y47.B2        net (fanout=21)       1.806   MIPS/MIPS_CORE/cpu_en
+    SLICE_X50Y47.BMUX      Tilo                  0.146   MIPS/MIPS_CORE/DATAPATH/regw_addr<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/mem_wen1
+    SLICE_X51Y50.D5        net (fanout=1)        0.328   MIPS/mem_wen
+    SLICE_X51Y50.D         Tilo                  0.043   MIPS/DATA_RAM/N4
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1_SW0
+    SLICE_X50Y55.A1        net (fanout=1)        0.588   MIPS/DATA_RAM/N4
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE1    net (fanout=8)        0.542   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        5.454ns (0.902ns logic, 4.552ns route)
+                                                         (16.5% logic, 83.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     41.656ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS/MIPS_CORE/DATAPATH/inst_addr_2 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          50.000ns
+  Data Path Delay:      8.331ns (Levels of Logic = 10)
+  Clock Path Skew:      0.082ns (1.186 - 1.104)
+  Source Clock:         clk_cpu rising at 0.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.095ns
+
+  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS/MIPS_CORE/DATAPATH/inst_addr_2 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X58Y52.CMUX      Tshcko                0.317   MIPS/inst_addr<29>
+                                                         MIPS/MIPS_CORE/DATAPATH/inst_addr_2
+    SLICE_X55Y40.A4        net (fanout=26)       1.377   MIPS/inst_addr<2>
+    SLICE_X55Y40.A         Tilo                  0.043   MIPS/INST_ROM/_n0008<27>
+                                                         MIPS/INST_ROM/Mram_data271
+    SLICE_X54Y40.C2        net (fanout=1)        0.436   MIPS/INST_ROM/_n0008<27>
+    SLICE_X54Y40.C         Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/out32
+                                                         MIPS/INST_ROM/Mmux_dout201
+    SLICE_X58Y43.D2        net (fanout=10)       0.753   MIPS/inst_data<27>
+    SLICE_X58Y43.D         Tilo                  0.043   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+                                                         MIPS/MIPS_CORE/CONTROLLER/exe_b_src<2>1
+    SLICE_X47Y44.C2        net (fanout=32)       0.912   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+    SLICE_X47Y44.C         Tilo                  0.043   MIPS/mem_data_w<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/Mmux_opb231
+    SLICE_X52Y47.C2        net (fanout=4)        0.731   MIPS/MIPS_CORE/DATAPATH/opb<2>
+    SLICE_X52Y47.COUT      Topcyc                0.226   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_lut<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.COUT      Tbyp                  0.054   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.DMUX      Tcind                 0.228   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+    SLICE_X55Y45.B4        net (fanout=1)        0.564   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_split<21>
+    SLICE_X55Y45.B         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/pc_src_ctrl[2]_inst_addr[31]_select_13_OUT<9>2
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux_result41
+    SLICE_X51Y51.A1        net (fanout=5)        1.019   MIPS/mem_addr<11>
+    SLICE_X51Y51.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<19>
+                                                         MIPS/DATA_RAM/GND_18_o_GND_18_o_equal_2_o<31>5_SW0
+    SLICE_X50Y55.A3        net (fanout=1)        0.467   MIPS/DATA_RAM/N2
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE1    net (fanout=8)        0.542   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        8.331ns (1.530ns logic, 6.801ns route)
+                                                         (18.4% logic, 81.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     41.688ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS/MIPS_CORE/DATAPATH/inst_addr_20 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          50.000ns
+  Data Path Delay:      8.299ns (Levels of Logic = 10)
+  Clock Path Skew:      0.082ns (1.186 - 1.104)
+  Source Clock:         clk_cpu rising at 0.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.095ns
+
+  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS/MIPS_CORE/DATAPATH/inst_addr_20 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X55Y55.DMUX      Tshcko                0.286   MIPS/inst_addr<24>
+                                                         MIPS/MIPS_CORE/DATAPATH/inst_addr_20
+    SLICE_X56Y51.D1        net (fanout=5)        0.764   MIPS/inst_addr<20>
+    SLICE_X56Y51.D         Tilo                  0.043   MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+                                                         MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+    SLICE_X54Y40.C3        net (fanout=21)       1.048   MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+    SLICE_X54Y40.C         Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/out32
+                                                         MIPS/INST_ROM/Mmux_dout201
+    SLICE_X58Y43.D2        net (fanout=10)       0.753   MIPS/inst_data<27>
+    SLICE_X58Y43.D         Tilo                  0.043   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+                                                         MIPS/MIPS_CORE/CONTROLLER/exe_b_src<2>1
+    SLICE_X47Y44.C2        net (fanout=32)       0.912   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+    SLICE_X47Y44.C         Tilo                  0.043   MIPS/mem_data_w<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/Mmux_opb231
+    SLICE_X52Y47.C2        net (fanout=4)        0.731   MIPS/MIPS_CORE/DATAPATH/opb<2>
+    SLICE_X52Y47.COUT      Topcyc                0.226   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_lut<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.COUT      Tbyp                  0.054   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.DMUX      Tcind                 0.228   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+    SLICE_X55Y45.B4        net (fanout=1)        0.564   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_split<21>
+    SLICE_X55Y45.B         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/pc_src_ctrl[2]_inst_addr[31]_select_13_OUT<9>2
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux_result41
+    SLICE_X51Y51.A1        net (fanout=5)        1.019   MIPS/mem_addr<11>
+    SLICE_X51Y51.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<19>
+                                                         MIPS/DATA_RAM/GND_18_o_GND_18_o_equal_2_o<31>5_SW0
+    SLICE_X50Y55.A3        net (fanout=1)        0.467   MIPS/DATA_RAM/N2
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE1    net (fanout=8)        0.542   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        8.299ns (1.499ns logic, 6.800ns route)
+                                                         (18.1% logic, 81.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS/DATA_RAM/Mram_data1 (RAMB18_X2Y19.WEBWE2), 992129 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.951ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               BTN_SCAN/result_16 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      5.454ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.380ns (4.050 - 4.430)
+  Source Clock:         clk_disp rising at 40.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: BTN_SCAN/result_16 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X150Y13.AQ       Tcko                  0.223   BTN_X_4_OBUF
+                                                         BTN_SCAN/result_16
+    SLICE_X122Y41.A2       net (fanout=4)        1.288   btn<16>
+    SLICE_X122Y41.A        Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/debug_step_prev
+                                                         MIPS/MIPS_CORE/CONTROLLER/Mmux_cpu_en11
+    SLICE_X50Y47.B2        net (fanout=21)       1.806   MIPS/MIPS_CORE/cpu_en
+    SLICE_X50Y47.BMUX      Tilo                  0.146   MIPS/MIPS_CORE/DATAPATH/regw_addr<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/mem_wen1
+    SLICE_X51Y50.D5        net (fanout=1)        0.328   MIPS/mem_wen
+    SLICE_X51Y50.D         Tilo                  0.043   MIPS/DATA_RAM/N4
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1_SW0
+    SLICE_X50Y55.A1        net (fanout=1)        0.588   MIPS/DATA_RAM/N4
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE2    net (fanout=8)        0.542   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        5.454ns (0.902ns logic, 4.552ns route)
+                                                         (16.5% logic, 83.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     41.656ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS/MIPS_CORE/DATAPATH/inst_addr_2 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          50.000ns
+  Data Path Delay:      8.331ns (Levels of Logic = 10)
+  Clock Path Skew:      0.082ns (1.186 - 1.104)
+  Source Clock:         clk_cpu rising at 0.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.095ns
+
+  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS/MIPS_CORE/DATAPATH/inst_addr_2 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X58Y52.CMUX      Tshcko                0.317   MIPS/inst_addr<29>
+                                                         MIPS/MIPS_CORE/DATAPATH/inst_addr_2
+    SLICE_X55Y40.A4        net (fanout=26)       1.377   MIPS/inst_addr<2>
+    SLICE_X55Y40.A         Tilo                  0.043   MIPS/INST_ROM/_n0008<27>
+                                                         MIPS/INST_ROM/Mram_data271
+    SLICE_X54Y40.C2        net (fanout=1)        0.436   MIPS/INST_ROM/_n0008<27>
+    SLICE_X54Y40.C         Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/out32
+                                                         MIPS/INST_ROM/Mmux_dout201
+    SLICE_X58Y43.D2        net (fanout=10)       0.753   MIPS/inst_data<27>
+    SLICE_X58Y43.D         Tilo                  0.043   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+                                                         MIPS/MIPS_CORE/CONTROLLER/exe_b_src<2>1
+    SLICE_X47Y44.C2        net (fanout=32)       0.912   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+    SLICE_X47Y44.C         Tilo                  0.043   MIPS/mem_data_w<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/Mmux_opb231
+    SLICE_X52Y47.C2        net (fanout=4)        0.731   MIPS/MIPS_CORE/DATAPATH/opb<2>
+    SLICE_X52Y47.COUT      Topcyc                0.226   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_lut<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.COUT      Tbyp                  0.054   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.DMUX      Tcind                 0.228   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+    SLICE_X55Y45.B4        net (fanout=1)        0.564   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_split<21>
+    SLICE_X55Y45.B         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/pc_src_ctrl[2]_inst_addr[31]_select_13_OUT<9>2
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux_result41
+    SLICE_X51Y51.A1        net (fanout=5)        1.019   MIPS/mem_addr<11>
+    SLICE_X51Y51.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<19>
+                                                         MIPS/DATA_RAM/GND_18_o_GND_18_o_equal_2_o<31>5_SW0
+    SLICE_X50Y55.A3        net (fanout=1)        0.467   MIPS/DATA_RAM/N2
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE2    net (fanout=8)        0.542   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        8.331ns (1.530ns logic, 6.801ns route)
+                                                         (18.4% logic, 81.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     41.688ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               MIPS/MIPS_CORE/DATAPATH/inst_addr_20 (FF)
+  Destination:          MIPS/DATA_RAM/Mram_data1 (RAM)
+  Requirement:          50.000ns
+  Data Path Delay:      8.299ns (Levels of Logic = 10)
+  Clock Path Skew:      0.082ns (1.186 - 1.104)
+  Source Clock:         clk_cpu rising at 0.000ns
+  Destination Clock:    clk_cpu falling at 50.000ns
+  Clock Uncertainty:    0.095ns
+
+  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: MIPS/MIPS_CORE/DATAPATH/inst_addr_20 to MIPS/DATA_RAM/Mram_data1
+    Location               Delay type         Delay(ns)  Physical Resource
+                                                         Logical Resource(s)
+    ---------------------------------------------------  -------------------
+    SLICE_X55Y55.DMUX      Tshcko                0.286   MIPS/inst_addr<24>
+                                                         MIPS/MIPS_CORE/DATAPATH/inst_addr_20
+    SLICE_X56Y51.D1        net (fanout=5)        0.764   MIPS/inst_addr<20>
+    SLICE_X56Y51.D         Tilo                  0.043   MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+                                                         MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+    SLICE_X54Y40.C3        net (fanout=21)       1.048   MIPS/INST_ROM/GND_17_o_GND_17_o_not_equal_0_o4
+    SLICE_X54Y40.C         Tilo                  0.043   MIPS/MIPS_CORE/CONTROLLER/out32
+                                                         MIPS/INST_ROM/Mmux_dout201
+    SLICE_X58Y43.D2        net (fanout=10)       0.753   MIPS/inst_data<27>
+    SLICE_X58Y43.D         Tilo                  0.043   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+                                                         MIPS/MIPS_CORE/CONTROLLER/exe_b_src<2>1
+    SLICE_X47Y44.C2        net (fanout=32)       0.912   MIPS/MIPS_CORE/exe_b_src_ctrl<0>
+    SLICE_X47Y44.C         Tilo                  0.043   MIPS/mem_data_w<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/Mmux_opb231
+    SLICE_X52Y47.C2        net (fanout=4)        0.731   MIPS/MIPS_CORE/DATAPATH/opb<2>
+    SLICE_X52Y47.COUT      Topcyc                0.226   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_lut<2>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<3>
+    SLICE_X52Y48.COUT      Tbyp                  0.054   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.CIN       net (fanout=1)        0.000   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<7>
+    SLICE_X52Y49.DMUX      Tcind                 0.228   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_rs_cy<11>
+    SLICE_X55Y45.B4        net (fanout=1)        0.564   MIPS/MIPS_CORE/DATAPATH/ALU/Mmux__n00371_split<21>
+    SLICE_X55Y45.B         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/pc_src_ctrl[2]_inst_addr[31]_select_13_OUT<9>2
+                                                         MIPS/MIPS_CORE/DATAPATH/ALU/Mmux_result41
+    SLICE_X51Y51.A1        net (fanout=5)        1.019   MIPS/mem_addr<11>
+    SLICE_X51Y51.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<19>
+                                                         MIPS/DATA_RAM/GND_18_o_GND_18_o_equal_2_o<31>5_SW0
+    SLICE_X50Y55.A3        net (fanout=1)        0.467   MIPS/DATA_RAM/N2
+    SLICE_X50Y55.A         Tilo                  0.043   MIPS/MIPS_CORE/DATAPATH/regw_data<24>
+                                                         MIPS/DATA_RAM/we_GND_18_o_AND_69_o1
+    RAMB18_X2Y19.WEBWE2    net (fanout=8)        0.542   MIPS/DATA_RAM/we_GND_18_o_AND_69_o
+    RAMB18_X2Y19.CLKBWRCLK Trcck_WEB             0.404   MIPS/DATA_RAM/Mram_data1
+                                                         MIPS/DATA_RAM/Mram_data1
+    ---------------------------------------------------  ---------------------------
+    Total                                        8.299ns (1.499ns logic, 6.800ns route)
+                                                         (18.1% logic, 81.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_GEN_clkout3 = PERIOD TIMEGRP "CLK_GEN_clkout3" TS_CLKIN / 0.05 HIGH
+        50%;
+--------------------------------------------------------------------------------
+
+Paths for end point rst_count_12 (SLICE_X114Y26.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.205ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               rst_count_11 (FF)
+  Destination:          rst_count_12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.234ns (Levels of Logic = 0)
+  Clock Path Skew:      0.029ns (0.322 - 0.293)
+  Source Clock:         clk_cpu rising at 100.000ns
+  Destination Clock:    clk_cpu rising at 100.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: rst_count_11 to rst_count_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X116Y25.DQ     Tcko                  0.118   rst_count<11>
+                                                       rst_count_11
+    SLICE_X114Y26.AX     net (fanout=2)        0.153   rst_count<11>
+    SLICE_X114Y26.CLK    Tckdi       (-Th)     0.037   rst_count<15>
+                                                       rst_count_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.234ns (0.081ns logic, 0.153ns route)
+                                                       (34.6% logic, 65.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point rst_count_8 (SLICE_X116Y25.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.209ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               rst_count_7 (FF)
+  Destination:          rst_count_8 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.237ns (Levels of Logic = 0)
+  Clock Path Skew:      0.028ns (0.321 - 0.293)
+  Source Clock:         clk_cpu rising at 100.000ns
+  Destination Clock:    clk_cpu rising at 100.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: rst_count_7 to rst_count_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X115Y26.DMUX   Tshcko                0.127   rst_count<3>
+                                                       rst_count_7
+    SLICE_X116Y25.AX     net (fanout=2)        0.147   rst_count<7>
+    SLICE_X116Y25.CLK    Tckdi       (-Th)     0.037   rst_count<11>
+                                                       rst_count_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.237ns (0.090ns logic, 0.147ns route)
+                                                       (38.0% logic, 62.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MIPS/MIPS_CORE/DATAPATH/inst_addr_0 (SLICE_X56Y43.A3), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.213ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               MIPS/MIPS_CORE/DATAPATH/inst_addr_0 (FF)
+  Destination:          MIPS/MIPS_CORE/DATAPATH/inst_addr_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.213ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_cpu rising at 100.000ns
+  Destination Clock:    clk_cpu rising at 100.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: MIPS/MIPS_CORE/DATAPATH/inst_addr_0 to MIPS/MIPS_CORE/DATAPATH/inst_addr_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y43.AQ      Tcko                  0.118   MIPS/MIPS_CORE/inst_addr<1>
+                                                       MIPS/MIPS_CORE/DATAPATH/inst_addr_0
+    SLICE_X56Y43.A3      net (fanout=3)        0.154   MIPS/MIPS_CORE/inst_addr<0>
+    SLICE_X56Y43.CLK     Tah         (-Th)     0.059   MIPS/MIPS_CORE/inst_addr<1>
+                                                       MIPS/MIPS_CORE/DATAPATH/pc_src_ctrl[2]_inst_addr[31]_select_13_OUT<0>1
+                                                       MIPS/MIPS_CORE/DATAPATH/inst_addr_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.213ns (0.059ns logic, 0.154ns route)
+                                                       (27.7% logic, 72.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_GEN_clkout3 = PERIOD TIMEGRP "CLK_GEN_clkout3" TS_CLKIN / 0.05 HIGH
+        50%;
+--------------------------------------------------------------------------------
+Slack: 98.161ns (period - min period limit)
+  Period: 100.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKA)
+  Physical resource: MIPS/DATA_RAM/Mram_data1/CLKARDCLK
+  Logical resource: MIPS/DATA_RAM/Mram_data1/CLKARDCLK
+  Location pin: RAMB18_X2Y19.CLKARDCLK
+  Clock network: clk_cpu
+--------------------------------------------------------------------------------
+Slack: 98.161ns (period - min period limit)
+  Period: 100.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKA)
+  Physical resource: MIPS/DATA_RAM/Mram_data1/CLKBWRCLK
+  Logical resource: MIPS/DATA_RAM/Mram_data1/CLKBWRCLK
+  Location pin: RAMB18_X2Y19.CLKBWRCLK
+  Clock network: clk_cpu
+--------------------------------------------------------------------------------
+Slack: 98.464ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 100.000ns
+  Low pulse: 50.000ns
+  Low pulse limit: 0.768ns (Tmpw)
+  Physical resource: MIPS/MIPS_CORE/DATAPATH/REGFILE/addr_b[4]_read_port_7_OUT<5>/CLK
+  Logical resource: MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile11_RAMA/CLK
+  Location pin: SLICE_X46Y43.CLK
+  Clock network: clk_cpu
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_CLK_GEN_clkout2 = PERIOD TIMEGRP "CLK_GEN_clkout2" 
+TS_CLKIN / 0.125 HIGH         50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 132842 paths analyzed, 1347 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   7.862ns.
+--------------------------------------------------------------------------------
+
+Paths for end point DISPLAY/P2S_SEG/buff_36 (SLICE_X52Y86.CE), 10 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     16.069ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rst_all (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_36 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.255ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.461ns (3.847 - 4.308)
+  Source Clock:         clk_cpu rising at 100.000ns
+  Destination Clock:    clk_disp rising at 120.000ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: rst_all to DISPLAY/P2S_SEG/buff_36
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X98Y35.DMUX    Tshcko                0.321   rst_all
+                                                       rst_all
+    SLICE_X49Y83.B6      net (fanout=32)       2.175   rst_all
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_36
+    -------------------------------------------------  ---------------------------
+    Total                                      3.255ns (0.542ns logic, 2.713ns route)
+                                                       (16.7% logic, 83.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     37.938ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DISPLAY/P2S_SEG/data_count_1 (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_36 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      1.881ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.100ns (0.544 - 0.644)
+  Source Clock:         clk_disp rising at 0.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.081ns
+
+  Clock Uncertainty:          0.081ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.146ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DISPLAY/P2S_SEG/data_count_1 to DISPLAY/P2S_SEG/buff_36
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y83.BMUX    Tshcko                0.284   DISPLAY/P2S_SEG/data_count<4>
+                                                       DISPLAY/P2S_SEG/data_count_1
+    SLICE_X49Y83.D1      net (fanout=3)        0.463   DISPLAY/P2S_SEG/data_count<1>
+    SLICE_X49Y83.DMUX    Tilo                  0.143   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1_SW0
+    SLICE_X49Y83.B4      net (fanout=1)        0.232   DISPLAY/P2S_SEG/N2
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_36
+    -------------------------------------------------  ---------------------------
+    Total                                      1.881ns (0.648ns logic, 1.233ns route)
+                                                       (34.4% logic, 65.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     37.971ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DISPLAY/P2S_SEG/data_count_4 (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_36 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      1.848ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.100ns (0.544 - 0.644)
+  Source Clock:         clk_disp rising at 0.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.081ns
+
+  Clock Uncertainty:          0.081ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.146ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DISPLAY/P2S_SEG/data_count_4 to DISPLAY/P2S_SEG/buff_36
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y83.DQ      Tcko                  0.223   DISPLAY/P2S_SEG/data_count<4>
+                                                       DISPLAY/P2S_SEG/data_count_4
+    SLICE_X49Y83.D2      net (fanout=4)        0.489   DISPLAY/P2S_SEG/data_count<4>
+    SLICE_X49Y83.DMUX    Tilo                  0.145   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1_SW0
+    SLICE_X49Y83.B4      net (fanout=1)        0.232   DISPLAY/P2S_SEG/N2
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_36
+    -------------------------------------------------  ---------------------------
+    Total                                      1.848ns (0.589ns logic, 1.259ns route)
+                                                       (31.9% logic, 68.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point DISPLAY/P2S_SEG/buff_37 (SLICE_X52Y86.CE), 10 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     16.069ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rst_all (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_37 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.255ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.461ns (3.847 - 4.308)
+  Source Clock:         clk_cpu rising at 100.000ns
+  Destination Clock:    clk_disp rising at 120.000ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: rst_all to DISPLAY/P2S_SEG/buff_37
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X98Y35.DMUX    Tshcko                0.321   rst_all
+                                                       rst_all
+    SLICE_X49Y83.B6      net (fanout=32)       2.175   rst_all
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_37
+    -------------------------------------------------  ---------------------------
+    Total                                      3.255ns (0.542ns logic, 2.713ns route)
+                                                       (16.7% logic, 83.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     37.938ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DISPLAY/P2S_SEG/data_count_1 (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_37 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      1.881ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.100ns (0.544 - 0.644)
+  Source Clock:         clk_disp rising at 0.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.081ns
+
+  Clock Uncertainty:          0.081ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.146ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DISPLAY/P2S_SEG/data_count_1 to DISPLAY/P2S_SEG/buff_37
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y83.BMUX    Tshcko                0.284   DISPLAY/P2S_SEG/data_count<4>
+                                                       DISPLAY/P2S_SEG/data_count_1
+    SLICE_X49Y83.D1      net (fanout=3)        0.463   DISPLAY/P2S_SEG/data_count<1>
+    SLICE_X49Y83.DMUX    Tilo                  0.143   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1_SW0
+    SLICE_X49Y83.B4      net (fanout=1)        0.232   DISPLAY/P2S_SEG/N2
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_37
+    -------------------------------------------------  ---------------------------
+    Total                                      1.881ns (0.648ns logic, 1.233ns route)
+                                                       (34.4% logic, 65.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     37.971ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DISPLAY/P2S_SEG/data_count_4 (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_37 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      1.848ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.100ns (0.544 - 0.644)
+  Source Clock:         clk_disp rising at 0.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.081ns
+
+  Clock Uncertainty:          0.081ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.146ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DISPLAY/P2S_SEG/data_count_4 to DISPLAY/P2S_SEG/buff_37
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y83.DQ      Tcko                  0.223   DISPLAY/P2S_SEG/data_count<4>
+                                                       DISPLAY/P2S_SEG/data_count_4
+    SLICE_X49Y83.D2      net (fanout=4)        0.489   DISPLAY/P2S_SEG/data_count<4>
+    SLICE_X49Y83.DMUX    Tilo                  0.145   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1_SW0
+    SLICE_X49Y83.B4      net (fanout=1)        0.232   DISPLAY/P2S_SEG/N2
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_37
+    -------------------------------------------------  ---------------------------
+    Total                                      1.848ns (0.589ns logic, 1.259ns route)
+                                                       (31.9% logic, 68.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point DISPLAY/P2S_SEG/buff_38 (SLICE_X52Y86.CE), 10 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     16.069ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               rst_all (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_38 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.255ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.461ns (3.847 - 4.308)
+  Source Clock:         clk_cpu rising at 100.000ns
+  Destination Clock:    clk_disp rising at 120.000ns
+  Clock Uncertainty:    0.215ns
+
+  Clock Uncertainty:          0.215ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.175ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: rst_all to DISPLAY/P2S_SEG/buff_38
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X98Y35.DMUX    Tshcko                0.321   rst_all
+                                                       rst_all
+    SLICE_X49Y83.B6      net (fanout=32)       2.175   rst_all
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_38
+    -------------------------------------------------  ---------------------------
+    Total                                      3.255ns (0.542ns logic, 2.713ns route)
+                                                       (16.7% logic, 83.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     37.938ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DISPLAY/P2S_SEG/data_count_1 (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_38 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      1.881ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.100ns (0.544 - 0.644)
+  Source Clock:         clk_disp rising at 0.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.081ns
+
+  Clock Uncertainty:          0.081ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.146ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DISPLAY/P2S_SEG/data_count_1 to DISPLAY/P2S_SEG/buff_38
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y83.BMUX    Tshcko                0.284   DISPLAY/P2S_SEG/data_count<4>
+                                                       DISPLAY/P2S_SEG/data_count_1
+    SLICE_X49Y83.D1      net (fanout=3)        0.463   DISPLAY/P2S_SEG/data_count<1>
+    SLICE_X49Y83.DMUX    Tilo                  0.143   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1_SW0
+    SLICE_X49Y83.B4      net (fanout=1)        0.232   DISPLAY/P2S_SEG/N2
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_38
+    -------------------------------------------------  ---------------------------
+    Total                                      1.881ns (0.648ns logic, 1.233ns route)
+                                                       (34.4% logic, 65.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     37.971ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               DISPLAY/P2S_SEG/data_count_4 (FF)
+  Destination:          DISPLAY/P2S_SEG/buff_38 (FF)
+  Requirement:          40.000ns
+  Data Path Delay:      1.848ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.100ns (0.544 - 0.644)
+  Source Clock:         clk_disp rising at 0.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.081ns
+
+  Clock Uncertainty:          0.081ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.146ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: DISPLAY/P2S_SEG/data_count_4 to DISPLAY/P2S_SEG/buff_38
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y83.DQ      Tcko                  0.223   DISPLAY/P2S_SEG/data_count<4>
+                                                       DISPLAY/P2S_SEG/data_count_4
+    SLICE_X49Y83.D2      net (fanout=4)        0.489   DISPLAY/P2S_SEG/data_count<4>
+    SLICE_X49Y83.DMUX    Tilo                  0.145   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1_SW0
+    SLICE_X49Y83.B4      net (fanout=1)        0.232   DISPLAY/P2S_SEG/N2
+    SLICE_X49Y83.B       Tilo                  0.043   DISPLAY/P2S_SEG/data_count<5>
+                                                       DISPLAY/P2S_SEG/_n0129_inv1
+    SLICE_X52Y86.CE      net (fanout=10)       0.538   DISPLAY/P2S_SEG/_n0129_inv
+    SLICE_X52Y86.CLK     Tceck                 0.178   DISPLAY/P2S_SEG/buff<41>
+                                                       DISPLAY/P2S_SEG/buff_38
+    -------------------------------------------------  ---------------------------
+    Total                                      1.848ns (0.589ns logic, 1.259ns route)
+                                                       (31.9% logic, 68.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_CLK_GEN_clkout2 = PERIOD TIMEGRP "CLK_GEN_clkout2" TS_CLKIN / 0.125 HIGH
+        50%;
+--------------------------------------------------------------------------------
+
+Paths for end point VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0 (RAMB18_X1Y21.ADDRARDADDR13), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.082ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               VGA_DEBUG/ascii_code_6 (FF)
+  Destination:          VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.142ns (Levels of Logic = 0)
+  Clock Path Skew:      0.060ns (0.398 - 0.338)
+  Source Clock:         clk_disp rising at 40.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: VGA_DEBUG/ascii_code_6 to VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+    Location                   Delay type         Delay(ns)  Physical Resource
+                                                             Logical Resource(s)
+    -------------------------------------------------------  -------------------
+    SLICE_X18Y53.DQ            Tcko                  0.118   VGA_DEBUG/ascii_code<6>
+                                                             VGA_DEBUG/ascii_code_6
+    RAMB18_X1Y21.ADDRARDADDR13 net (fanout=1)        0.207   VGA_DEBUG/ascii_code<6>
+    RAMB18_X1Y21.CLKARDCLK     Trckc_ADDRA (-Th)     0.183   VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+                                                             VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+    -------------------------------------------------------  ---------------------------
+    Total                                            0.142ns (-0.065ns logic, 0.207ns route)
+                                                             (-45.8% logic, 145.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0 (RAMB18_X1Y21.ADDRARDADDR8), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.106ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               VGA_DEBUG/ascii_code_1 (FF)
+  Destination:          VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.165ns (Levels of Logic = 0)
+  Clock Path Skew:      0.059ns (0.398 - 0.339)
+  Source Clock:         clk_disp rising at 40.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: VGA_DEBUG/ascii_code_1 to VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X19Y52.CQ           Tcko                  0.100   VGA_DEBUG/ascii_code<1>
+                                                            VGA_DEBUG/ascii_code_1
+    RAMB18_X1Y21.ADDRARDADDR8 net (fanout=1)        0.248   VGA_DEBUG/ascii_code<1>
+    RAMB18_X1Y21.CLKARDCLK    Trckc_ADDRA (-Th)     0.183   VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+                                                            VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.165ns (-0.083ns logic, 0.248ns route)
+                                                            (-50.3% logic, 150.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0 (RAMB18_X1Y21.ADDRARDADDR11), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.134ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               VGA_DEBUG/ascii_code_4 (FF)
+  Destination:          VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.194ns (Levels of Logic = 0)
+  Clock Path Skew:      0.060ns (0.398 - 0.338)
+  Source Clock:         clk_disp rising at 40.000ns
+  Destination Clock:    clk_disp rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: VGA_DEBUG/ascii_code_4 to VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+    Location                   Delay type         Delay(ns)  Physical Resource
+                                                             Logical Resource(s)
+    -------------------------------------------------------  -------------------
+    SLICE_X18Y53.AQ            Tcko                  0.118   VGA_DEBUG/ascii_code<6>
+                                                             VGA_DEBUG/ascii_code_4
+    RAMB18_X1Y21.ADDRARDADDR11 net (fanout=1)        0.259   VGA_DEBUG/ascii_code<4>
+    RAMB18_X1Y21.CLKARDCLK     Trckc_ADDRA (-Th)     0.183   VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+                                                             VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0
+    -------------------------------------------------------  ---------------------------
+    Total                                            0.194ns (-0.065ns logic, 0.259ns route)
+                                                             (-33.5% logic, 133.5% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_CLK_GEN_clkout2 = PERIOD TIMEGRP "CLK_GEN_clkout2" TS_CLKIN / 0.125 HIGH
+        50%;
+--------------------------------------------------------------------------------
+Slack: 38.161ns (period - min period limit)
+  Period: 40.000ns
+  Min period limit: 1.839ns (543.774MHz) (Trper_CLKA)
+  Physical resource: VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/CLKARDCLK
+  Logical resource: VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/CLKARDCLK
+  Location pin: RAMB18_X1Y21.CLKARDCLK
+  Clock network: clk_disp
+--------------------------------------------------------------------------------
+Slack: 38.464ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 40.000ns
+  Low pulse: 20.000ns
+  Low pulse limit: 0.768ns (Tmpw)
+  Physical resource: VGA_DEBUG/Sh33/CLK
+  Logical resource: VGA_DEBUG/Mram_data_buf1_RAMA/CLK
+  Location pin: SLICE_X38Y53.CLK
+  Clock network: clk_disp
+--------------------------------------------------------------------------------
+Slack: 38.464ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 40.000ns
+  High pulse: 20.000ns
+  High pulse limit: 0.768ns (Tmpw)
+  Physical resource: VGA_DEBUG/Sh33/CLK
+  Logical resource: VGA_DEBUG/Mram_data_buf1_RAMA/CLK
+  Location pin: SLICE_X38Y53.CLK
+  Clock network: clk_disp
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_CLKIN
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_CLKIN                       |      5.000ns|      2.800ns|      3.046ns|            0|            0|            0|    181078271|
+| TS_CLK_GEN_clkout3            |    100.000ns|     60.920ns|          N/A|            0|            0|    180945429|            0|
+| TS_CLK_GEN_clkout2            |     40.000ns|      7.862ns|          N/A|            0|            0|       132842|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock CLK_200M_N
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_200M_N     |   10.133|    4.589|    8.387|         |
+CLK_200M_P     |   10.133|    4.589|    8.387|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLK_200M_P
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_200M_N     |   10.133|    4.589|    8.387|         |
+CLK_200M_P     |   10.133|    4.589|    8.387|         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 181078271 paths, 0 nets, and 5620 connections
+
+Design statistics:
+   Minimum period:  60.920ns{1}   (Maximum frequency:  16.415MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Oct 13 15:53:11 2020 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 652 MB
+
+
+
