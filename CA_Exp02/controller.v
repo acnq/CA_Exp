@@ -53,7 +53,7 @@ module controller (/*AUTOARG*/
 	`include "mips_define.vh"
 	
 	// instruction decode
-	reg rs_used, rt_used;
+	reg rs_used, rt_used;//used means read the value of the register(rs/rt)这我自己加的注释
 	
 	always @(*) begin
 		pc_src = PC_NEXT;
@@ -85,36 +85,36 @@ module controller (/*AUTOARG*/
 						rt_used = 1;
 					end
 					R_FUNC_SUB: begin
-						exe_alu_oper = ???;
-						wb_addr_src = ???;
-						wb_data_src = ???;
-						wb_wen = ???;
-						rs_used = ???;
-						rt_used = ???;
+						exe_alu_oper = EXE_ALU_SUB;//
+						wb_addr_src = WB_ADDR_RD;//
+						wb_data_src = WB_DATA_ALU;//
+						wb_wen = 1;////
+						rs_used = 1;////
+						rt_used = 1;////
 					end
 					R_FUNC_AND: begin
-						exe_alu_oper = ???;
-						wb_addr_src = ???;
-						wb_data_src = ???;
-						wb_wen = ???;
-						rs_used = ???;
-						rt_used = ???;
+						exe_alu_oper = EXE_ALU_AND;//
+						wb_addr_src = WB_ADDR_RD;//
+						wb_data_src = WB_DATA_ALU;//
+						wb_wen = 1;////
+						rs_used = 1;////
+						rt_used = 1;////
 					end
 					R_FUNC_OR: begin
-						exe_alu_oper = ???;
-						wb_addr_src = ???;
-						wb_data_src = ???;
-						wb_wen = ???;
-						rs_used = ???;
-						rt_used = ???;
+						exe_alu_oper = EXE_ALU_OR;//
+						wb_addr_src = WB_ADDR_RD;//
+						wb_data_src = WB_DATA_ALU;//
+						wb_wen = 1;////
+						rs_used = 1;////
+						rt_used = 1;////
 					end
 					R_FUNC_SLT: begin
-						exe_alu_oper = ???;
-						wb_addr_src = ???;
-						wb_data_src = ???;
-						wb_wen = ???;
-						rs_used = ???;
-						rt_used = ???;
+						exe_alu_oper = EXE_ALU_SLT;//
+						wb_addr_src = WB_ADDR_RD;//
+						wb_data_src = WB_DATA_ALU;//
+						wb_wen = 1;////
+						rs_used = 1;////
+						rt_used = 1;////
 					end
 					default: begin
 						unrecognized = 1;
@@ -125,31 +125,31 @@ module controller (/*AUTOARG*/
 				pc_src = PC_JUMP;
 			end
 			INST_JAL: begin
-				pc_src = ???;
-				exe_a_src = ???;
-				exe_b_src = ???;
-				exe_alu_oper = ???;
-				wb_addr_src = ???;
-				wb_data_src = ???;
+				pc_src = PC_JUMP;//
+				exe_a_src = EXE_A_LINK;//
+				exe_b_src = EXE_B_LINK;//
+				exe_alu_oper = EXE_ALU_ADD;//
+				wb_addr_src = WB_ADDR_LINK;//
+				wb_data_src = WB_DATA_ALU;//
 				wb_wen = 1;
 			end
 			INST_BEQ: begin
-				pc_src = ???;
-				exe_a_src = ???;
-				exe_b_src = ???;
-				exe_alu_oper = ???;
-				imm_ext = ???;
-				rs_used = ???;
-				rt_used = ???;
+				pc_src = PC_BEQ;//
+				exe_a_src = EXE_A_BRANCH;//
+				exe_b_src = EXE_B_BRANCH;//
+				exe_alu_oper = EXE_ALU_ADD;//
+				imm_ext = 1;//
+				rs_used = 1;////
+				rt_used = 1;////
 			end
 			INST_BNE: begin
-				pc_src = ???;
-				exe_a_src = ???;
-				exe_b_src = ???;
-				exe_alu_oper = ???;
-				imm_ext = ???;
-				rs_used = ???;
-				rt_used = ???;
+				pc_src = PC_BNE;//
+				exe_a_src = EXE_A_BRANCH;//
+				exe_b_src = EXE_B_BRANCH;//
+				exe_alu_oper = EXE_ALU_ADD;//
+				imm_ext = 1;//
+				rs_used = 1;////
+				rt_used = 1;////
 			end
 			INST_ADDI: begin
 				imm_ext = 1;
@@ -161,40 +161,40 @@ module controller (/*AUTOARG*/
 				rs_used = 1;
 			end
 			INST_ANDI: begin
-				imm_ext = ???;
-				exe_b_src = ???;
-				exe_alu_oper = ???;
-				wb_addr_src = ???;
-				wb_data_src = ???;
-				wb_wen = ???;
-				rs_used = ???;
+				imm_ext = 0;//
+				exe_b_src = EXE_B_IMM;//
+				exe_alu_oper =EXE_ALU_AND;//
+				wb_addr_src = WB_ADDR_RT;//
+				wb_data_src = WB_DATA_ALU;//
+				wb_wen = 1;//
+				rs_used = 1;////
 			end
 			INST_ORI: begin
-				imm_ext = ???;
-				exe_b_src = ???;
-				exe_alu_oper = ???;
-				wb_addr_src = ???;
-				wb_data_src = ???;
-				wb_wen = ???;
-				rs_used = ???;
+				imm_ext = 0;//
+				exe_b_src = EXE_B_IMM;//
+				exe_alu_oper = EXE_ALU_OR;//
+				wb_addr_src = WB_ADDR_RT;//
+				wb_data_src = WB_DATA_ALU;//
+				wb_wen = 1;///
+				rs_used = 1;////
 			end
 			INST_LW: begin
-				imm_ext = ???;
-				exe_b_src = ???;
-				exe_alu_oper = ???;
-				mem_ren = ???;
-				wb_addr_src = ???;
-				wb_data_src = ???;
-				wb_wen = ???;
-				rs_used = ???;
+				imm_ext = 1;//
+				exe_b_src = EXE_B_IMM;//
+				exe_alu_oper = EXE_ALU_ADD;//
+				mem_ren = 1;//
+				wb_addr_src = WB_ADDR_RT;//
+				wb_data_src = WB_DATA_MEM;//
+				wb_wen = 1;//
+				rs_used = 1;////
 			end
 			INST_SW: begin
-				imm_ext = ???;
-				exe_b_src = ???;
-				exe_alu_oper = ???;
-				mem_wen = ???;
-				rs_used = ???;
-				rt_used = ???;
+				imm_ext = 1;//
+				exe_b_src = EXE_B_IMM;//
+				exe_alu_oper = EXE_ALU_ADD;//
+				mem_wen = 1;//
+				rs_used = 1;////
+				rt_used = 1;////
 			end
 			default: begin
 				unrecognized = 1;
@@ -205,35 +205,35 @@ module controller (/*AUTOARG*/
 	// pipeline control
 	reg reg_stall;
 	reg branch_stall;
-	wire [4:0] addr_rs, addr_rt;
+	wire [4:0] addr_rs, addr_rt;///这一条要执行的语句的地址
 	
 	assign
 		addr_rs = inst[25:21],
 		addr_rt = inst[20:16];
 	
-	always @(*) begin
+	always @(*) begin////PPT27页
 		reg_stall = 0;
-		if (rs_used && addr_rs != 0) begin
+		if (rs_used && addr_rs != 0) begin////ID instr.rs = exe inst.rd and exe instr.writereg，本条rs 和下一条WB阶段的rd冲突；此时不考虑0号寄存器，因为他一直是0不会冲突
 			if (regw_addr_exe == addr_rs && wb_wen_exe) begin
 				reg_stall = 1;
 			end
-			else if (??? == addr_rs && ???) begin
+			else if (regw_addr_mem == addr_rs && wb_wen_exe) begin ////id instr.rs = ex instr.rd and ex instr.writereg 本条rs 和下一条MEM阶段的rd冲突；同样不考虑0号
 				reg_stall = 1;
 			end
 		end
-		if (??? && ??? != 0) begin
-			if (??? == ??? && ???) begin
+		if (rt_used && addr_rt != 0) begin
+			if (regw_addr_exe == addr_rt && wb_wen_exe) begin////ID instr.rt = exe inst.rd and exe instr.writereg，本条rt 和下一条WB阶段的rd冲突；同样不考虑0号
 				reg_stall = 1;
 			end
-			else if (??? == ??? && ???) begin
+			else if (regw_addr_mem == addr_rt && wb_wen_exe) begin////ID instr.rt = exe inst.rd and exe instr.writereg，本条rt 和下一条MEM阶段的rd冲突；同样不考虑0号
 				reg_stall = 1;
 			end
 		end
 	end
 	
-	always @(*) begin
+	always @(*) begin////PPT28
 		branch_stall = 0;
-		if (pc_src != PC_NEXT || ??? || ???)
+		if (pc_src != PC_NEXT || is_branch_mem || is_branch_exe)////
 			branch_stall = 1;
 	end
 	

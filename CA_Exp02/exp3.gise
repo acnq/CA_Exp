@@ -37,6 +37,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1602577257" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1602577257">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1602577257" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-8805238978412594602" xil_pn:start_ts="1602577257">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -68,7 +69,9 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="mips_top.lso"/>
       <outfile xil_pn:name="mips_top.prj"/>
@@ -76,7 +79,6 @@
       <outfile xil_pn:name="mips_top.xst"/>
       <outfile xil_pn:name="mips_top_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
     </transform>
   </transforms>
 
