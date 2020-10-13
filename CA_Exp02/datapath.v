@@ -191,9 +191,9 @@ module datapath (
 	always @(*) begin
 		regw_addr_id = inst_data_id[15:11];
 		case (wb_addr_src_ctrl)
-			WB_ADDR_RD: regw_addr_id = ???;
-			WB_ADDR_RT: regw_addr_id = ???;
-			WB_ADDR_LINK: regw_addr_id = ???;
+			WB_ADDR_RD: regw_addr_id = addr_rd;//
+			WB_ADDR_RT: regw_addr_id = addr_rt;//
+			WB_ADDR_LINK: regw_addr_id = GPR_RA;//
 		endcase
 	end
 	
@@ -263,15 +263,15 @@ module datapath (
 		opa_exe = data_rs_exe;
 		opb_exe = data_rt_exe;
 		case (exe_a_src_exe)
-			EXE_A_RS: opa_exe = ???;
-			EXE_A_LINK: opa_exe = ???;
-			EXE_A_BRANCH: opa_exe = ???;
+			EXE_A_RS: opa_exe = data_rs_exe;//
+			EXE_A_LINK: opa_exe = inst_addr_next_exe;//
+			EXE_A_BRANCH: opa_exe = inst_addr_next_exe;//
 		endcase
 		case (exe_b_src_exe)
-			EXE_B_RT: opb_exe = ???;
-			EXE_B_IMM: opb_exe = ???;
-			EXE_B_LINK: opb_exe = ???;  // linked address is the next one of current instruction
-			EXE_B_BRANCH: opb_exe = ???;
+			EXE_B_RT: opb_exe = data_rt_exe;//
+			EXE_B_IMM: opb_exe = data_imm_exe;//
+			EXE_B_LINK: opb_exe = 32'h0;  // linked address is the next one of current instruction
+			EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};//
 		endcase
 	end
 	
@@ -324,10 +324,10 @@ module datapath (
 	
 	always @(*) begin
 		case (pc_src_mem)
-			PC_JUMP: branch_target_mem <= ???;
-			PC_JR: branch_target_mem <= ???;
-			PC_BEQ: branch_target_mem <= ???;
-			PC_BNE: branch_target_mem <= ???;
+			PC_JUMP: branch_target_mem <= {inst_addr_mem[31:28],inst_data_mem[28:0],2'b0};//
+			PC_JR: branch_target_mem <= data_rs_exe;//
+			PC_BEQ: branch_target_mem <= rs_rt_equal_mem?alu_out_mem:inst_addr_next_mem;//
+			PC_BNE: branch_target_mem <= rs_rt_equal_mem?inst_addr_next_mem:alu_mem;//
 			default: branch_target_mem <= inst_addr_next_mem;  // will never used
 		endcase
 	end
@@ -361,8 +361,8 @@ module datapath (
 	always @(*) begin
 		regw_data_wb = alu_out_wb;
 		case (wb_data_src_wb)
-			WB_DATA_ALU: regw_data_wb = ???;
-			WB_DATA_MEM: regw_data_wb = ???;
+			WB_DATA_ALU: regw_data_wb = alu_out_wb;//
+			WB_DATA_MEM: regw_data_wb = mem_din;//
 		endcase
 	end
 	
