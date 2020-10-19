@@ -161,7 +161,7 @@ module controller (/*AUTOARG*/
 				rs_used = 1;
 			end
 			INST_ANDI: begin
-				imm_ext = 0;//
+				imm_ext = 0;//逻辑操作不考虑负数
 				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper =EXE_ALU_AND;//
 				wb_addr_src = WB_ADDR_RT;//
@@ -170,7 +170,7 @@ module controller (/*AUTOARG*/
 				rs_used = 1;////
 			end
 			INST_ORI: begin
-				imm_ext = 0;//
+				imm_ext = 0;//逻辑操作不考虑负数
 				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper = EXE_ALU_OR;//
 				wb_addr_src = WB_ADDR_RT;//
@@ -217,7 +217,7 @@ module controller (/*AUTOARG*/
 			if (regw_addr_exe == addr_rs && wb_wen_exe) begin
 				reg_stall = 1;
 			end
-			else if (regw_addr_mem == addr_rs && wb_wen_exe) begin ////id instr.rs = ex instr.rd and ex instr.writereg 本条rs 和下一条MEM阶段的rd冲突；同样不考虑0号
+			else if (regw_addr_mem == addr_rs && wb_wen_mem) begin ////id instr.rs=mem instr.rd and mem instr.writereg 本条rs 和下一条MEM阶段的rd冲突；同样不考虑0号
 				reg_stall = 1;
 			end
 		end
@@ -225,7 +225,7 @@ module controller (/*AUTOARG*/
 			if (regw_addr_exe == addr_rt && wb_wen_exe) begin////ID instr.rt = exe inst.rd and exe instr.writereg，本条rt 和下一条WB阶段的rd冲突；同样不考虑0号
 				reg_stall = 1;
 			end
-			else if (regw_addr_mem == addr_rt && wb_wen_exe) begin////ID instr.rt = exe inst.rd and exe instr.writereg，本条rt 和下一条MEM阶段的rd冲突；同样不考虑0号
+			else if (regw_addr_mem == addr_rt && wb_wen_mem) begin////： id instr.rt=mem instr.rd and mem instr = instr.writereg，本条rt 和下一条MEM阶段的rd冲突；同样不考虑0号
 				reg_stall = 1;
 			end
 		end
