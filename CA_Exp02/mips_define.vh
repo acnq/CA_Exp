@@ -20,20 +20,6 @@ localparam
 	EXE_B_LINK   = 2,
 	EXE_B_BRANCH = 3;
 
-//EXE A FWD sources
-localparam
-	EXE_A_FWD_ALUOUT     = 0,//
-	EXE_A_FWD_MEMOUT    = 1,//
-	EXE_A_FWD_WB   = 2,//
-	EXE_A_FWD_RS = 3;//
-//EXE FWD B sources
-localparam
-	EXE_B_FWD_ALUOUT     = 0,//
-	EXE_B_FWD_MEMOUT    = 1,//
-	EXE_B_FWD_WB   = 2,//
-	EXE_B_FWD_RT = 3;//
-	
-
 // EXE ALU operations
 localparam
 	EXE_ALU_ADD    = 0,

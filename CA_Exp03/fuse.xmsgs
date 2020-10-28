@@ -5,5 +5,8 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp02/mips_core.v" Line 97: Port <arg fmt="%s" index="1">exe_fwd_a_ctrl</arg> is not connected to this instance
+</msg>
+
 </messages>
 

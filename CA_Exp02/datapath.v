@@ -1,8 +1,5 @@
 `include "define.vh"
-/*工程的变量命名规则：
-xxx_: works in xxx stage
-_xxx: generated from xxx stage
-*/
+
 
 /**
  * Data Path for MIPS 5-stage pipelined CPU.
@@ -27,8 +24,6 @@ module datapath (
 	input wire imm_ext_ctrl,  // whether using sign extended to immediate data
 	input wire [1:0] exe_a_src_ctrl,  // data source of operand A for ALU
 	input wire [1:0] exe_b_src_ctrl,  // data source of operand B for ALU
-	input wire [1:0] exe_fwd_a_ctrl, //
-	input wire [1:0] exe_fwd_b_ctrl, //
 	input wire [3:0] exe_alu_oper_ctrl,  // ALU operation type
 	input wire mem_ren_ctrl,  // memory read enable signal
 	input wire mem_wen_ctrl,  // memory write enable signal
@@ -70,7 +65,6 @@ module datapath (
 	// control signals
 	reg [2:0] pc_src_exe, pc_src_mem;
 	reg [1:0] exe_a_src_exe, exe_b_src_exe;
-	reg [1:0] exe_a_fwd_exe, exe_b_fwd_exe;
 	reg [3:0] exe_alu_oper_exe;
 	reg mem_ren_exe, mem_ren_mem;
 	reg mem_wen_exe, mem_wen_mem;
@@ -92,7 +86,6 @@ module datapath (
 	reg [31:0] inst_data_exe;
 	reg [31:0] data_rs_exe, data_rt_exe, data_imm_exe;
 	reg [31:0] opa_exe, opb_exe;
-	reg [31:0] fwda_exe,fwdb_exe;//bypass unit新增的多路选择器的输出值
 	wire [31:0] alu_out_exe;
 	wire rs_rt_equal_exe;
 	
@@ -198,9 +191,9 @@ module datapath (
 	always @(*) begin
 		regw_addr_id = inst_data_id[15:11];
 		case (wb_addr_src_ctrl)
-			WB_ADDR_RD: regw_addr_id = addr_rd;
-			WB_ADDR_RT: regw_addr_id = addr_rt;
-			WB_ADDR_LINK: regw_addr_id = GPR_RA;
+			WB_ADDR_RD: regw_addr_id = addr_rd;//
+			WB_ADDR_RT: regw_addr_id = addr_rt;//
+			WB_ADDR_LINK: regw_addr_id = GPR_RA;//
 		endcase
 	end
 	
@@ -230,8 +223,6 @@ module datapath (
 			pc_src_exe <= 0;
 			exe_a_src_exe <= 0;
 			exe_b_src_exe <= 0;
-			exe_a_fwd_exe <= 0;//
-			exe_b_fwd_exe <= 0;//
 			data_rs_exe <= 0;
 			data_rt_exe <= 0;
 			data_imm_exe <= 0;
@@ -250,8 +241,6 @@ module datapath (
 			pc_src_exe <= pc_src_ctrl;
 			exe_a_src_exe <= exe_a_src_ctrl;
 			exe_b_src_exe <= exe_b_src_ctrl;
-			exe_a_fwd_exe <= exe_fwd_a_ctrl;//
-			exe_b_fwd_exe <= exe_fwd_b_ctrl;//
 			data_rs_exe <= data_rs;
 			data_rt_exe <= data_rt;
 			data_imm_exe <= data_imm;
@@ -274,32 +263,15 @@ module datapath (
 		opa_exe = data_rs_exe;
 		opb_exe = data_rt_exe;
 		case (exe_a_src_exe)
-			EXE_A_RS: opa_exe = fwda_exe;
-			EXE_A_LINK: opa_exe = inst_addr_next_exe;
-			EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
+			EXE_A_RS: opa_exe = data_rs_exe;//
+			EXE_A_LINK: opa_exe = inst_addr_next_exe;//
+			EXE_A_BRANCH: opa_exe = inst_addr_next_exe;//
 		endcase
 		case (exe_b_src_exe)
-			EXE_B_RT: opb_exe = data_rt_exe;
-			EXE_B_IMM: opb_exe = data_imm_exe;
-			EXE_B_LINK: opb_exe = fwdb_exe;  // linked address is the next one of current instruction
-			EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};
-		endcase
-	end
-	//新增的bypass unit的2个多路选择器：
-	always @(*) begin
-		fwda_exe = data_rs_exe;
-		fwdb_exe = data_rt_exe;
-		case (exe_a_fwd_exe)
-			EXE_A_FWD_ALUOUT: fwda_exe = alu_out_exe;//
-			EXE_A_FWD_MEMOUT: fwda_exe = mem_din;//
-			EXE_A_FWD_WB: fwda_exe = regw_data_wb;//
-			EXE_A_FWD_RS: fwda_exe = data_rs_exe;//
-		endcase
-		case (exe_b_fwd_exe)
-			EXE_B_FWD_ALUOUT:fwdb_exe = alu_out_exe;//
-			EXE_B_FWD_MEMOUT: fwdb_exe = mem_din;//
-			EXE_B_FWD_WB: fwdb_exe = regw_data_wb;//
-			EXE_B_FWD_RT: fwdb_exe = data_rt_exe;//
+			EXE_B_RT: opb_exe = data_rt_exe;//
+			EXE_B_IMM: opb_exe = data_imm_exe;//
+			EXE_B_LINK: opb_exe = 32'h0;  // linked address is the next one of current instruction
+			EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};//
 		endcase
 	end
 	
@@ -352,10 +324,10 @@ module datapath (
 	
 	always @(*) begin
 		case (pc_src_mem)
-			PC_JUMP: branch_target_mem <= {inst_addr_mem[31:28],inst_data_mem[25:0],2'b0};
-			PC_JR: branch_target_mem <= data_rs_mem;
-			PC_BNE: branch_target_mem <= rs_rt_equal_mem?inst_addr_next_mem:alu_out_mem;
-			PC_BEQ: branch_target_mem <= rs_rt_equal_mem?alu_out_mem:inst_addr_next_mem;
+			PC_JUMP: branch_target_mem <= {inst_addr_mem[31:28],inst_data_mem[25:0],2'b0};//
+			PC_JR: branch_target_mem <= data_rs_mem;//
+			PC_BNE: branch_target_mem <= rs_rt_equal_mem?inst_addr_next_mem:alu_out_mem;//
+			PC_BEQ: branch_target_mem <= rs_rt_equal_mem?alu_out_mem:inst_addr_next_mem;//
 			default: branch_target_mem <= inst_addr_next_mem;  // will never used
 		endcase
 	end
@@ -389,8 +361,8 @@ module datapath (
 	always @(*) begin
 		regw_data_wb = alu_out_wb;
 		case (wb_data_src_wb)
-			WB_DATA_ALU: regw_data_wb = alu_out_wb;
-			WB_DATA_MEM: regw_data_wb = mem_din_wb;
+			WB_DATA_ALU: regw_data_wb = alu_out_wb;//
+			WB_DATA_MEM: regw_data_wb = mem_din_wb;//
 		endcase
 	end
 	

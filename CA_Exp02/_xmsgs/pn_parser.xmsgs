@@ -8,6 +8,45 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/alu.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/alu.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/alu.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/alu.v</arg>&quot; Line <arg fmt="%d" index="2">14</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/mips_define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/alu.v&quot; line 14
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/btn_scan.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/btn_scan.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/btn_scan.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/btn_scan.v</arg>&quot; Line <arg fmt="%d" index="2">17</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/function.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/btn_scan.v&quot; line 17
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/clk_diff.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/controller.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/controller.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/controller.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/controller.v</arg>&quot; Line <arg fmt="%d" index="2">53</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/mips_define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/controller.v&quot; line 53
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/data_ram.v&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/datapath.v&quot; into library work</arg>
 </msg>
 
@@ -15,8 +54,76 @@
 </arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/datapath.v</arg>&quot; Line <arg fmt="%d" index="2">68</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/mips_define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/datapath.v&quot; line 68
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/datapath.v</arg>&quot; Line <arg fmt="%d" index="2">63</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/mips_define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/datapath.v&quot; line 63
 </arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/display.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/display.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/display.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/display.v</arg>&quot; Line <arg fmt="%d" index="2">27</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/function.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/display.v&quot; line 27
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/inst_rom.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/mips.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/mips.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/mips.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/mips_core.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/mips_core.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/mips_core.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/mips_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/mips_top.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/mips_top.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/my_clk_gen.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/parallel2serial.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/parallel2serial.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/parallel2serial.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/parallel2serial.v</arg>&quot; Line <arg fmt="%d" index="2">20</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/function.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/parallel2serial.v&quot; line 20
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/regfile.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp02/regfile.v</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Include file found: &apos;D:/00a/CA/CA_Exp/CA_Exp02/define.vh&apos; in file &quot;D:/00a/CA/CA_Exp/CA_Exp02/regfile.v&quot; line 1
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/sim_mips.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/vga.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/vga_8x16.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;D:/00a/CA/CA_Exp/CA_Exp02/vga_debug.v&quot; into library work</arg>
 </msg>
 
 </messages>
