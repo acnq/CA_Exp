@@ -47,7 +47,20 @@ module controller (/*AUTOARG*/
 	input wire mem_valid,
 	output reg wb_rst,
 	output reg wb_en,
-	input wire wb_valid
+	input wire wb_valid,
+	
+	//-------------------------
+	//input we need from datapath:
+	input wire [4:0] addr_rs_exe,
+	input wire [4:0] addr_rt_exe,
+	input wire [4:0] regw_addr_wb,
+	input wire mem_ren_mem,
+	input wire wb_wen_wb,
+	
+	//output we generated;
+	output reg [1:0] exe_fwd_a_ctrl,
+	output reg [1:0] exe_fwd_b_ctrl
+	
 	);
 	
 	`include "mips_define.vh"
@@ -212,12 +225,30 @@ module controller (/*AUTOARG*/
 		addr_rt = inst[20:16];
 	
 	always @(*) begin////PPT27页
-		reg_stall = 0;
-		if (rs_used && addr_rs != 0) begin////ID instr.rs = exe inst.rd and exe instr.writereg，本条rs 和下一条WB阶段的rd冲突；此时不考虑0号寄存器，因为他一直是0不会冲突
-			if (regw_addr_exe == addr_rs && wb_wen_exe) begin
-				reg_stall = 1;
-			end
-			else if (regw_addr_mem == addr_rs && wb_wen_mem) begin ////id instr.rs=mem instr.rd and mem instr.writereg 本条rs 和下一条MEM阶段的rd冲突；同样不考虑0号
+		exe_fwd_a_ctrl = EXE_A_FWD_RS;
+		exe_fwd_b_ctrl = EXE_B_FWD_RT;
+		if (wb_wen_mem && regw_addr_mem != 0) begin////ID instr.rs = exe inst.rd and exe instr.writereg，本条rs 和下一条WB阶段的rd冲突；此时不考虑0号寄存器，因为他一直是0不会冲突
+			if (regw_addr_mem == addr_rs_exe)
+				exe_fwd_a_ctrl = EXE_A_FWD_ALUOUT;
+			if(regw_addr_mem == addr_rt_exe)
+				exe_fwd_b_ctrl = EXE_B_FWD_ALUOUT;
+			if(regw_addr_mem == addr_rs_exe && mem_ren_mem)
+				exe_fwd_a_ctrl = EXE_A_FWD_MEMOUT;
+			if(regw_addr_mem == addr_rt_exe && mem_ren_mem)
+				exe_fwd_b_ctrl = EXE_B_FWD_MEMOUT;
+			
+		end
+			
+		if(wb_wen_wb  && regw_addr_wb != 0)begin
+			if(regw_addr_mem != addr_rs_exe && regw_addr_wb == addr_rs_exe)
+				exe_fwd_a_ctrl = EXE_A_FWD_WB;
+			if(regw_addr_mem != addr_rt_exe && regw_addr_wb == addr_rt_exe)
+				exe_fwd_b_ctrl = EXE_B_FWD_WB;			
+		end
+	end
+
+
+/*			else if (regw_addr_mem == addr_rs && wb_wen_mem) begin ////id instr.rs=mem instr.rd and mem instr.writereg 本条rs 和下一条MEM阶段的rd冲突；同样不考虑0号
 				reg_stall = 1;
 			end
 		end
@@ -230,7 +261,7 @@ module controller (/*AUTOARG*/
 			end
 		end
 	end
-	
+*/	
 	always @(*) begin////PPT28
 		branch_stall = 0;
 		if (pc_src != PC_NEXT || is_branch_mem || is_branch_exe)////

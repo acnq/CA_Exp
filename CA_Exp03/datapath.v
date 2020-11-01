@@ -62,7 +62,16 @@ module datapath (
 	// WB signals
 	input wire wb_rst,
 	input wire wb_en,
-	output reg wb_valid
+	output reg wb_valid,
+	//--------------------------
+	//在WB阶段，我们需要两个output：
+	output reg wb_wen_wb,
+	output reg [4:0] regw_addr_wb,
+	//我们需要各个阶段的rs,rd的地址值；
+	output reg [4:0] addr_rs_exe,
+	output reg [4:0] addr_rt_exe,
+	//我们需要在mem阶段是否有ren 信号
+	output reg mem_ren_mem 
 	);
 	
 	`include "mips_define.vh"
@@ -72,10 +81,10 @@ module datapath (
 	reg [1:0] exe_a_src_exe, exe_b_src_exe;
 	reg [1:0] exe_a_fwd_exe, exe_b_fwd_exe;//控制2个新增的多路选择器的信号
 	reg [3:0] exe_alu_oper_exe;
-	reg mem_ren_exe, mem_ren_mem;
+	reg mem_ren_exe; //mem_ren_mem;output 
 	reg mem_wen_exe, mem_wen_mem;
 	reg wb_data_src_exe, wb_data_src_mem, wb_data_src_wb;
-	
+		
 	// IF signals
 	wire [31:0] inst_addr_next;
 	
@@ -86,7 +95,7 @@ module datapath (
 	wire [4:0] addr_rs, addr_rt, addr_rd;
 	wire [31:0] data_rs, data_rt, data_imm;
 	
-	// EXE signals
+	// EXE signals-------------------
 	reg [31:0] inst_addr_exe;
 	reg [31:0] inst_addr_next_exe;
 	reg [31:0] inst_data_exe;
@@ -106,12 +115,12 @@ module datapath (
 	reg [31:0] branch_target_mem;
 	reg rs_rt_equal_mem;
 	
-	// WB signals
-	reg wb_wen_wb;
+	// WB signals---------------------------
+	//reg wb_wen_wb; moved upward to the output module
 	reg [31:0] alu_out_wb;
 	reg [31:0] mem_din_wb;
-	reg [4:0] regw_addr_wb;
-	reg [31:0] regw_data_wb;
+	//reg [4:0] regw_addr_wb;moved upward to the output module
+	reg [31:0] regw_data_wb; 
 	
 	// debug
 	`ifdef DEBUG
@@ -230,8 +239,12 @@ module datapath (
 			pc_src_exe <= 0;
 			exe_a_src_exe <= 0;
 			exe_b_src_exe <= 0;
-			exe_a_fwd_exe <= 0;//
-			exe_b_fwd_exe <= 0;//
+			//--------------------
+			//exe_a_fwd_exe <= 0;
+			//exe_b_fwd_exe <= 0;
+			//在stall的时候，不清空这个寄存器的值，
+			//这样可以保存exe_a_src_ctrl的内容
+			//假如有一次重新enable的时候exe_src_ctrl没有更新，也可以读取上一回的值
 			data_rs_exe <= 0;
 			data_rt_exe <= 0;
 			data_imm_exe <= 0;
@@ -240,6 +253,9 @@ module datapath (
 			mem_wen_exe <= 0;
 			wb_data_src_exe <= 0;
 			wb_wen_exe <= 0;
+			//--------------
+			addr_rs_exe <= 0;	//add addr_rs_exe for output
+			addr_rt_exe <= 0;	//add addr_rt_exe for output
 		end
 		else if (exe_en) begin
 			exe_valid <= id_valid;
@@ -260,6 +276,10 @@ module datapath (
 			mem_wen_exe <= mem_wen_ctrl;
 			wb_data_src_exe <= wb_data_src_ctrl;
 			wb_wen_exe <= wb_wen_ctrl;
+			//---------------
+			addr_rs_exe <= addr_rs;//add addr_rs_exe for output
+			addr_rt_exe <= addr_rt;//add addr_rt_exe for output
+
 		end
 	end
 	
@@ -267,42 +287,50 @@ module datapath (
 		is_branch_exe <= (pc_src_exe != PC_NEXT);
 	end
 	
+	//这里应该是fwda_exe
 	assign
-		rs_rt_equal_exe = (data_rs_exe == data_rt_exe);
-	
-	always @(*) begin
-		opa_exe = data_rs_exe;
-		opb_exe = data_rt_exe;
-		case (exe_a_src_exe)
-			EXE_A_RS: opa_exe = fwda_exe;
-			EXE_A_LINK: opa_exe = inst_addr_next_exe;
-			EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
-		endcase
-		case (exe_b_src_exe)
-			EXE_B_RT: opb_exe = data_rt_exe;
-			EXE_B_IMM: opb_exe = data_imm_exe;
-			EXE_B_LINK: opb_exe = fwdb_exe;  // linked address is the next one of current instruction
-			EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};
-		endcase
-	end
-	
+		rs_rt_equal_exe = (fwda_exe == fwdb_exe);
+		
+	//调整了两个always的顺序--------------------------------
 	//新增的bypass unit的2个多路选择器：
 	always @(*) begin
 		fwda_exe = data_rs_exe;
 		fwdb_exe = data_rt_exe;
-		case (exe_a_fwd_exe)
-			EXE_A_FWD_ALUOUT: fwda_exe = alu_out_exe;//0
+		case (exe_fwd_a_ctrl)
+			EXE_A_FWD_ALUOUT: fwda_exe = alu_out_mem;//0_wrong!
 			EXE_A_FWD_MEMOUT: fwda_exe = mem_din;//1
 			EXE_A_FWD_WB: fwda_exe = regw_data_wb;//2
 			EXE_A_FWD_RS: fwda_exe = data_rs_exe;//3
 		endcase
-		case (exe_b_fwd_exe)
-			EXE_B_FWD_ALUOUT:fwdb_exe = alu_out_exe;//0
+		case (exe_fwd_b_ctrl)
+			EXE_B_FWD_ALUOUT:fwdb_exe = alu_out_mem;//0_wrong!
 			EXE_B_FWD_MEMOUT: fwdb_exe = mem_din;//1
 			EXE_B_FWD_WB: fwdb_exe = regw_data_wb;//2
 			EXE_B_FWD_RT: fwdb_exe = data_rt_exe;//3
 		endcase
 	end
+	
+	
+
+	
+	always @(*) begin
+		opa_exe = fwda_exe;
+		opb_exe = fwdb_exe;
+		case (exe_a_src_exe)
+			EXE_A_RS: opa_exe = fwda_exe;//这个值应该在fwda_exe刷新之后才有，于是这个always应该在后。
+			EXE_A_LINK: opa_exe = inst_addr_next_exe;
+			EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
+		endcase
+		case (exe_b_src_exe)
+			EXE_B_RT: opb_exe = fwdb_exe;//wrong!
+			EXE_B_IMM: opb_exe = data_imm_exe;
+			EXE_B_LINK: opb_exe = 32'h0;  // linked address is the next one of current instruction
+			EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};
+		endcase
+	end
+	//------------------------------------------------
+	
+	
 	
 	alu ALU (
 		.a(opa_exe),
@@ -328,6 +356,7 @@ module datapath (
 			wb_data_src_mem <= 0;
 			wb_wen_mem <= 0;
 			rs_rt_equal_mem <= 0;
+			
 		end
 		else if (mem_en) begin
 			mem_valid <= exe_valid;
@@ -336,14 +365,20 @@ module datapath (
 			inst_data_mem <= inst_data_exe;
 			inst_addr_next_mem <= inst_addr_next_exe;
 			regw_addr_mem <= regw_addr_exe;
-			data_rs_mem <= data_rs_exe;
-			data_rt_mem <= data_rt_exe;
+			//----------------------------
+			//data_rs_mem <= data_rs_exe;
+			//data_rt_mem <= data_rt_exe;
+			data_rs_mem <= fwda_exe;
+			data_rt_mem <= fwdb_exe;
+			//这里应该修改为fwda_exe 和fwdb_exe，之后的每步都跟着fwd之后的结果走了
+			//-----------------------
 			alu_out_mem <= alu_out_exe;
 			mem_ren_mem <= mem_ren_exe;
 			mem_wen_mem <= mem_wen_exe;
 			wb_data_src_mem <= wb_data_src_exe;
 			wb_wen_mem <= wb_wen_exe;
 			rs_rt_equal_mem <= rs_rt_equal_exe;
+			//--------------------------------
 		end
 	end
 	

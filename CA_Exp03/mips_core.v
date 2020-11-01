@@ -50,6 +50,18 @@ module mips_core (
 	wire mem_rst, mem_en, mem_valid;
 	wire wb_rst, wb_en, wb_valid;
 	
+	//------------------------
+	//add wires here
+	wire [1:0] exe_fwd_a_ctrl;
+	wire [1:0] exe_fwd_b_ctrl;
+	
+	wire [4:0] regw_addr_wb;
+	wire [4:0] addr_rs_exe;
+	wire [4:0] addr_rt_exe;
+	wire mem_ren_mem;
+	wire wb_wen_wb;
+	//--------------------------
+	
 	// controller
 	controller CONTROLLER (
 		.clk(clk),
@@ -90,7 +102,16 @@ module mips_core (
 		.mem_valid(mem_valid),
 		.wb_rst(wb_rst),
 		.wb_en(wb_en),
-		.wb_valid(wb_valid)
+		.wb_valid(wb_valid),
+		
+		//port added:
+		.addr_rt_exe(addr_rt_exe),
+		.addr_rs_exe(addr_rs_exe),
+		.regw_addr_wb(regw_addr_wb),
+		.wb_wen_wb(wb_wen_wb),
+		.mem_ren_mem(mem_ren_mem),
+		.exe_fwd_a_ctrl(exe_fwd_a_ctrl),
+		.exe_fwd_b_ctrl(exe_fwd_b_ctrl)	
 	);
 	
 	// data path
@@ -111,6 +132,10 @@ module mips_core (
 		.imm_ext_ctrl(imm_ext_ctrl),
 		.exe_a_src_ctrl(exe_a_src_ctrl),
 		.exe_b_src_ctrl(exe_b_src_ctrl),
+		
+		.exe_fwd_a_ctrl(exe_fwd_a_ctrl),
+		.exe_fwd_b_ctrl(exe_fwd_b_ctrl),
+		
 		.exe_alu_oper_ctrl(exe_alu_oper_ctrl),
 		.mem_ren_ctrl(mem_ren_ctrl),
 		.mem_wen_ctrl(mem_wen_ctrl),
@@ -139,7 +164,13 @@ module mips_core (
 		.mem_din(mem_din),
 		.wb_rst(wb_rst),
 		.wb_en(wb_en),
-		.wb_valid(wb_valid)
+		.wb_valid(wb_valid),
+		
+		.addr_rs_exe(addr_rs_exe),
+		.addr_rt_exe(addr_rt_exe),
+		.regw_addr_wb(regw_addr_wb),
+		.mem_ren_mem(mem_ren_mem),
+		.wb_wen_wb(wb_wen_wb)
 	);
 	
 endmodule

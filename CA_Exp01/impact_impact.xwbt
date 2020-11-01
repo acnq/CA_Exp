@@ -1,8 +1,8 @@
 INTSTYLE=impact
-INFILE=D:\00a\CA\CA_Exp\CA_Exp01\impact.xsl
-OUTFILE=D:\00a\CA\CA_Exp\CA_Exp01\impact.xsl
+INFILE=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap1Exp\CA_Exp\CA_Exp01\impact.xsl
+OUTFILE=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap1Exp\CA_Exp\CA_Exp01\impact.xsl
 FAMILY=Single
 PART=Single
-WORKINGDIR=D:\00a\CA\CA_Exp\CA_Exp01
+WORKINGDIR=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap1Exp\CA_Exp\CA_Exp01
 LICENSE=iMPACT
 USER_INFO=iMPACT
