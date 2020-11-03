@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sim_mips" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="59" />
+   <wvobject fp_name="/sim_mips/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/if_rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">if_rst</obj_property>
+      <obj_property name="ObjectShortName">if_rst</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/if_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">if_en</obj_property>
+      <obj_property name="ObjectShortName">if_en</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/if_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">if_valid</obj_property>
+      <obj_property name="ObjectShortName">if_valid</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffa500</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/inst_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/inst_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_data[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/id_rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">id_rst</obj_property>
+      <obj_property name="ObjectShortName">id_rst</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/id_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">id_en</obj_property>
+      <obj_property name="ObjectShortName">id_en</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/id_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">id_valid</obj_property>
+      <obj_property name="ObjectShortName">id_valid</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffa500</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/inst_addr_id" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_addr_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_addr_id[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/inst_data_id" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_data_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_data_id[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/inst_addr_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_addr_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_addr_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/inst_data_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_data_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_data_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/exe_fwd_a_ctrl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">exe_fwd_a_ctrl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">exe_fwd_a_ctrl[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/exe_fwd_b_ctrl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">exe_fwd_b_ctrl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">exe_fwd_b_ctrl[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/fwda_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fwda_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fwda_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/fwdb_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">fwdb_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fwdb_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/reg_stall" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reg_stall</obj_property>
+      <obj_property name="ObjectShortName">reg_stall</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/branch_stall" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">branch_stall</obj_property>
+      <obj_property name="ObjectShortName">branch_stall</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/exe_rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">exe_rst</obj_property>
+      <obj_property name="ObjectShortName">exe_rst</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/exe_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">exe_en</obj_property>
+      <obj_property name="ObjectShortName">exe_en</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/exe_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">exe_valid</obj_property>
+      <obj_property name="ObjectShortName">exe_valid</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffa500</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/inst_data_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_data_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_data_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/opa_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">opa_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">opa_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/addr_rs_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_rs_exe[4:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_rs_exe[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/data_rs_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_rs_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_rs_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/opb_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">opb_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">opb_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/alu_out_exe" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">alu_out_exe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out_exe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/alu_out_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">alu_out_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out_mem[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/mem_rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_rst</obj_property>
+      <obj_property name="ObjectShortName">mem_rst</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/mem_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_en</obj_property>
+      <obj_property name="ObjectShortName">mem_en</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/mem_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_valid</obj_property>
+      <obj_property name="ObjectShortName">mem_valid</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffa500</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/inst_addr_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_addr_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_addr_mem[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/inst_data_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_data_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_data_mem[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[8]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[8,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile[8,31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/mem_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/mem_ren" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_ren</obj_property>
+      <obj_property name="ObjectShortName">mem_ren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/mem_wen" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_wen</obj_property>
+      <obj_property name="ObjectShortName">mem_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/mem_din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_din[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/mem_dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_dout[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/wb_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_valid</obj_property>
+      <obj_property name="ObjectShortName">wb_valid</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffa500</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/wb_wen_wb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_wen_wb</obj_property>
+      <obj_property name="ObjectShortName">wb_wen_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/regw_addr_wb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regw_addr_wb[4:0]</obj_property>
+      <obj_property name="ObjectShortName">regw_addr_wb[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/regw_data_wb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regw_data_wb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regw_data_wb[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regfile[1:31,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile[1:31,31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[1]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[1,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[1,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[2]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[2,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[2,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[3]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[3,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[3,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[4]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[4,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[4,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[5]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[5,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[5,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[6]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[6,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[6,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[7]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[7,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[7,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[8]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[8,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[8,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[9]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[9,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[9,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[10]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[10,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[10,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[11]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[11,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[11,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[12]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[12,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[12,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[13]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[13,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[13,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[14]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[14,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[14,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[15]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[15,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[15,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[16]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[16,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[16,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[17]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[17,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[17,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[18]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[18,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[18,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[19]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[19,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[19,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[20]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[20,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[20,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[21]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[21,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[21,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[22]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[22,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[22,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[23]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[23,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[23,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[24]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[24,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[24,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[25]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[25,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[25,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[26]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[26,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[26,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[27]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[27,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[27,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[28]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[28,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[28,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[29]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[29,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[29,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[30]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[30,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[30,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/REGFILE/regfile[31]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[31,31:0]</obj_property>
+         <obj_property name="ObjectShortName">regfile[31,31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/is_branch_mem" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">is_branch_mem</obj_property>
+      <obj_property name="ObjectShortName">is_branch_mem</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/pc_src_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pc_src_mem[2:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_src_mem[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/branch_target_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">branch_target_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">branch_target_mem[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/wb_wen_mem" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_wen_mem</obj_property>
+      <obj_property name="ObjectShortName">wb_wen_mem</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/wb_wen_wb" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_wen_wb</obj_property>
+      <obj_property name="ObjectShortName">wb_wen_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/CONTROLLER/wb_wen_exe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_wen_exe</obj_property>
+      <obj_property name="ObjectShortName">wb_wen_exe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/rs_rt_equal_mem" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rs_rt_equal_mem</obj_property>
+      <obj_property name="ObjectShortName">rs_rt_equal_mem</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/rs_rt_equal_exe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rs_rt_equal_exe</obj_property>
+      <obj_property name="ObjectShortName">rs_rt_equal_exe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/data_rt_mem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_rt_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_rt_mem[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/mem_dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_dout[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/mem_din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_din[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/DATAPATH/mem_din_wb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_din_wb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_din_wb[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_mips/uut/MIPS_CORE/wb_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_en</obj_property>
+      <obj_property name="ObjectShortName">wb_en</obj_property>
+   </wvobject>
+</wave_config>
