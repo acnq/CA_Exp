@@ -51,26 +51,24 @@ module controller (/*AUTOARG*/
 	
 	//-------------------------
 	//input we need from datapath:
-	input wire [4:0] addr_rs_exe,
-	input wire [4:0] addr_rt_exe,
+	//input wire [4:0] addr_rs_exe,
+	//input wire [4:0] addr_rt_exe,
 	input wire [4:0] regw_addr_wb,
 	input wire mem_ren_mem,
 	input wire wb_wen_wb,
 	
-	//output we generated;
 	output reg [1:0] exe_fwd_a_ctrl,
 	output reg [1:0] exe_fwd_b_ctrl,
 
 	//!! added signla;
-	input wire a_b_equal,
+	input wire rs_rt_equal,
 	output reg fwd_m
 	);
 	
 	`include "mips_define.vh"
 	
 	// instruction decode
-	reg rs_used, rt_used;//used means read the value of the register(rs/rt)�����Լ��ӵ�ע��
-
+	reg rs_used, rt_used;//used means read the value of the register(rs/rt)
 	//!! instruction decode append
 	reg is_load, is_store;
 	reg is_load_exe;
@@ -151,27 +149,27 @@ module controller (/*AUTOARG*/
 			end
 			INST_JAL: begin
 				pc_src = PC_JUMP;//
-				exe_a_src = EXE_A_LINK;//
-				exe_b_src = EXE_B_LINK;//
+				exe_a_src = EXE_A_NEXT;//
+				exe_b_src = EXE_B_FOUR;//
 				exe_alu_oper = EXE_ALU_ADD;//
 				wb_addr_src = WB_ADDR_LINK;//
 				wb_data_src = WB_DATA_ALU;//
 				wb_wen = 1;
 			end
 			INST_BEQ: begin
-				pc_src = a_b_equal ? PC_BRANCH:PC_NEXT;//
-				exe_a_src = EXE_A_RS;//??
-				exe_b_src = EXE_B_BRANCH;//??
-				exe_alu_oper = EXE_ALU_ADD;//
+				pc_src = rs_rt_equal ? PC_BRANCH:PC_NEXT;//
+				//exe_a_src = EXE_A_RS;//??
+				//exe_b_src = EXE_B_BRANCH;//??
+				//exe_alu_oper = EXE_ALU_ADD;//
 				imm_ext = 1;//
 				rs_used = 1;////
 				rt_used = 1;////
 			end
 			INST_BNE: begin
-				pc_src = a_b_equal ? PC_BRANCH:PC_NEXT;//
-				exe_a_src = EXE_A_RS;//??
-				exe_b_src = EXE_B_BRANCH;//??
-				exe_alu_oper = EXE_ALU_ADD;//
+				pc_src = rs_rt_equal ? PC_BRANCH:PC_NEXT;//
+				//exe_a_src = EXE_A_RS;//??
+				//exe_b_src = EXE_B_BRANCH;//??
+				//exe_alu_oper = EXE_ALU_ADD;//
 				imm_ext = 1;//
 				rs_used = 1;////
 				rt_used = 1;////
@@ -186,7 +184,7 @@ module controller (/*AUTOARG*/
 				rs_used = 1;
 			end
 			INST_ANDI: begin
-				imm_ext = 0;//�߼����������Ǹ���
+				imm_ext = 0;//n<0 not considered
 				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper =EXE_ALU_AND;//
 				wb_addr_src = WB_ADDR_RT;//
@@ -195,7 +193,7 @@ module controller (/*AUTOARG*/
 				rs_used = 1;////
 			end
 			INST_ORI: begin
-				imm_ext = 0;//�߼����������Ǹ���
+				imm_ext = 0;//n<0 not considered
 				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper = EXE_ALU_OR;//
 				wb_addr_src = WB_ADDR_RT;//
@@ -233,38 +231,41 @@ module controller (/*AUTOARG*/
 	// pipeline control
 	//! reg reg_stall;
 	reg branch_stall;
-	wire [4:0] addr_rs, addr_rt;///��һ��Ҫִ�е����ĵ�ַ
+	wire [4:0] addr_rs, addr_rt;///
 	
 	assign
 		addr_rs = inst[25:21],
 		addr_rt = inst[20:16];
 	
 	always @(*) begin////PPT27ҳ
-		exe_fwd_a_ctrl = EXE_A_FWD_RS;
-		exe_fwd_b_ctrl = EXE_B_FWD_RT;
+		exe_fwd_a_ctrl = ID_A_FWD_RS;
+		exe_fwd_b_ctrl = ID_B_FWD_RT;
 		//exe_fwd_a_ctrl is parallel to fwd_a_ctrl
 		//so is exe_fwd_b_ctrl is parrel to fwd_b_ctrl
-
 		fwd_m = 1'b0;
 		load_stall = 1'b0;
-		if (wb_wen_mem && regw_addr_mem != 0) begin////ID instr.rs = exe inst.rd and exe instr.writereg������rs ����һ��WB�׶ε�rd��ͻ����ʱ������0�żĴ�������Ϊ��һֱ��0������
-			if (regw_addr_mem == addr_rs_exe)
-				exe_fwd_a_ctrl = EXE_A_FWD_ALUOUT;
-			if(regw_addr_mem == addr_rt_exe)
-				exe_fwd_b_ctrl = EXE_B_FWD_ALUOUT;
-			if(regw_addr_mem == addr_rs_exe && mem_ren_mem)
-				exe_fwd_a_ctrl = EXE_A_FWD_MEMOUT;
-			if(regw_addr_mem == addr_rt_exe && mem_ren_mem)
-				exe_fwd_b_ctrl = EXE_B_FWD_MEMOUT;
-			
+		if (wb_wen_mem && regw_addr_mem != 0) begin////
+			if (regw_addr_mem == addr_rs)
+				exe_fwd_a_ctrl = ID_A_FWD_MEMIN;
+			if(regw_addr_mem == addr_rt)
+				exe_fwd_b_ctrl = ID_B_FWD_MEMIN;
+			if(regw_addr_mem == addr_rs && mem_ren_mem)
+				exe_fwd_a_ctrl = ID_A_FWD_MEMOUT;
+			if(regw_addr_mem == addr_rt && mem_ren_mem)
+				exe_fwd_b_ctrl = ID_B_FWD_MEMOUT;
 		end
-			
-		if(wb_wen_wb  && regw_addr_wb != 0)begin
-			if(regw_addr_mem != addr_rs_exe && regw_addr_wb == addr_rs_exe)
-				exe_fwd_a_ctrl = EXE_A_FWD_WB;
-			if(regw_addr_mem != addr_rt_exe && regw_addr_wb == addr_rt_exe)
-				exe_fwd_b_ctrl = EXE_B_FWD_WB;			
-		end
+		if(wb_wen_exe && regw_addr_exe != 0) begin////
+			if(regw_addr_exe == addr_rs)////
+				exe_fwd_a_ctrl = ID_A_FWD_ALUOUT;////
+			if(regw_addr_exe == addr_rt)////
+				exe_fwd_b_ctrl = ID_B_FWD_ALUOUT;////
+		end	////
+		//if(wb_wen_wb  && regw_addr_wb != 0)begin
+		//	if(regw_addr_mem != addr_rs_exe && regw_addr_wb == addr_rs_exe)
+		//		exe_fwd_a_ctrl = ID_A_FWD_MEMOUT;
+		//	if(regw_addr_mem != addr_rt_exe && regw_addr_wb == addr_rt_exe)
+		//		exe_fwd_b_ctrl = ID_B_FWD_MEMOUT;			
+		//end
 
 
 		if (rt_used && regw_addr_exe == addr_rt && wb_wen_exe && is_load_exe && is_store) begin
