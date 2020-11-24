@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.39 secs
+Total CPU time to Xst completion: 0.34 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.39 secs
+Total CPU time to Xst completion: 0.36 secs
  
 --> Reading design: mips_top.prj
 
@@ -115,11 +115,11 @@ Parsing verilog file "mips_define.vh" included at line 14.
 Analyzing Verilog file "D:\00a\CA\CA_Exp\CA_Exp04\datapath.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <datapath>.
-Parsing verilog file "mips_define.vh" included at line 82.
+Parsing verilog file "mips_define.vh" included at line 79.
 Analyzing Verilog file "D:\00a\CA\CA_Exp\CA_Exp04\controller.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <controller>.
-Parsing verilog file "mips_define.vh" included at line 68.
+Parsing verilog file "mips_define.vh" included at line 64.
 Analyzing Verilog file "D:\00a\CA\CA_Exp\CA_Exp04\vga_8x16.v" into library work
 Parsing module <pc_vga_8x16_00_7F>.
 Analyzing Verilog file "D:\00a\CA\CA_Exp\CA_Exp04\parallel2serial.v" into library work
@@ -203,17 +203,17 @@ Elaborating module <mips>.
 Elaborating module <mips_core>.
 
 Elaborating module <controller>.
-WARNING:HDLCompiler:413 - "D:\00a\CA\CA_Exp\CA_Exp04\controller.v" Line 160: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "D:\00a\CA\CA_Exp\CA_Exp04\controller.v" Line 169: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "D:\00a\CA\CA_Exp\CA_Exp04\controller.v" Line 156: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "D:\00a\CA\CA_Exp\CA_Exp04\controller.v" Line 165: Result of 32-bit expression is truncated to fit in 3-bit target.
 
 Elaborating module <datapath>.
 
 Elaborating module <regfile>.
 
 Elaborating module <alu>.
-WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp04\datapath.v" Line 344: Assignment to data_rs_mem ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" Line 126: Assignment to is_branch_exe ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" Line 129: Assignment to is_branch_mem ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp04\datapath.v" Line 341: Assignment to data_rs_mem ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" Line 124: Assignment to is_branch_exe ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" Line 127: Assignment to is_branch_mem ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp04\mips.v" Line 41: Assignment to inst_ren ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "D:\00a\CA\CA_Exp\CA_Exp04\mips.v" Line 44: Assignment to mem_ren ignored, since the identifier is never used
 
@@ -391,8 +391,8 @@ Synthesizing Unit <mips_core>.
     Related source file is "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v".
 WARNING:Xst:647 - Input <debug_addr<6:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 INFO:Xst:3210 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" line 65: Output port <unrecognized> of the instance <CONTROLLER> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" line 119: Output port <is_branch_exe> of the instance <DATAPATH> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" line 119: Output port <is_branch_mem> of the instance <DATAPATH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" line 117: Output port <is_branch_exe> of the instance <DATAPATH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\00a\CA\CA_Exp\CA_Exp04\mips_core.v" line 117: Output port <is_branch_mem> of the instance <DATAPATH> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <mips_core> synthesized.
@@ -408,10 +408,10 @@ WARNING:Xst:647 - Input <mem_valid> is never used. This port will be preserved a
 WARNING:Xst:647 - Input <wb_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <wb_wen_wb> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <debug_step_prev>.
-    Found 5-bit comparator equal for signal <regw_addr_mem[4]_addr_rs[4]_equal_60_o> created at line 248
-    Found 5-bit comparator equal for signal <regw_addr_mem[4]_addr_rt[4]_equal_62_o> created at line 250
-    Found 5-bit comparator equal for signal <regw_addr_exe[4]_addr_rs[4]_equal_78_o> created at line 275
-    Found 5-bit comparator equal for signal <regw_addr_exe[4]_addr_rt[4]_equal_79_o> created at line 276
+    Found 5-bit comparator equal for signal <regw_addr_mem[4]_addr_rs[4]_equal_60_o> created at line 243
+    Found 5-bit comparator equal for signal <regw_addr_mem[4]_addr_rt[4]_equal_62_o> created at line 245
+    Found 5-bit comparator equal for signal <regw_addr_exe[4]_addr_rs[4]_equal_78_o> created at line 270
+    Found 5-bit comparator equal for signal <regw_addr_exe[4]_addr_rt[4]_equal_79_o> created at line 271
     WARNING:Xst:2404 -  FFs/Latches <is_load_exe<0:0>> (without init value) have a constant value of 1 in block <controller>.
     Summary:
 	inferred   1 D-type flip-flop(s).
@@ -462,15 +462,15 @@ WARNING:Xst:653 - Signal <is_branch_mem> is used but never assigned. This source
     Found 32-bit register for signal <alu_out_wb>.
     Found 32-bit register for signal <mem_din_wb>.
     Found 32-bit register for signal <debug_data_signal>.
-    Found 32-bit adder for signal <inst_addr_next> created at line 173.
-    Found 32-bit adder for signal <inst_addr_next_id[31]_data_imm[29]_add_6_OUT> created at line 188.
-    Found 32-bit 24-to-1 multiplexer for signal <debug_addr[4]_PWR_14_o_wide_mux_1_OUT> created at line 138.
-    Found 32-bit 4-to-1 multiplexer for signal <fwda_id> created at line 220.
-    Found 32-bit 4-to-1 multiplexer for signal <fwdb_id> created at line 226.
-    Found 5-bit 4-to-1 multiplexer for signal <regw_addr_id> created at line 237.
-    Found 32-bit 3-to-1 multiplexer for signal <opb_exe> created at line 326.
-    Found 32-bit 4-to-1 multiplexer for signal <_n0291> created at line 185.
-    Found 32-bit comparator equal for signal <rs_rt_equal> created at line 233
+    Found 32-bit adder for signal <inst_addr_next> created at line 170.
+    Found 32-bit adder for signal <inst_addr_next_id[31]_data_imm[29]_add_6_OUT> created at line 185.
+    Found 32-bit 24-to-1 multiplexer for signal <debug_addr[4]_PWR_14_o_wide_mux_1_OUT> created at line 135.
+    Found 32-bit 4-to-1 multiplexer for signal <fwda_id> created at line 217.
+    Found 32-bit 4-to-1 multiplexer for signal <fwdb_id> created at line 223.
+    Found 5-bit 4-to-1 multiplexer for signal <regw_addr_id> created at line 234.
+    Found 32-bit 3-to-1 multiplexer for signal <opb_exe> created at line 323.
+    Found 32-bit 4-to-1 multiplexer for signal <_n0291> created at line 182.
+    Found 32-bit comparator equal for signal <rs_rt_equal> created at line 230
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 583 D-type flip-flop(s).
@@ -1141,15 +1141,15 @@ Top Level Output File Name         : mips_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1697
+# BELS                             : 1696
 #      GND                         : 11
 #      INV                         : 36
 #      LUT1                        : 85
-#      LUT2                        : 14
+#      LUT2                        : 13
 #      LUT3                        : 202
-#      LUT4                        : 180
+#      LUT4                        : 179
 #      LUT5                        : 261
-#      LUT6                        : 540
+#      LUT6                        : 541
 #      MUXCY                       : 171
 #      MUXF7                       : 32
 #      VCC                         : 13
@@ -1181,16 +1181,16 @@ Selected Device : 7k325tfbg676-2l
 
 Slice Logic Utilization: 
  Number of Slice Registers:             810  out of  407600     0%  
- Number of Slice LUTs:                 1414  out of  203800     0%  
-    Number used as Logic:              1318  out of  203800     0%  
+ Number of Slice LUTs:                 1413  out of  203800     0%  
+    Number used as Logic:              1317  out of  203800     0%  
     Number used as Memory:               96  out of  64000     0%  
        Number used as RAM:               96
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1826
-   Number with an unused Flip Flop:    1016  out of   1826    55%  
-   Number with an unused LUT:           412  out of   1826    22%  
-   Number of fully used LUT-FF pairs:   398  out of   1826    21%  
+ Number of LUT Flip Flop pairs used:   1825
+   Number with an unused Flip Flop:    1015  out of   1825    55%  
+   Number with an unused LUT:           412  out of   1825    22%  
+   Number of fully used LUT-FF pairs:   398  out of   1825    21%  
    Number of unique control sets:        28
 
 IO Utilization: 
@@ -1255,7 +1255,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_GEN/clkout3'
   Clock period: 11.959ns (frequency: 83.620MHz)
-  Total number of paths / destination ports: 18385359 / 1878
+  Total number of paths / destination ports: 18386281 / 1878
 -------------------------------------------------------------------------
 Delay:               5.979ns (Levels of Logic = 51)
   Source:            MIPS/DATA_RAM/Mram_data1 (RAM)
@@ -1287,7 +1287,7 @@ Delay:               5.979ns (Levels of Logic = 51)
      MUXCY:CI->O           1   0.151   0.350  Mcompar_rs_rt_equal_cy<10> (rs_rt_equal)
      end scope: 'MIPS/MIPS_CORE/DATAPATH:rs_rt_equal'
      begin scope: 'MIPS/MIPS_CORE/CONTROLLER:rs_rt_equal'
-     LUT5:I4->O           91   0.043   0.491  pc_src<3>1 (pc_src<0>)
+     LUT6:I5->O           91   0.043   0.491  pc_src<0>1 (pc_src<0>)
      end scope: 'MIPS/MIPS_CORE/CONTROLLER:pc_src<0>'
      begin scope: 'MIPS/MIPS_CORE/DATAPATH:pc_src_ctrl<0>'
      LUT4:I3->O            1   0.043   0.000  Mmux__n02911_rs_lut<2> (Mmux__n02911_rs_lut<2>)
@@ -1479,11 +1479,11 @@ CLK_GEN/clkout3|    7.000|    5.979|    2.095|         |
 
 
 Total REAL time to Xst completion: 30.00 secs
-Total CPU time to Xst completion: 30.62 secs
+Total CPU time to Xst completion: 30.40 secs
  
 --> 
 
-Total memory usage is 382252 kilobytes
+Total memory usage is 412908 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  115 (   0 filtered)

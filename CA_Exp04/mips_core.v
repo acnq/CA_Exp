@@ -104,8 +104,6 @@ module mips_core (
 		.wb_valid(wb_valid),
 		
 		//port added:
-		//.addr_rt_exe(addr_rt_exe),
-		//.addr_rs_exe(addr_rs_exe),
 		.regw_addr_wb(regw_addr_wb),
 		.wb_wen_wb(wb_wen_wb),
 		.mem_ren_mem(mem_ren_mem),
@@ -166,9 +164,6 @@ module mips_core (
 		.wb_rst(wb_rst),
 		.wb_en(wb_en),
 		.wb_valid(wb_valid),
-		
-		//.addr_rs_exe(addr_rs_exe),
-		//.addr_rt_exe(addr_rt_exe),
 		.regw_addr_wb(regw_addr_wb),
 		.mem_ren_mem(mem_ren_mem),
 		.wb_wen_wb(wb_wen_wb),

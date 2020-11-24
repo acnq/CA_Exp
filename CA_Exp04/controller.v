@@ -48,10 +48,6 @@ module controller (/*AUTOARG*/
 	output reg wb_rst,
 	output reg wb_en,
 	input wire wb_valid,
-	
-	//-------------------------
-	//input we need from datapath:
-	//input wire [4:0] addr_rs_exe,
 	//input wire [4:0] addr_rt_exe,
 	input wire [4:0] regw_addr_wb,
 	input wire mem_ren_mem,
@@ -166,7 +162,7 @@ module controller (/*AUTOARG*/
 				rt_used = 1;////
 			end
 			INST_BNE: begin
-				pc_src = rs_rt_equal ? PC_BRANCH:PC_NEXT;//
+				pc_src = rs_rt_equal ? PC_NEXT:PC_BRANCH;//
 				//exe_a_src = EXE_A_RS;//??
 				//exe_b_src = EXE_B_BRANCH;//??
 				//exe_alu_oper = EXE_ALU_ADD;//
@@ -210,7 +206,6 @@ module controller (/*AUTOARG*/
 				wb_data_src = WB_DATA_MEM;//
 				wb_wen = 1;//
 				rs_used = 1;////
-
 				is_load = 1; //!!
 			end
 			INST_SW: begin

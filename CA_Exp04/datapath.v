@@ -68,9 +68,6 @@ module datapath (
 	//WB:we need 2 output：
 	output reg wb_wen_wb,
 	output reg [4:0] regw_addr_wb,
-	//我们需要各个阶段的rs,rd的地址值；
-	//output reg [4:0] addr_rs_exe,
-	//output reg [4:0] addr_rt_exe,
 	//我们需要在mem阶段是否有ren 信号
 	output reg mem_ren_mem, 
 	
@@ -184,7 +181,7 @@ module datapath (
 		else if (if_en) begin
 			case(pc_src_ctrl)
 			PC_NEXT: inst_addr<=inst_addr_next;////0
-			PC_JR: inst_addr<=fwda_id;////1
+			PC_JR: inst_addr<=fwda_id;////1,=addr_rs
 			PC_BRANCH: inst_addr<=inst_addr_next_id[31:0]+{data_imm[29:0], 2'b0};////3
 			PC_JUMP: inst_addr<={inst_addr_id[31:28],inst_data_id[25:0],2'b0};////2
 			endcase
@@ -397,7 +394,7 @@ module datapath (
 		mem_ren = mem_ren_mem,
 		mem_wen = mem_wen_mem,
 		mem_addr = alu_out_mem,
-		mem_dout = mem_fwd_m_mem?data_rt_mem:regw_data_wb;
+		mem_dout = mem_fwd_m_mem?data_rt_mem:regw_data_wb;////
 	
 	// WB stage
 	always @(posedge clk) begin
