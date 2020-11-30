@@ -1,22 +1,20 @@
-Running: D:\ISE\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/00a/CA/CA_Exp/CA_Exp04/sim_mips_isim_beh.exe -prj D:/00a/CA/CA_Exp/CA_Exp04/sim_mips_beh.prj work.sim_mips work.glbl 
-ISim P.20131013 (signature 0x8ef4fb42)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Running: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips_isim_beh.exe -prj D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips_beh.prj work.sim_mips work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 12
+Turning on mult-threading, number of parallel sub-compilation jobs: 24 
 Determining compilation order of HDL files
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/regfile.v" into library work
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/alu.v" into library work
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/datapath.v" into library work
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/controller.v" into library work
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/mips_core.v" into library work
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/inst_rom.v" into library work
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/data_ram.v" into library work
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/mips.v" into library work
-Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp04/sim_mips.v" into library work
-Analyzing Verilog file "D:/ISE/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/regfile.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/alu.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/datapath.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/controller.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/mips_core.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/inst_rom.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/data_ram.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/mips.v" into library work
+Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips.v" into library work
+Analyzing Verilog file "D:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 160804 KB
-Fuse CPU Usage: 1077 ms
 Compiling module controller
 Compiling module regfile
 Compiling module alu
@@ -28,8 +26,7 @@ Compiling module mips
 Compiling module sim_mips
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 3 sub-compilation(s) to finish...
 Compiled 10 Verilog Units
-Built simulation executable D:/00a/CA/CA_Exp/CA_Exp04/sim_mips_isim_beh.exe
-Fuse Memory Usage: 166448 KB
-Fuse CPU Usage: 1577 ms
+Built simulation executable D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips_isim_beh.exe
+Fuse Memory Usage: 30008 KB
+Fuse CPU Usage: 468 ms

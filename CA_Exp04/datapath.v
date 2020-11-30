@@ -59,28 +59,27 @@ module datapath (
 	output wire [31:0] mem_addr,  // address of memory
 	output wire [31:0] mem_dout,  // data writing to memory
 	input wire [31:0] mem_din,  // data read from memory
-	
 	// WB signals
 	input wire wb_rst,
 	input wire wb_en,
 	output reg wb_valid,
 	//--------------------------
-	//WB:we need 2 output：
+	//在WB阶段，我们需要两个output：
 	output reg wb_wen_wb,
 	output reg [4:0] regw_addr_wb,
+	//我们需要各个阶段的rs,rd的地址值；
+	output reg [4:0] addr_rs_exe,
+	output reg [4:0] addr_rt_exe,
 	//我们需要在mem阶段是否有ren 信号
-	output reg mem_ren_mem, 
-	
-	//Exp5 new:
-	output wire rs_rt_equal,////
-	input wire fwd_m////
+	output reg mem_ren_mem 
 	);
 	
 	`include "mips_define.vh"
 	
 	// control signals
-	//reg [2:0] pc_src_exe;
+	reg [2:0] pc_src_exe, pc_src_mem;
 	reg [1:0] exe_a_src_exe, exe_b_src_exe;
+	reg [1:0] exe_a_fwd_exe, exe_b_fwd_exe;//控制2个新增的多路选择器的信号
 	reg [3:0] exe_alu_oper_exe;
 	reg mem_ren_exe; //mem_ren_mem;output 
 	reg mem_wen_exe, mem_wen_mem;
@@ -95,29 +94,26 @@ module datapath (
 	reg [4:0] regw_addr_id;
 	wire [4:0] addr_rs, addr_rt, addr_rd;
 	wire [31:0] data_rs, data_rt, data_imm;
-	reg [31:0] fwda_id,fwdb_id;//bypass unit's multiplexer output in ID
 	
-	// EXE signals
+	// EXE signals-------------------
 	reg [31:0] inst_addr_exe;
 	reg [31:0] inst_addr_next_exe;
 	reg [31:0] inst_data_exe;
 	reg [31:0] data_rs_exe, data_rt_exe, data_imm_exe;
 	reg [31:0] opa_exe, opb_exe;
+	reg [31:0] fwda_exe,fwdb_exe;//bypass unit新增的多路选择器的输出值
 	wire [31:0] alu_out_exe;
-	reg [31:0] fwda_exe,fwdb_exe;//bypass unit's multiplexer output in EXE
-	//------------
-	reg exe_fwd_m_exe;////
+	wire rs_rt_equal_exe;
 	
 	// MEM signals
 	reg [31:0] inst_addr_mem;
-	//reg [31:0] inst_addr_next_mem;
+	reg [31:0] inst_addr_next_mem;
 	reg [31:0] inst_data_mem;
 	reg [4:0] data_rs_mem;
 	reg [31:0] data_rt_mem;
 	reg [31:0] alu_out_mem;
 	reg [31:0] branch_target_mem;
-	//------------------
-	reg mem_fwd_m_mem;////
+	reg rs_rt_equal_mem;
 	
 	// WB signals---------------------------
 	//reg wb_wen_wb; moved upward to the output module
@@ -173,19 +169,17 @@ module datapath (
 		if_valid = ~if_rst & if_en;
 		inst_ren = ~if_rst;
 	end
-	//new multiplexer:
+	
 	always @(posedge clk) begin
 		if (if_rst) begin
 			inst_addr <= 0;
 		end
 		else if (if_en) begin
-			case(pc_src_ctrl)
-			PC_NEXT: inst_addr<=inst_addr_next;////0
-			PC_JR: inst_addr<=fwda_id;////1,=addr_rs
-			PC_BRANCH: inst_addr<=inst_addr_next_id[31:0]+{data_imm[29:0], 2'b0};////3
-			PC_JUMP: inst_addr<={inst_addr_id[31:28],inst_data_id[25:0],2'b0};////2
-			endcase
-		end 
+			if (is_branch_mem)
+				inst_addr <= branch_target_mem;
+			else
+				inst_addr <= inst_addr_next;
+		end
 	end
 	
 	// ID stage
@@ -209,25 +203,6 @@ module datapath (
 		addr_rt = inst_data_id[20:16],
 		addr_rd = inst_data_id[15:11],
 		data_imm = imm_ext_ctrl ? {{16{inst_data_id[15]}}, inst_data_id[15:0]} : {16'b0, inst_data_id[15:0]};
-	
-	//new bypass unit：
-	always @(*) begin
-		fwda_id = data_rs_exe;
-		fwdb_id = data_rt_exe;
-		case (exe_fwd_a_ctrl)
-			ID_A_FWD_ALUOUT: fwda_id = alu_out_exe;//0
-			ID_A_FWD_MEMIN: fwda_id = alu_out_mem;//1
-			ID_A_FWD_MEMOUT: fwda_id = mem_din;//2
-			ID_A_FWD_RS: fwda_id = data_rs;//3
-		endcase
-		case (exe_fwd_b_ctrl)
-			ID_B_FWD_ALUOUT:fwdb_id = alu_out_exe;//0
-			ID_B_FWD_MEMIN: fwdb_id = alu_out_mem;//1
-			ID_B_FWD_MEMOUT: fwdb_id = mem_din;//2
-			ID_B_FWD_RT: fwdb_id = data_rt;//3
-		endcase
-	end
-	assign rs_rt_equal = (fwda_id == fwdb_id);////judge whether BEQ or BNE
 	
 	always @(*) begin
 		regw_addr_id = inst_data_id[15:11];
@@ -261,7 +236,7 @@ module datapath (
 			inst_data_exe <= 0;
 			inst_addr_next_exe <= 0;
 			regw_addr_exe <= 0;
-			//pc_src_exe <= 0;
+			pc_src_exe <= 0;
 			exe_a_src_exe <= 0;
 			exe_b_src_exe <= 0;
 			//--------------------
@@ -279,11 +254,8 @@ module datapath (
 			wb_data_src_exe <= 0;
 			wb_wen_exe <= 0;
 			//--------------
-			//addr_rs_exe <= 0;	//add addr_rs_exe for output
-			//addr_rt_exe <= 0;	//add addr_rt_exe for output
-			fwda_exe <= 0;////
-			fwdb_exe <= 0;////
-			exe_fwd_m_exe<=0;////
+			addr_rs_exe <= 0;	//add addr_rs_exe for output
+			addr_rt_exe <= 0;	//add addr_rt_exe for output
 		end
 		else if (exe_en) begin
 			exe_valid <= id_valid;
@@ -291,9 +263,11 @@ module datapath (
 			inst_data_exe <= inst_data_id;
 			inst_addr_next_exe <= inst_addr_next_id;
 			regw_addr_exe <= regw_addr_id;
-			//pc_src_exe <= pc_src_ctrl;
+			pc_src_exe <= pc_src_ctrl;
 			exe_a_src_exe <= exe_a_src_ctrl;
 			exe_b_src_exe <= exe_b_src_ctrl;
+			exe_a_fwd_exe <= exe_fwd_a_ctrl;//
+			exe_b_fwd_exe <= exe_fwd_b_ctrl;//
 			data_rs_exe <= data_rs;
 			data_rt_exe <= data_rt;
 			data_imm_exe <= data_imm;
@@ -303,32 +277,60 @@ module datapath (
 			wb_data_src_exe <= wb_data_src_ctrl;
 			wb_wen_exe <= wb_wen_ctrl;
 			//---------------
-			//addr_rs_exe <= addr_rs;//add addr_rs_exe for output
-			//addr_rt_exe <= addr_rt;//add addr_rt_exe for output
-			fwda_exe <= fwda_id;////
-			fwdb_exe <= fwdb_id;////
-			exe_fwd_m_exe<=fwd_m;////
+			addr_rs_exe <= addr_rs;//add addr_rs_exe for output
+			addr_rt_exe <= addr_rt;//add addr_rt_exe for output
+
 		end
 	end
 	
 	always @(*) begin
-		opa_exe = fwda_exe;
-		opb_exe = fwdb_exe;
-		case (exe_a_src_exe)//0-1
-			EXE_A_RS: opa_exe = fwda_exe;////0
-			EXE_A_NEXT: opa_exe = inst_addr_next_exe;////1
-			//EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
-			default:;
+		is_branch_exe <= (pc_src_exe != PC_NEXT);
+	end
+	
+	//这里应该是fwda_exe
+	assign
+		rs_rt_equal_exe = (fwda_exe == fwdb_exe);
+		
+	//调整了两个always的顺序--------------------------------
+	//新增的bypass unit的2个多路选择器：
+	always @(*) begin
+		fwda_exe = data_rs_exe;
+		fwdb_exe = data_rt_exe;
+		case (exe_fwd_a_ctrl)
+			EXE_A_FWD_ALUOUT: fwda_exe = alu_out_mem;//0_wrong!
+			EXE_A_FWD_MEMOUT: fwda_exe = mem_din;//1
+			EXE_A_FWD_WB: fwda_exe = regw_data_wb;//2
+			EXE_A_FWD_RS: fwda_exe = data_rs_exe;//3
 		endcase
-		case (exe_b_src_exe)//0-2
-			EXE_B_IMM: opb_exe = data_imm_exe;////0
-			EXE_B_FOUR: opb_exe = 3'h4;  ////1
-			EXE_B_RT: opb_exe = fwdb_exe;////2
-			//EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};
-			//default:opb_exe = 32'h0;////
+		case (exe_fwd_b_ctrl)
+			EXE_B_FWD_ALUOUT:fwdb_exe = alu_out_mem;//0_wrong!
+			EXE_B_FWD_MEMOUT: fwdb_exe = mem_din;//1
+			EXE_B_FWD_WB: fwdb_exe = regw_data_wb;//2
+			EXE_B_FWD_RT: fwdb_exe = data_rt_exe;//3
 		endcase
 	end
+	
+	
 
+	
+	always @(*) begin
+		opa_exe = fwda_exe;
+		opb_exe = fwdb_exe;
+		case (exe_a_src_exe)
+			EXE_A_RS: opa_exe = fwda_exe;//这个值应该在fwda_exe刷新之后才有，于是这个always应该在后。
+			EXE_A_LINK: opa_exe = inst_addr_next_exe;
+			EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
+		endcase
+		case (exe_b_src_exe)
+			EXE_B_RT: opb_exe = fwdb_exe;//wrong!
+			EXE_B_IMM: opb_exe = data_imm_exe;
+			EXE_B_LINK: opb_exe = 32'h0;  // linked address is the next one of current instruction
+			EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};
+		endcase
+	end
+	//------------------------------------------------
+	
+	
 	
 	alu ALU (
 		.a(opa_exe),
@@ -341,10 +343,10 @@ module datapath (
 	always @(posedge clk) begin
 		if (mem_rst) begin
 			mem_valid <= 0;
-			//pc_src_mem <= 0;
+			pc_src_mem <= 0;
 			inst_addr_mem <= 0;
 			inst_data_mem <= 0;
-			//inst_addr_next_mem <= 0;
+			inst_addr_next_mem <= 0;
 			regw_addr_mem <= 0;
 			data_rs_mem <= 0;
 			data_rt_mem <= 0;
@@ -353,17 +355,20 @@ module datapath (
 			mem_wen_mem <= 0;
 			wb_data_src_mem <= 0;
 			wb_wen_mem <= 0;
-			//--------------------
-			mem_fwd_m_mem<=0;////
+			rs_rt_equal_mem <= 0;
+			
 		end
 		else if (mem_en) begin
 			mem_valid <= exe_valid;
-			//pc_src_mem <= pc_src_exe;
+			pc_src_mem <= pc_src_exe;
 			inst_addr_mem <= inst_addr_exe;
 			inst_data_mem <= inst_data_exe;
-			//inst_addr_next_mem <= inst_addr_next_exe;
+			inst_addr_next_mem <= inst_addr_next_exe;
 			regw_addr_mem <= regw_addr_exe;
-		   //data_rs_mem <= fwda_exe;
+			//----------------------------
+			//data_rs_mem <= data_rs_exe;
+			//data_rt_mem <= data_rt_exe;
+			data_rs_mem <= fwda_exe;
 			data_rt_mem <= fwdb_exe;
 			//这里应该修改为fwda_exe 和fwdb_exe，之后的每步都跟着fwd之后的结果走了
 			//-----------------------
@@ -372,16 +377,16 @@ module datapath (
 			mem_wen_mem <= mem_wen_exe;
 			wb_data_src_mem <= wb_data_src_exe;
 			wb_wen_mem <= wb_wen_exe;
+			rs_rt_equal_mem <= rs_rt_equal_exe;
 			//--------------------------------
-			mem_fwd_m_mem<=exe_fwd_m_exe;
 		end
 	end
 	
-	//always @(*) begin
-	//	is_branch_mem <= (pc_src_mem != PC_NEXT);
-	//end
+	always @(*) begin
+		is_branch_mem <= (pc_src_mem != PC_NEXT);
+	end
 	
-	/*always @(*) begin
+	always @(*) begin
 		case (pc_src_mem)
 			PC_JUMP: branch_target_mem <= {inst_addr_mem[31:28],inst_data_mem[25:0],2'b0};
 			PC_JR: branch_target_mem <= data_rs_mem;
@@ -389,12 +394,13 @@ module datapath (
 			PC_BEQ: branch_target_mem <= rs_rt_equal_mem?alu_out_mem:inst_addr_next_mem;
 			default: branch_target_mem <= inst_addr_next_mem;  // will never used
 		endcase
-	end*/
+	end
+	
 	assign
 		mem_ren = mem_ren_mem,
 		mem_wen = mem_wen_mem,
 		mem_addr = alu_out_mem,
-		mem_dout = mem_fwd_m_mem?data_rt_mem:regw_data_wb;////
+		mem_dout = data_rt_mem;
 	
 	// WB stage
 	always @(posedge clk) begin

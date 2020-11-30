@@ -1,47 +1,37 @@
 // PC sources
 localparam
 	PC_NEXT    = 0,
-	PC_JUMP    = 3,
+	PC_JUMP    = 1,
 	PC_JR      = 2,
-	PC_BRANCH  = 1;
-//	PC_BEQ     = 1,
-//	PC_BNE     = 5;
-
-//IF PC address source
-//localparam
-//IF_PC_NEXT=0,
-//IF_PC_BRANCH=1,
-//IF_PC=2,
-//IF_PC_JUMP=3;
+	PC_BEQ     = 4,
+	PC_BNE     = 5;
 
 // EXE A sources
 localparam
 	EXE_A_RS     = 0,
-	EXE_A_NEXT   = 1;
 	//EXE_A_SA     = 1,
-	//EXE_A_LINK   = 2,
-	//EXE_A_BRANCH = 3;
+	EXE_A_LINK   = 2,
+	EXE_A_BRANCH = 3;
 
 // EXE B sources
 localparam
-	EXE_B_RT     = 2,
-	EXE_B_IMM    = 0,
-	EXE_B_FOUR   = 1,
-	EXE_B_LINK   = 2;
-	//EXE_B_BRANCH = 3;
+	EXE_B_RT     = 0,
+	EXE_B_IMM    = 1,
+	EXE_B_LINK   = 2,
+	EXE_B_BRANCH = 3;
 
-//ID A FWD sources
+//EXE A FWD sources
 localparam
-	ID_A_FWD_ALUOUT     = 0,//
-	ID_A_FWD_MEMIN   = 1,//
-	ID_A_FWD_MEMOUT   = 2,//
-	ID_A_FWD_RS = 3;//
-//ID FWD B sources
+	EXE_A_FWD_ALUOUT     = 0,//
+	EXE_A_FWD_MEMOUT    = 1,//
+	EXE_A_FWD_WB   = 2,//
+	EXE_A_FWD_RS = 3;//
+//EXE FWD B sources
 localparam
-	ID_B_FWD_ALUOUT     = 0,//
-	ID_B_FWD_MEMIN    = 1,//
-	ID_B_FWD_MEMOUT   = 2,//
-	ID_B_FWD_RT = 3;//
+	EXE_B_FWD_ALUOUT     = 0,//
+	EXE_B_FWD_MEMOUT    = 1,//
+	EXE_B_FWD_WB   = 2,//
+	EXE_B_FWD_RT = 3;//
 	
 
 // EXE ALU operations

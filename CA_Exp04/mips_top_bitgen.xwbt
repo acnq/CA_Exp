@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=D:\00a\CA\CA_Exp\CA_Exp04\mips_top.ncd
-OUTFILE=D:\00a\CA\CA_Exp\CA_Exp04\mips_top.bit
+INFILE=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.ncd
+OUTFILE=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.bit
 FAMILY=Kintex7
 PART=xc7k325t-2lfbg676
-WORKINGDIR=D:\00a\CA\CA_Exp\CA_Exp04
+WORKINGDIR=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2
 LICENSE=ISE
 USER_INFO=__0_0_0

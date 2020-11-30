@@ -15,10 +15,10 @@ module controller (/*AUTOARG*/
 	`endif
 	// instruction decode
 	input wire [31:0] inst,  // instruction
-	//!! input wire is_branch_exe,  // whether instruction in EXE stage is jump/branch instruction
+	input wire is_branch_exe,  // whether instruction in EXE stage is jump/branch instruction
 	input wire [4:0] regw_addr_exe,  // register write address from EXE stage
 	input wire wb_wen_exe,  // register write enable signal feedback from EXE stage
-	//!! input wire is_branch_mem,  // whether instruction in MEM stage is jump/branch instruction
+	input wire is_branch_mem,  // whether instruction in MEM stage is jump/branch instruction
 	input wire [4:0] regw_addr_mem,  // register write address from MEM stage
 	input wire wb_wen_mem,  // register write enable signal feedback from MEM stage
 	output reg [2:0] pc_src,  // how would PC change to next
@@ -48,31 +48,25 @@ module controller (/*AUTOARG*/
 	output reg wb_rst,
 	output reg wb_en,
 	input wire wb_valid,
-	//input wire [4:0] addr_rt_exe,
+	
+	//-------------------------
+	//input we need from datapath:
+	input wire [4:0] addr_rs_exe,
+	input wire [4:0] addr_rt_exe,
 	input wire [4:0] regw_addr_wb,
 	input wire mem_ren_mem,
 	input wire wb_wen_wb,
 	
+	//output we generated;
 	output reg [1:0] exe_fwd_a_ctrl,
-	output reg [1:0] exe_fwd_b_ctrl,
-
-	//!! added signla;
-	input wire rs_rt_equal,
-	output reg fwd_m
+	output reg [1:0] exe_fwd_b_ctrl
+	
 	);
 	
 	`include "mips_define.vh"
 	
 	// instruction decode
-	reg rs_used, rt_used;//used means read the value of the register(rs/rt)
-	//!! instruction decode append
-	reg is_load, is_store;
-	reg is_load_exe;
-	reg load_stall;
-
-	always @ (posedge clk) begin
-		is_load_exe <= is_load;
-	end
+	reg rs_used, rt_used;//used means read the value of the register(rs/rt)ÕâÎÒ×Ô¼º¼ÓµÄ×¢ÊÍ
 	
 	always @(*) begin
 		pc_src = PC_NEXT;
@@ -145,27 +139,27 @@ module controller (/*AUTOARG*/
 			end
 			INST_JAL: begin
 				pc_src = PC_JUMP;//
-				exe_a_src = EXE_A_NEXT;//
-				exe_b_src = EXE_B_FOUR;//
+				exe_a_src = EXE_A_LINK;//
+				exe_b_src = EXE_B_LINK;//
 				exe_alu_oper = EXE_ALU_ADD;//
 				wb_addr_src = WB_ADDR_LINK;//
 				wb_data_src = WB_DATA_ALU;//
 				wb_wen = 1;
 			end
 			INST_BEQ: begin
-				pc_src = rs_rt_equal ? PC_BRANCH:PC_NEXT;//
-				//exe_a_src = EXE_A_RS;//??
-				//exe_b_src = EXE_B_BRANCH;//??
-				//exe_alu_oper = EXE_ALU_ADD;//
+				pc_src = PC_BEQ;//
+				exe_a_src = EXE_A_BRANCH;//
+				exe_b_src = EXE_B_BRANCH;//
+				exe_alu_oper = EXE_ALU_ADD;//
 				imm_ext = 1;//
 				rs_used = 1;////
 				rt_used = 1;////
 			end
 			INST_BNE: begin
-				pc_src = rs_rt_equal ? PC_NEXT:PC_BRANCH;//
-				//exe_a_src = EXE_A_RS;//??
-				//exe_b_src = EXE_B_BRANCH;//??
-				//exe_alu_oper = EXE_ALU_ADD;//
+				pc_src = PC_BNE;//
+				exe_a_src = EXE_A_BRANCH;//
+				exe_b_src = EXE_B_BRANCH;//
+				exe_alu_oper = EXE_ALU_ADD;//
 				imm_ext = 1;//
 				rs_used = 1;////
 				rt_used = 1;////
@@ -180,7 +174,7 @@ module controller (/*AUTOARG*/
 				rs_used = 1;
 			end
 			INST_ANDI: begin
-				imm_ext = 0;//n<0 not considered
+				imm_ext = 0;//Âß¼­²Ù×÷²»¿¼ÂÇ¸ºÊý
 				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper =EXE_ALU_AND;//
 				wb_addr_src = WB_ADDR_RT;//
@@ -189,7 +183,7 @@ module controller (/*AUTOARG*/
 				rs_used = 1;////
 			end
 			INST_ORI: begin
-				imm_ext = 0;//n<0 not considered
+				imm_ext = 0;//Âß¼­²Ù×÷²»¿¼ÂÇ¸ºÊý
 				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper = EXE_ALU_OR;//
 				wb_addr_src = WB_ADDR_RT;//
@@ -206,7 +200,6 @@ module controller (/*AUTOARG*/
 				wb_data_src = WB_DATA_MEM;//
 				wb_wen = 1;//
 				rs_used = 1;////
-				is_load = 1; //!!
 			end
 			INST_SW: begin
 				imm_ext = 1;//
@@ -215,7 +208,6 @@ module controller (/*AUTOARG*/
 				mem_wen = 1;//
 				rs_used = 1;////
 				rt_used = 1;////
-				is_store = 1;//!!
 			end
 			default: begin
 				unrecognized = 1;
@@ -224,75 +216,56 @@ module controller (/*AUTOARG*/
 	end
 	
 	// pipeline control
-	//! reg reg_stall;
+	reg reg_stall;
 	reg branch_stall;
-	wire [4:0] addr_rs, addr_rt;///
+	wire [4:0] addr_rs, addr_rt;///ÕâÒ»ÌõÒªÖ´ÐÐµÄÓï¾äµÄµØÖ·
 	
 	assign
 		addr_rs = inst[25:21],
 		addr_rt = inst[20:16];
 	
 	always @(*) begin////PPT27Ò³
-		exe_fwd_a_ctrl = ID_A_FWD_RS;
-		exe_fwd_b_ctrl = ID_B_FWD_RT;
-		//exe_fwd_a_ctrl is parallel to fwd_a_ctrl
-		//so is exe_fwd_b_ctrl is parrel to fwd_b_ctrl
-		fwd_m = 1'b0;
-		load_stall = 1'b0;
-		if (wb_wen_mem && regw_addr_mem != 0) begin////
-			if (regw_addr_mem == addr_rs)
-				exe_fwd_a_ctrl = ID_A_FWD_MEMIN;
-			if(regw_addr_mem == addr_rt)
-				exe_fwd_b_ctrl = ID_B_FWD_MEMIN;
-			if(regw_addr_mem == addr_rs && mem_ren_mem)
-				exe_fwd_a_ctrl = ID_A_FWD_MEMOUT;
-			if(regw_addr_mem == addr_rt && mem_ren_mem)
-				exe_fwd_b_ctrl = ID_B_FWD_MEMOUT;
+		exe_fwd_a_ctrl = EXE_A_FWD_RS;
+		exe_fwd_b_ctrl = EXE_B_FWD_RT;
+		if (wb_wen_mem && regw_addr_mem != 0) begin////ID instr.rs = exe inst.rd and exe instr.writereg£¬±¾Ìõrs ºÍÏÂÒ»ÌõWB½×¶ÎµÄrd³åÍ»£»´ËÊ±²»¿¼ÂÇ0ºÅ¼Ä´æÆ÷£¬ÒòÎªËûÒ»Ö±ÊÇ0²»»á³åÍ»
+			if (regw_addr_mem == addr_rs_exe)
+				exe_fwd_a_ctrl = EXE_A_FWD_ALUOUT;
+			if(regw_addr_mem == addr_rt_exe)
+				exe_fwd_b_ctrl = EXE_B_FWD_ALUOUT;
+			if(regw_addr_mem == addr_rs_exe && mem_ren_mem)
+				exe_fwd_a_ctrl = EXE_A_FWD_MEMOUT;
+			if(regw_addr_mem == addr_rt_exe && mem_ren_mem)
+				exe_fwd_b_ctrl = EXE_B_FWD_MEMOUT;
+			
 		end
-		if(wb_wen_exe && regw_addr_exe != 0) begin////
-			if(regw_addr_exe == addr_rs)////
-				exe_fwd_a_ctrl = ID_A_FWD_ALUOUT;////
-			if(regw_addr_exe == addr_rt)////
-				exe_fwd_b_ctrl = ID_B_FWD_ALUOUT;////
-		end	////
-		//if(wb_wen_wb  && regw_addr_wb != 0)begin
-		//	if(regw_addr_mem != addr_rs_exe && regw_addr_wb == addr_rs_exe)
-		//		exe_fwd_a_ctrl = ID_A_FWD_MEMOUT;
-		//	if(regw_addr_mem != addr_rt_exe && regw_addr_wb == addr_rt_exe)
-		//		exe_fwd_b_ctrl = ID_B_FWD_MEMOUT;			
-		//end
-
-
-		if (rt_used && regw_addr_exe == addr_rt && wb_wen_exe && is_load_exe && is_store) begin
-			fwd_m = 1;
-		end	
-
-		if((rs_used && regw_addr_exe == addr_rs && wb_wen_exe && is_load_exe)
-			|| (rt_used && regw_addr_exe == addr_rt && wb_wen_exe && is_load_exe && ~is_store)) begin
-				load_stall = 1;
-			end
+			
+		if(wb_wen_wb  && regw_addr_wb != 0)begin
+			if(regw_addr_mem != addr_rs_exe && regw_addr_wb == addr_rs_exe)
+				exe_fwd_a_ctrl = EXE_A_FWD_WB;
+			if(regw_addr_mem != addr_rt_exe && regw_addr_wb == addr_rt_exe)
+				exe_fwd_b_ctrl = EXE_B_FWD_WB;			
+		end
 	end
 
 
-/*			else if (regw_addr_mem == addr_rs && wb_wen_mem) begin ////id instr.rs=mem instr.rd and mem instr.writereg ï¿½ï¿½ï¿½ï¿½rs ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½MEMï¿½×¶Îµï¿½rdï¿½ï¿½Í»ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½
+/*			else if (regw_addr_mem == addr_rs && wb_wen_mem) begin ////id instr.rs=mem instr.rd and mem instr.writereg ±¾Ìõrs ºÍÏÂÒ»ÌõMEM½×¶ÎµÄrd³åÍ»£»Í¬Ñù²»¿¼ÂÇ0ºÅ
 				reg_stall = 1;
 			end
 		end
 		if (rt_used && addr_rt != 0) begin
-			if (regw_addr_exe == addr_rt && wb_wen_exe) begin////ID instr.rt = exe inst.rd and exe instr.writeregï¿½ï¿½ï¿½ï¿½ï¿½ï¿½rt ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½WBï¿½×¶Îµï¿½rdï¿½ï¿½Í»ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½
+			if (regw_addr_exe == addr_rt && wb_wen_exe) begin////ID instr.rt = exe inst.rd and exe instr.writereg£¬±¾Ìõrt ºÍÏÂÒ»ÌõWB½×¶ÎµÄrd³åÍ»£»Í¬Ñù²»¿¼ÂÇ0ºÅ
 				reg_stall = 1;
 			end
-			else if (regw_addr_mem == addr_rt && wb_wen_mem) begin////ï¿½ï¿½ id instr.rt=mem instr.rd and mem instr = instr.writeregï¿½ï¿½ï¿½ï¿½ï¿½ï¿½rt ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½MEMï¿½×¶Îµï¿½rdï¿½ï¿½Í»ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½
+			else if (regw_addr_mem == addr_rt && wb_wen_mem) begin////£º id instr.rt=mem instr.rd and mem instr = instr.writereg£¬±¾Ìõrt ºÍÏÂÒ»ÌõMEM½×¶ÎµÄrd³åÍ»£»Í¬Ñù²»¿¼ÂÇ0ºÅ
 				reg_stall = 1;
 			end
 		end
 	end
 */	
 	always @(*) begin////PPT28
-	/*!!	branch_stall = 0;
+		branch_stall = 0;
 		if (pc_src != PC_NEXT || is_branch_mem || is_branch_exe)////
 			branch_stall = 1;
-	*/
 	end
 	
 	`ifdef DEBUG
@@ -332,7 +305,7 @@ module controller (/*AUTOARG*/
 		end
 		`endif
 		// this stall indicate that ID is waiting for previous instruction, should insert NOPs between ID and EXE.
-		/*!!else if (reg_stall) begin
+		else if (reg_stall) begin
 			if_en = 0;
 			id_en = 0;
 			exe_rst = 1;
@@ -340,13 +313,7 @@ module controller (/*AUTOARG*/
 		// this stall indicate that a jump/branch instruction is running, so that 3 NOP should be inserted between IF and ID
 		else if (branch_stall) begin
 			id_rst = 1;
-		end*/
-
-		else if (load_stall) begin
-			if_en = 0;
-			id_en = 0;
-			exe_rst = 1;
-		end		
+		end
 	end
 	
 endmodule
