@@ -268,11 +268,6 @@ module datapath (
 			exe_a_src_exe <= 0;
 			exe_b_src_exe <= 0;
 			//--------------------
-			//exe_a_fwd_exe <= 0;
-			//exe_b_fwd_exe <= 0;
-			//在stall的时候，不清空这个寄存器的值，
-			//这样可以保存exe_a_src_ctrl的内容
-			//假如有一次重新enable的时候exe_src_ctrl没有更新，也可以读取上一回的值
 			data_rs_exe <= 0;
 			data_rt_exe <= 0;
 			data_imm_exe <= 0;
@@ -282,11 +277,9 @@ module datapath (
 			wb_data_src_exe <= 0;
 			wb_wen_exe <= 0;
 			//--------------
-			//addr_rs_exe <= 0;	//add addr_rs_exe for output
-			//addr_rt_exe <= 0;	//add addr_rt_exe for output
-			fwda_exe <= 0;////
-			fwdb_exe <= 0;////
-			exe_fwd_m_exe<=0;////
+			fwda_exe <= 0;//
+			fwdb_exe <= 0;//
+			exe_fwd_m_exe<=0;//
 		end
 		else if (exe_en) begin
 		   is_load_exe<=is_load;
@@ -295,7 +288,6 @@ module datapath (
 			inst_data_exe <= inst_data_id;
 			inst_addr_next_exe <= inst_addr_next_id;
 			regw_addr_exe <= regw_addr_id;
-			//pc_src_exe <= pc_src_ctrl;
 			exe_a_src_exe <= exe_a_src_ctrl;
 			exe_b_src_exe <= exe_b_src_ctrl;
 			data_rs_exe <= data_rs;
@@ -307,11 +299,9 @@ module datapath (
 			wb_data_src_exe <= wb_data_src_ctrl;
 			wb_wen_exe <= wb_wen_ctrl;
 			//---------------
-			//addr_rs_exe <= addr_rs;//add addr_rs_exe for output
-			//addr_rt_exe <= addr_rt;//add addr_rt_exe for output
-			fwda_exe <= fwda_id;////
-			fwdb_exe <= fwdb_id;////
-			exe_fwd_m_exe<=fwd_m;////
+			fwda_exe <= fwda_id;//
+			fwdb_exe <= fwdb_id;//
+			exe_fwd_m_exe<=fwd_m;//
 		end
 	end
 	
@@ -345,10 +335,8 @@ module datapath (
 	always @(posedge clk) begin
 		if (mem_rst) begin
 			mem_valid <= 0;
-			//pc_src_mem <= 0;
 			inst_addr_mem <= 0;
 			inst_data_mem <= 0;
-			//inst_addr_next_mem <= 0;
 			regw_addr_mem <= 0;
 			data_rs_mem <= 0;
 			data_rt_mem <= 0;
@@ -362,15 +350,10 @@ module datapath (
 		end
 		else if (mem_en) begin
 			mem_valid <= exe_valid;
-			//pc_src_mem <= pc_src_exe;
 			inst_addr_mem <= inst_addr_exe;
 			inst_data_mem <= inst_data_exe;
-			//inst_addr_next_mem <= inst_addr_next_exe;
 			regw_addr_mem <= regw_addr_exe;
-		   //data_rs_mem <= fwda_exe;
 			data_rt_mem <= fwdb_exe;
-			//这里应该修改为fwda_exe 和fwdb_exe，之后的每步都跟着fwd之后的结果走了
-			//-----------------------
 			alu_out_mem <= alu_out_exe;
 			mem_ren_mem <= mem_ren_exe;
 			mem_wen_mem <= mem_wen_exe;
@@ -381,19 +364,6 @@ module datapath (
 		end
 	end
 	
-	//always @(*) begin
-	//	is_branch_mem <= (pc_src_mem != PC_NEXT);
-	//end
-	
-	/*always @(*) begin
-		case (pc_src_mem)
-			PC_JUMP: branch_target_mem <= {inst_addr_mem[31:28],inst_data_mem[25:0],2'b0};
-			PC_JR: branch_target_mem <= data_rs_mem;
-			PC_BNE: branch_target_mem <= rs_rt_equal_mem?inst_addr_next_mem:alu_out_mem;
-			PC_BEQ: branch_target_mem <= rs_rt_equal_mem?alu_out_mem:inst_addr_next_mem;
-			default: branch_target_mem <= inst_addr_next_mem;  // will never used
-		endcase
-	end*/
 	assign
 		mem_ren = mem_ren_mem,
 		mem_wen = mem_wen_mem,

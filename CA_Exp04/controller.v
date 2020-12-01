@@ -50,7 +50,6 @@ module controller (/*AUTOARG*/
 	output reg wb_rst,
 	output reg wb_en,
 	input wire wb_valid,
-	//input wire [4:0] addr_rt_exe,
 	input wire [4:0] regw_addr_wb,
 	input wire mem_ren_mem,
 	input wire wb_wen_wb,
@@ -132,9 +131,9 @@ module controller (/*AUTOARG*/
 						exe_alu_oper = EXE_ALU_SLT;//
 						wb_addr_src = WB_ADDR_RD;//
 						wb_data_src = WB_DATA_ALU;//
-						wb_wen = 1;////
-						rs_used = 1;////
-						rt_used = 1;////
+						wb_wen = 1;//
+						rs_used = 1;//
+						rt_used = 1;//
 					end
 					default: begin
 						unrecognized = 1;
@@ -155,21 +154,15 @@ module controller (/*AUTOARG*/
 			end
 			INST_BEQ: begin
 				pc_src = rs_rt_equal ? PC_BRANCH:PC_NEXT;//
-				//exe_a_src = EXE_A_RS;//??
-				//exe_b_src = EXE_B_BRANCH;//??
-				//exe_alu_oper = EXE_ALU_ADD;//
 				imm_ext = 1;//
 				rs_used = 1;////
 				rt_used = 1;////
 			end
 			INST_BNE: begin
 				pc_src = rs_rt_equal ? PC_NEXT:PC_BRANCH;//
-				//exe_a_src = EXE_A_RS;//??
-				//exe_b_src = EXE_B_BRANCH;//??
-				//exe_alu_oper = EXE_ALU_ADD;//
 				imm_ext = 1;//
-				rs_used = 1;////
-				rt_used = 1;////
+				rs_used = 1;//
+				rt_used = 1;//
 			end
 			INST_ADDI: begin
 				imm_ext = 1;
@@ -214,8 +207,8 @@ module controller (/*AUTOARG*/
 				exe_b_src = EXE_B_IMM;//
 				exe_alu_oper = EXE_ALU_ADD;//
 				mem_wen = 1;//
-				rs_used = 1;////
-				rt_used = 1;////
+				rs_used = 1;//
+				rt_used = 1;//
 				is_store = 1;//!!
 			end
 			default: begin
@@ -256,13 +249,6 @@ module controller (/*AUTOARG*/
 			if(regw_addr_exe == addr_rt)////
 				exe_fwd_b_ctrl = ID_B_FWD_ALUOUT;////
 		end	////
-		//if(wb_wen_wb  && regw_addr_wb != 0)begin
-		//	if(regw_addr_mem != addr_rs_exe && regw_addr_wb == addr_rs_exe)
-		//		exe_fwd_a_ctrl = ID_A_FWD_MEMOUT;
-		//	if(regw_addr_mem != addr_rt_exe && regw_addr_wb == addr_rt_exe)
-		//		exe_fwd_b_ctrl = ID_B_FWD_MEMOUT;			
-		//end
-
 
 		if (rt_used && regw_addr_exe == addr_rt && wb_wen_exe && is_load_exe && is_store) begin
 			fwd_m = 1;
@@ -274,21 +260,6 @@ module controller (/*AUTOARG*/
 			end
 	end
 
-
-/*			else if (regw_addr_mem == addr_rs && wb_wen_mem) begin ////id instr.rs=mem instr.rd and mem instr.writereg ����rs ����һ��MEM�׶ε�rd��ͻ��ͬ��������0��
-				reg_stall = 1;
-			end
-		end
-		if (rt_used && addr_rt != 0) begin
-			if (regw_addr_exe == addr_rt && wb_wen_exe) begin////ID instr.rt = exe inst.rd and exe instr.writereg������rt ����һ��WB�׶ε�rd��ͻ��ͬ��������0��
-				reg_stall = 1;
-			end
-			else if (regw_addr_mem == addr_rt && wb_wen_mem) begin////�� id instr.rt=mem instr.rd and mem instr = instr.writereg������rt ����һ��MEM�׶ε�rd��ͻ��ͬ��������0��
-				reg_stall = 1;
-			end
-		end
-	end
-*/	
 	always @(*) begin////PPT28
 	/*!!	branch_stall = 0;
 		if (pc_src != PC_NEXT || is_branch_mem || is_branch_exe)////
@@ -332,16 +303,6 @@ module controller (/*AUTOARG*/
 			wb_en = 0;
 		end
 		`endif
-		// this stall indicate that ID is waiting for previous instruction, should insert NOPs between ID and EXE.
-		/*!!else if (reg_stall) begin
-			if_en = 0;
-			id_en = 0;
-			exe_rst = 1;
-		end
-		// this stall indicate that a jump/branch instruction is running, so that 3 NOP should be inserted between IF and ID
-		else if (branch_stall) begin
-			id_rst = 1;
-		end*/
 
 		else if (load_stall) begin
 			if_en = 0;
