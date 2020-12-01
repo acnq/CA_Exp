@@ -31,6 +31,9 @@
 <msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">MIPS/MIPS_CORE/wb_valid</arg>&apos; has no driver
 </msg>
 
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">MIPS/MIPS_CORE/pc_src_ctrl&lt;2&gt;</arg>&apos; has no driver
+</msg>
+
 <msg type="warning" file="NgdBuild" num="478" delta="old" >clock net <arg fmt="%s" index="1">CLK_GEN/CLK_OUT1</arg> with clock driver <arg fmt="%s" index="2">CLK_GEN/clkout1_buf</arg> drives no clock pins
 </msg>
 

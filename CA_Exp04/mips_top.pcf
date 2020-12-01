@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Nov 01 19:47:13 2020
+// Written by: Map P.20131013 on Mon Nov 30 14:42:16 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -52,10 +52,7 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         BEL "rst_count_6" BEL "rst_count_7" BEL "rst_count_8" BEL
         "rst_count_9" BEL "rst_count_10" BEL "rst_count_11" BEL "rst_count_12"
         BEL "rst_count_13" BEL "rst_count_14" BEL "rst_count_15" BEL "rst_all"
-        BEL "MIPS/MIPS_CORE/DATAPATH/pc_src_exe_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/pc_src_exe_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/pc_src_exe_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/exe_a_src_exe_1" BEL
+        BEL "MIPS/MIPS_CORE/DATAPATH/exe_a_src_exe_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_b_src_exe_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_b_src_exe_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_alu_oper_exe_0" BEL
@@ -123,76 +120,108 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_din_wb_29" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_din_wb_30" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_din_wb_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_exe_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rt_exe_31" BEL
+        "MIPS/MIPS_CORE/DATAPATH/is_load_exe" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_5" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_6" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_7" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_8" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_9" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_10" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_11" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_12" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_13" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_14" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_15" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_17" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_18" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_19" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_20" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_21" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_22" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_23" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_24" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_25" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_26" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_27" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_28" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_29" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_30" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_31" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_ren_exe" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_wen_exe" BEL
         "MIPS/MIPS_CORE/DATAPATH/wb_data_src_exe" BEL
         "MIPS/MIPS_CORE/DATAPATH/wb_wen_exe" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_id_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_id_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_5" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_6" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_7" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_8" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_9" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_10" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_11" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_12" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_13" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_14" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_15" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_17" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_18" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_19" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_20" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_21" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_22" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_23" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_24" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_25" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_26" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_27" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_28" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_29" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_30" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwda_exe_31" BEL
+        "MIPS/MIPS_CORE/DATAPATH/exe_fwd_m_exe" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_5" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_6" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_7" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_8" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_9" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_10" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_11" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_12" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_13" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_14" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_15" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_17" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_18" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_19" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_20" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_21" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_22" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_23" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_24" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_25" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_26" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_27" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_28" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_29" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_30" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_31" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_id_2" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_id_3" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_id_4" BEL
@@ -223,6 +252,38 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_id_29" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_id_30" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_id_31" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_5" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_6" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_7" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_8" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_9" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_10" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_11" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_12" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_13" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_14" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_15" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_17" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_18" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_19" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_20" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_21" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_22" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_23" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_24" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_25" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_26" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_27" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_28" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_29" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_30" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_31" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_exe_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_exe_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_exe_2" BEL
@@ -253,47 +314,43 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_exe_28" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_exe_29" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_exe_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/pc_src_mem_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/pc_src_mem_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/pc_src_mem_2" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_ren_mem" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_wen_mem" BEL
         "MIPS/MIPS_CORE/DATAPATH/wb_data_src_mem" BEL
         "MIPS/MIPS_CORE/DATAPATH/wb_wen_mem" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_exe_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_exe_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/mem_fwd_m_mem" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_5" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_6" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_7" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_8" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_9" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_10" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_11" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_12" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_13" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_14" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_15" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_17" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_18" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_19" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_20" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_21" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_22" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_23" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_24" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_25" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_26" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_27" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_28" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_29" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_30" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_31" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_exe_2" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_exe_3" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_exe_4" BEL
@@ -330,6 +387,38 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/regw_addr_exe_3" BEL
         "MIPS/MIPS_CORE/DATAPATH/regw_addr_exe_4" BEL
         "MIPS/MIPS_CORE/DATAPATH/data_imm_exe_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_5" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_6" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_7" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_8" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_9" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_10" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_11" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_12" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_13" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_14" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_15" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_17" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_18" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_19" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_20" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_21" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_22" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_23" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_24" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_25" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_26" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_27" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_28" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_29" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_30" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_31" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_mem_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_mem_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_mem_2" BEL
@@ -360,11 +449,50 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_mem_28" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_mem_29" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_mem_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_mem_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_mem_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_mem_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_mem_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/data_rs_mem_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/wb_wen_wb" BEL
+        "MIPS/MIPS_CORE/DATAPATH/wb_data_src_wb" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_5" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_6" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_7" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_8" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_9" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_10" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_11" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_12" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_13" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_14" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_15" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_17" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_18" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_19" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_20" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_21" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_22" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_23" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_24" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_25" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_26" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_27" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_28" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_29" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_30" BEL
+        "MIPS/MIPS_CORE/DATAPATH/fwdb_exe_31" BEL
         "MIPS/MIPS_CORE/DATAPATH/data_rt_mem_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/data_rt_mem_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/data_rt_mem_2" BEL
@@ -397,205 +525,38 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/data_rt_mem_29" BEL
         "MIPS/MIPS_CORE/DATAPATH/data_rt_mem_30" BEL
         "MIPS/MIPS_CORE/DATAPATH/data_rt_mem_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/wb_wen_wb" BEL
-        "MIPS/MIPS_CORE/DATAPATH/wb_data_src_wb" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_next_mem_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_mem_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/rs_rt_equal_mem" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_exe_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/regw_addr_wb_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/inst_addr_mem_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_0" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_1" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_2" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_3" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_4" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_5" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_6" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_7" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_8" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_9" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_10" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_11" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_12" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_13" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_14" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_15" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_16" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_17" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_18" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_19" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_20" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_21" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_22" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_23" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_24" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_25" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_26" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_27" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_28" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_29" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_30" BEL
-        "MIPS/MIPS_CORE/DATAPATH/alu_out_wb_31" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_1" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_3" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_4" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_5" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_6" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_7" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_8" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_9" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_10" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_11" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_12" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_13" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_14" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_15" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_16" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_17" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_18" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_19" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_20" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_21" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_22" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_23" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_24" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_25" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_26" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_27" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_28" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_29" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_30" BEL
+        "MIPS/MIPS_CORE/DATAPATH/inst_addr_31" BEL
         "MIPS/MIPS_CORE/DATAPATH/debug_data_signal_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/debug_data_signal_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/debug_data_signal_2" BEL

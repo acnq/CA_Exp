@@ -1,18 +1,18 @@
-Running: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips_isim_beh.exe -prj D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips_beh.prj work.sim_mips work.glbl 
+Running: E:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o E:/80959/arch/work (2)/sim_mips_isim_beh.exe -prj E:/80959/arch/work (2)/sim_mips_beh.prj work.sim_mips work.glbl 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 12
-Turning on mult-threading, number of parallel sub-compilation jobs: 24 
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/regfile.v" into library work
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/alu.v" into library work
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/datapath.v" into library work
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/controller.v" into library work
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/mips_core.v" into library work
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/inst_rom.v" into library work
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/data_ram.v" into library work
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/mips.v" into library work
-Analyzing Verilog file "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips.v" into library work
-Analyzing Verilog file "D:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/regfile.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/alu.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/datapath.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/controller.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/mips_core.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/inst_rom.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/data_ram.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/mips.v" into library work
+Analyzing Verilog file "E:/80959/arch/work (2)/sim_mips.v" into library work
+Analyzing Verilog file "E:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling module controller
@@ -26,7 +26,9 @@ Compiling module mips
 Compiling module sim_mips
 Compiling module glbl
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: 系统找不到指定的路径。, "isim\sim_mips_isim_beh.exe.sim\libPortability.dll".
 Compiled 10 Verilog Units
-Built simulation executable D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/sim_mips_isim_beh.exe
-Fuse Memory Usage: 30008 KB
-Fuse CPU Usage: 468 ms
+Built simulation executable E:/80959/arch/work (2)/sim_mips_isim_beh.exe
+Fuse Memory Usage: 29288 KB
+Fuse CPU Usage: 1015 ms

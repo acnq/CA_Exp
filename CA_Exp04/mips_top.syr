@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.45 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.46 secs
  
 --> Reading design: mips_top.prj
 
@@ -105,64 +105,64 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\regfile.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\regfile.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <regfile>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\alu.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\alu.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <alu>.
 Parsing verilog file "mips_define.vh" included at line 14.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\datapath.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\datapath.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <datapath>.
-Parsing verilog file "mips_define.vh" included at line 77.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\controller.v" into library work
+Parsing verilog file "mips_define.vh" included at line 81.
+Analyzing Verilog file "E:\80959\arch\work (2)\controller.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <controller>.
 Parsing verilog file "mips_define.vh" included at line 66.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga_8x16.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\vga_8x16.v" into library work
 Parsing module <pc_vga_8x16_00_7F>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\parallel2serial.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\parallel2serial.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <parallel2serial>.
 Parsing verilog file "function.vh" included at line 20.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_core.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\mips_core.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <mips_core>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\inst_rom.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\inst_rom.v" into library work
 Parsing module <inst_rom>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\data_ram.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\data_ram.v" into library work
 Parsing module <data_ram>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga_debug.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\vga_debug.v" into library work
 Parsing module <vga_debug>.
-WARNING:HDLCompiler:327 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga_debug.v" Line 59: Concatenation with unsized literal; will interpret as 32 bits
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga.v" into library work
+WARNING:HDLCompiler:327 - "E:\80959\arch\work (2)\vga_debug.v" Line 59: Concatenation with unsized literal; will interpret as 32 bits
+Analyzing Verilog file "E:\80959\arch\work (2)\vga.v" into library work
 Parsing module <vga>.
-WARNING:HDLCompiler:751 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga.v" Line 11: Redeclaration of ansi port h_count is not allowed
-WARNING:HDLCompiler:751 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga.v" Line 22: Redeclaration of ansi port v_count is not allowed
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" into library work
+WARNING:HDLCompiler:751 - "E:\80959\arch\work (2)\vga.v" Line 11: Redeclaration of ansi port h_count is not allowed
+WARNING:HDLCompiler:751 - "E:\80959\arch\work (2)\vga.v" Line 22: Redeclaration of ansi port v_count is not allowed
+Analyzing Verilog file "E:\80959\arch\work (2)\my_clk_gen.v" into library work
 Parsing module <my_clk_gen>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\mips.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <mips>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\display.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\display.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <display>.
 Parsing verilog file "function.vh" included at line 27.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\clk_diff.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\clk_diff.v" into library work
 Parsing module <clk_diff>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\btn_scan.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\btn_scan.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <btn_scan>.
 Parsing verilog file "function.vh" included at line 17.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" into library work
+Analyzing Verilog file "E:\80959\arch\work (2)\mips_top.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <mips_top>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
-WARNING:HDLCompiler:1016 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" Line 80: Port led_clr_n is not connected to this instance
+WARNING:HDLCompiler:1016 - "E:\80959\arch\work (2)\mips_top.v" Line 80: Port led_clr_n is not connected to this instance
 
 Elaborating module <mips_top>.
 
@@ -173,20 +173,20 @@ Elaborating module <IBUFGDS(DIFF_TERM="FALSE",IBUF_LOW_PWR="TRUE",IOSTANDARD="DE
 Elaborating module <my_clk_gen>.
 
 Elaborating module <MMCME2_ADV(BANDWIDTH="OPTIMIZED",CLKOUT4_CASCADE="FALSE",COMPENSATION="ZHOLD",STARTUP_WAIT="FALSE",DIVCLK_DIVIDE=1,CLKFBOUT_MULT_F=5.0,CLKFBOUT_PHASE=0.0,CLKFBOUT_USE_FINE_PS="FALSE",CLKOUT0_DIVIDE_F=10.0,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT0_USE_FINE_PS="FALSE",CLKOUT1_DIVIDE=20,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT1_USE_FINE_PS="FALSE",CLKOUT2_DIVIDE=40,CLKOUT2_PHASE=0.0,CLKOUT2_DUTY_CYCLE=0.5,CLKOUT2_USE_FINE_PS="FALSE",CLKOUT3_DIVIDE=100,CLKOUT3_PHASE=0.0,CLKOUT3_DUTY_CYCLE=0.5,CLKOUT3_USE_FINE_PS="FALSE",CLKIN1_PERIOD=5.0,REF_JITTER1=0.01)>.
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 134: Assignment to clkfboutb_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 136: Assignment to clkout0b_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 138: Assignment to clkout1b_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 140: Assignment to clkout2b_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 142: Assignment to clkout3b_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 143: Assignment to clkout4_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 144: Assignment to clkout5_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 145: Assignment to clkout6_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 157: Assignment to do_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 158: Assignment to drdy_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 164: Assignment to psdone_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 166: Assignment to locked_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 167: Assignment to clkinstopped_unused ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v" Line 168: Assignment to clkfbstopped_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 134: Assignment to clkfboutb_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 136: Assignment to clkout0b_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 138: Assignment to clkout1b_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 140: Assignment to clkout2b_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 142: Assignment to clkout3b_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 143: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 144: Assignment to clkout5_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 145: Assignment to clkout6_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 157: Assignment to do_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 158: Assignment to drdy_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 164: Assignment to psdone_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 166: Assignment to locked_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 167: Assignment to clkinstopped_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\my_clk_gen.v" Line 168: Assignment to clkfbstopped_unused ignored, since the identifier is never used
 
 Elaborating module <BUFG>.
 
@@ -203,20 +203,19 @@ Elaborating module <mips>.
 Elaborating module <mips_core>.
 
 Elaborating module <controller>.
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\controller.v" Line 71: Assignment to rs_used ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\controller.v" Line 224: Assignment to addr_rs ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\controller.v" Line 225: Assignment to addr_rt ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\controller.v" Line 219: Net <reg_stall> does not have a driver.
+WARNING:HDLCompiler:413 - "E:\80959\arch\work (2)\controller.v" Line 157: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "E:\80959\arch\work (2)\controller.v" Line 166: Result of 32-bit expression is truncated to fit in 3-bit target.
 
 Elaborating module <datapath>.
 
 Elaborating module <regfile>.
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\datapath.v" Line 232: Assignment to exe_a_fwd_exe ignored, since the identifier is never used
 
 Elaborating module <alu>.
-WARNING:HDLCompiler:413 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\datapath.v" Line 371: Result of 32-bit expression is truncated to fit in 5-bit target.
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips.v" Line 41: Assignment to inst_ren ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips.v" Line 44: Assignment to mem_ren ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\datapath.v" Line 345: Assignment to data_rs_mem ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\mips_core.v" Line 127: Assignment to is_branch_exe ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\mips_core.v" Line 130: Assignment to is_branch_mem ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\mips.v" Line 41: Assignment to inst_ren ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\mips.v" Line 44: Assignment to mem_ren ignored, since the identifier is never used
 
 Elaborating module <inst_rom>.
 Reading initialization file \"inst_mem.hex\".
@@ -225,8 +224,8 @@ Elaborating module <data_ram>.
 Reading initialization file \"data_mem.hex\".
 
 Elaborating module <vga>.
-WARNING:HDLCompiler:189 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" Line 116: Size mismatch in connection of port <rst>. Formal port size is 1-bit while actual signal size is 32-bit.
-WARNING:HDLCompiler:1127 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" Line 120: Assignment to vga_rdn ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "E:\80959\arch\work (2)\mips_top.v" Line 116: Size mismatch in connection of port <rst>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:1127 - "E:\80959\arch\work (2)\mips_top.v" Line 120: Assignment to vga_rdn ignored, since the identifier is never used
 
 Elaborating module <vga_debug>.
 
@@ -254,12 +253,12 @@ NIT_28=256'b01111000001100000011000000110000001100000011111000110011001100110011
 =========================================================================
 
 Synthesizing Unit <mips_top>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v".
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" line 36: Output port <CLK_OUT1> of the instance <CLK_GEN> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" line 36: Output port <CLK_OUT2> of the instance <CLK_GEN> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" line 80: Output port <led_clr_n> of the instance <DISPLAY> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" line 80: Output port <seg_clr_n> of the instance <DISPLAY> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_top.v" line 114: Output port <rdn> of the instance <VGA> is unconnected or connected to loadless signal.
+    Related source file is "E:\80959\arch\work (2)\mips_top.v".
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips_top.v" line 36: Output port <CLK_OUT1> of the instance <CLK_GEN> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips_top.v" line 36: Output port <CLK_OUT2> of the instance <CLK_GEN> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips_top.v" line 80: Output port <led_clr_n> of the instance <DISPLAY> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips_top.v" line 80: Output port <seg_clr_n> of the instance <DISPLAY> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips_top.v" line 114: Output port <rdn> of the instance <VGA> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <rst_count>.
     Found 1-bit register for signal <rst_all>.
     Summary:
@@ -267,19 +266,19 @@ INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_to
 Unit <mips_top> synthesized.
 
 Synthesizing Unit <clk_diff>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\clk_diff.v".
+    Related source file is "E:\80959\arch\work (2)\clk_diff.v".
     Summary:
 	no macro.
 Unit <clk_diff> synthesized.
 
 Synthesizing Unit <my_clk_gen>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\my_clk_gen.v".
+    Related source file is "E:\80959\arch\work (2)\my_clk_gen.v".
     Summary:
 	no macro.
 Unit <my_clk_gen> synthesized.
 
 Synthesizing Unit <btn_scan>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\btn_scan.v".
+    Related source file is "E:\80959\arch\work (2)\btn_scan.v".
         CLK_FREQ = 25
     Found 5-bit register for signal <btn_x>.
     Found 20-bit register for signal <result>.
@@ -292,12 +291,12 @@ Synthesizing Unit <btn_scan>.
 Unit <btn_scan> synthesized.
 
 Synthesizing Unit <display>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\display.v".
+    Related source file is "E:\80959\arch\work (2)\display.v".
         CLK_FREQ = 25
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\display.v" line 86: Output port <busy> of the instance <P2S_LED> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\display.v" line 86: Output port <finish> of the instance <P2S_LED> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\display.v" line 103: Output port <busy> of the instance <P2S_SEG> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\display.v" line 103: Output port <finish> of the instance <P2S_SEG> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\display.v" line 86: Output port <busy> of the instance <P2S_LED> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\display.v" line 86: Output port <finish> of the instance <P2S_LED> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\display.v" line 103: Output port <busy> of the instance <P2S_SEG> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\display.v" line 103: Output port <finish> of the instance <P2S_SEG> is unconnected or connected to loadless signal.
     Found 22-bit register for signal <clk_count>.
     Found 22-bit adder for signal <clk_count[21]_GND_8_o_add_19_OUT> created at line 121.
     Summary:
@@ -306,7 +305,7 @@ INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_to
 Unit <display> synthesized.
 
 Synthesizing Unit <parallel2serial_1>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\parallel2serial.v".
+    Related source file is "E:\80959\arch\work (2)\parallel2serial.v".
         P_CLK_FREQ = 25
         S_CLK_FREQ = 20
         DATA_BITS = 16
@@ -343,7 +342,7 @@ Synthesizing Unit <parallel2serial_1>.
 Unit <parallel2serial_1> synthesized.
 
 Synthesizing Unit <parallel2serial_2>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\parallel2serial.v".
+    Related source file is "E:\80959\arch\work (2)\parallel2serial.v".
         P_CLK_FREQ = 25
         S_CLK_FREQ = 20
         DATA_BITS = 64
@@ -380,83 +379,82 @@ Synthesizing Unit <parallel2serial_2>.
 Unit <parallel2serial_2> synthesized.
 
 Synthesizing Unit <mips>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips.v".
+    Related source file is "E:\80959\arch\work (2)\mips.v".
 WARNING:Xst:647 - Input <interrupter> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips.v" line 32: Output port <inst_ren> of the instance <MIPS_CORE> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips.v" line 32: Output port <mem_ren> of the instance <MIPS_CORE> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips.v" line 32: Output port <inst_ren> of the instance <MIPS_CORE> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips.v" line 32: Output port <mem_ren> of the instance <MIPS_CORE> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <mips> synthesized.
 
 Synthesizing Unit <mips_core>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_core.v".
+    Related source file is "E:\80959\arch\work (2)\mips_core.v".
 WARNING:Xst:647 - Input <debug_addr<6:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_core.v" line 66: Output port <unrecognized> of the instance <CONTROLLER> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips_core.v" line 66: Output port <unrecognized> of the instance <CONTROLLER> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips_core.v" line 120: Output port <is_branch_exe> of the instance <DATAPATH> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\80959\arch\work (2)\mips_core.v" line 120: Output port <is_branch_mem> of the instance <DATAPATH> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <mips_core> synthesized.
 
 Synthesizing Unit <controller>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\controller.v".
-WARNING:Xst:647 - Input <inst<25:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <regw_addr_exe> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <wb_wen_exe> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "E:\80959\arch\work (2)\controller.v".
+WARNING:Xst:647 - Input <inst<15:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <regw_addr_wb> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <if_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <id_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <exe_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <mem_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <wb_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <reg_stall> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:647 - Input <wb_wen_wb> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <debug_step_prev>.
-    Found 5-bit comparator equal for signal <regw_addr_mem[4]_addr_rs_exe[4]_equal_55_o> created at line 231
-    Found 5-bit comparator equal for signal <regw_addr_mem[4]_addr_rt_exe[4]_equal_57_o> created at line 233
-    Found 5-bit comparator equal for signal <regw_addr_wb[4]_addr_rs_exe[4]_equal_67_o> created at line 243
-    Found 5-bit comparator equal for signal <regw_addr_wb[4]_addr_rt_exe[4]_equal_70_o> created at line 245
+    Found 5-bit comparator equal for signal <regw_addr_mem[4]_addr_rs[4]_equal_59_o> created at line 244
+    Found 5-bit comparator equal for signal <regw_addr_mem[4]_addr_rt[4]_equal_61_o> created at line 246
+    Found 5-bit comparator equal for signal <regw_addr_exe[4]_addr_rs[4]_equal_77_o> created at line 271
+    Found 5-bit comparator equal for signal <regw_addr_exe[4]_addr_rt[4]_equal_78_o> created at line 272
     Summary:
 	inferred   1 D-type flip-flop(s).
 	inferred   4 Comparator(s).
-	inferred  13 Multiplexer(s).
+	inferred  14 Multiplexer(s).
 Unit <controller> synthesized.
 
 Synthesizing Unit <datapath>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\datapath.v".
+    Related source file is "E:\80959\arch\work (2)\datapath.v".
+WARNING:Xst:653 - Signal <is_branch_exe> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <is_branch_mem> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 32-bit register for signal <inst_addr>.
     Found 1-bit register for signal <id_valid>.
     Found 32-bit register for signal <inst_addr_id>.
     Found 32-bit register for signal <inst_data_id>.
     Found 32-bit register for signal <inst_addr_next_id>.
+    Found 1-bit register for signal <is_load_exe>.
     Found 1-bit register for signal <exe_valid>.
     Found 32-bit register for signal <inst_addr_exe>.
     Found 32-bit register for signal <inst_data_exe>.
     Found 32-bit register for signal <inst_addr_next_exe>.
     Found 5-bit register for signal <regw_addr_exe>.
-    Found 3-bit register for signal <pc_src_exe>.
     Found 2-bit register for signal <exe_a_src_exe>.
     Found 2-bit register for signal <exe_b_src_exe>.
-    Found 32-bit register for signal <data_rs_exe>.
-    Found 32-bit register for signal <data_rt_exe>.
     Found 32-bit register for signal <data_imm_exe>.
     Found 4-bit register for signal <exe_alu_oper_exe>.
     Found 1-bit register for signal <mem_ren_exe>.
     Found 1-bit register for signal <mem_wen_exe>.
     Found 1-bit register for signal <wb_data_src_exe>.
     Found 1-bit register for signal <wb_wen_exe>.
-    Found 5-bit register for signal <addr_rs_exe>.
-    Found 5-bit register for signal <addr_rt_exe>.
+    Found 32-bit register for signal <fwda_exe>.
+    Found 32-bit register for signal <fwdb_exe>.
+    Found 1-bit register for signal <exe_fwd_m_exe>.
     Found 1-bit register for signal <mem_valid>.
-    Found 3-bit register for signal <pc_src_mem>.
     Found 32-bit register for signal <inst_addr_mem>.
     Found 32-bit register for signal <inst_data_mem>.
-    Found 32-bit register for signal <inst_addr_next_mem>.
     Found 5-bit register for signal <regw_addr_mem>.
-    Found 5-bit register for signal <data_rs_mem>.
     Found 32-bit register for signal <data_rt_mem>.
     Found 32-bit register for signal <alu_out_mem>.
     Found 1-bit register for signal <mem_ren_mem>.
     Found 1-bit register for signal <mem_wen_mem>.
     Found 1-bit register for signal <wb_data_src_mem>.
     Found 1-bit register for signal <wb_wen_mem>.
-    Found 1-bit register for signal <rs_rt_equal_mem>.
+    Found 1-bit register for signal <mem_fwd_m_mem>.
     Found 1-bit register for signal <wb_valid>.
     Found 1-bit register for signal <wb_wen_wb>.
     Found 1-bit register for signal <wb_data_src_wb>.
@@ -464,22 +462,24 @@ Synthesizing Unit <datapath>.
     Found 32-bit register for signal <alu_out_wb>.
     Found 32-bit register for signal <mem_din_wb>.
     Found 32-bit register for signal <debug_data_signal>.
-    Found 32-bit adder for signal <inst_addr_next> created at line 166.
-    Found 32-bit 24-to-1 multiplexer for signal <debug_addr[4]_PWR_14_o_wide_mux_1_OUT> created at line 131.
-    Found 5-bit 4-to-1 multiplexer for signal <regw_addr_id> created at line 209.
-    Found 32-bit 4-to-1 multiplexer for signal <fwda_exe> created at line 299.
-    Found 32-bit 4-to-1 multiplexer for signal <fwdb_exe> created at line 305.
-    Found 32-bit 4-to-1 multiplexer for signal <opb_exe> created at line 324.
-    Found 32-bit comparator equal for signal <rs_rt_equal_exe> created at line 292
+    Found 32-bit adder for signal <inst_addr_next> created at line 172.
+    Found 32-bit adder for signal <inst_addr_next_id[31]_data_imm[29]_add_6_OUT> created at line 187.
+    Found 32-bit 24-to-1 multiplexer for signal <debug_addr[4]_PWR_14_o_wide_mux_1_OUT> created at line 137.
+    Found 32-bit 4-to-1 multiplexer for signal <fwda_id> created at line 219.
+    Found 32-bit 4-to-1 multiplexer for signal <fwdb_id> created at line 225.
+    Found 5-bit 4-to-1 multiplexer for signal <regw_addr_id> created at line 236.
+    Found 32-bit 3-to-1 multiplexer for signal <opb_exe> created at line 327.
+    Found 32-bit 4-to-1 multiplexer for signal <_n0294> created at line 184.
+    Found 32-bit comparator equal for signal <rs_rt_equal> created at line 232
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred 635 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 584 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  12 Multiplexer(s).
+	inferred  14 Multiplexer(s).
 Unit <datapath> synthesized.
 
 Synthesizing Unit <regfile>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\regfile.v".
+    Related source file is "E:\80959\arch\work (2)\regfile.v".
     Found 32x32-bit dual-port RAM <Mram_regfile> for signal <regfile>.
     Summary:
 	inferred   3 RAM(s).
@@ -487,7 +487,7 @@ Synthesizing Unit <regfile>.
 Unit <regfile> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\alu.v".
+    Related source file is "E:\80959\arch\work (2)\alu.v".
     Found 32-bit subtractor for signal <a[31]_b[31]_sub_2_OUT> created at line 23.
     Found 32-bit adder for signal <a[31]_b[31]_add_0_OUT> created at line 20.
     Found 32-bit 7-to-1 multiplexer for signal <_n0037> created at line 11.
@@ -499,7 +499,7 @@ Synthesizing Unit <alu>.
 Unit <alu> synthesized.
 
 Synthesizing Unit <inst_rom>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\inst_rom.v".
+    Related source file is "E:\80959\arch\work (2)\inst_rom.v".
         ADDR_WIDTH = 6
 WARNING:Xst:2999 - Signal 'data', unconnected in block 'inst_rom', is tied to its initial value.
     Found 64x32-bit single-port Read Only RAM <Mram_data> for signal <data>.
@@ -511,7 +511,7 @@ WARNING:Xst:2999 - Signal 'data', unconnected in block 'inst_rom', is tied to it
 Unit <inst_rom> synthesized.
 
 Synthesizing Unit <data_ram>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\data_ram.v".
+    Related source file is "E:\80959\arch\work (2)\data_ram.v".
         ADDR_WIDTH = 5
     Found 32x32-bit single-port RAM <Mram_data> for signal <data>.
     Found 32-bit register for signal <out>.
@@ -522,7 +522,7 @@ Synthesizing Unit <data_ram>.
 Unit <data_ram> synthesized.
 
 Synthesizing Unit <vga>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga.v".
+    Related source file is "E:\80959\arch\work (2)\vga.v".
     Found 10-bit register for signal <v_count>.
     Found 1-bit register for signal <rdn>.
     Found 1-bit register for signal <HS>.
@@ -548,7 +548,7 @@ Synthesizing Unit <vga>.
 Unit <vga> synthesized.
 
 Synthesizing Unit <vga_debug>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga_debug.v".
+    Related source file is "E:\80959\arch\work (2)\vga_debug.v".
     Found 4x32-bit dual-port RAM <Mram_data_buf> for signal <data_buf>.
     Found 57-bit register for signal <strdata>.
     Found 8-bit register for signal <ascii_code>.
@@ -635,7 +635,7 @@ Synthesizing Unit <mod_7u_5u>.
 Unit <mod_7u_5u> synthesized.
 
 Synthesizing Unit <pc_vga_8x16_00_7F>.
-    Related source file is "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\vga_8x16.v".
+    Related source file is "E:\80959\arch\work (2)\vga_8x16.v".
     Summary:
 	no macro.
 Unit <pc_vga_8x16_00_7F> synthesized.
@@ -650,7 +650,7 @@ Macro Statistics
  32x57-bit single-port Read Only RAM                   : 1
  4x32-bit dual-port RAM                                : 1
  64x32-bit single-port Read Only RAM                   : 1
-# Adders/Subtractors                                   : 38
+# Adders/Subtractors                                   : 39
  1-bit adder                                           : 2
  10-bit adder                                          : 4
  10-bit subtractor                                     : 2
@@ -659,7 +659,7 @@ Macro Statistics
  18-bit adder                                          : 1
  22-bit adder                                          : 1
  3-bit subtractor                                      : 2
- 32-bit adder                                          : 1
+ 32-bit adder                                          : 2
  32-bit addsub                                         : 1
  4-bit adder                                           : 1
  5-bit subtractor                                      : 1
@@ -668,8 +668,8 @@ Macro Statistics
  7-bit adder                                           : 10
  8-bit adder                                           : 3
  9-bit adder                                           : 2
-# Registers                                            : 77
- 1-bit register                                        : 30
+# Registers                                            : 73
+ 1-bit register                                        : 32
  10-bit register                                       : 2
  16-bit register                                       : 1
  17-bit register                                       : 1
@@ -677,10 +677,9 @@ Macro Statistics
  2-bit register                                        : 2
  20-bit register                                       : 1
  22-bit register                                       : 1
- 3-bit register                                        : 2
- 32-bit register                                       : 20
+ 32-bit register                                       : 19
  4-bit register                                        : 5
- 5-bit register                                        : 7
+ 5-bit register                                        : 4
  57-bit register                                       : 1
  6-bit register                                        : 1
  65-bit register                                       : 1
@@ -698,13 +697,14 @@ Macro Statistics
  7-bit comparator lessequal                            : 6
  8-bit comparator lessequal                            : 2
  9-bit comparator lessequal                            : 2
-# Multiplexers                                         : 132
- 1-bit 2-to-1 multiplexer                              : 85
+# Multiplexers                                         : 135
+ 1-bit 2-to-1 multiplexer                              : 86
  17-bit 2-to-1 multiplexer                             : 2
  2-bit 2-to-1 multiplexer                              : 8
- 32-bit 2-to-1 multiplexer                             : 18
+ 32-bit 2-to-1 multiplexer                             : 20
  32-bit 24-to-1 multiplexer                            : 1
- 32-bit 4-to-1 multiplexer                             : 3
+ 32-bit 3-to-1 multiplexer                             : 1
+ 32-bit 4-to-1 multiplexer                             : 2
  4-bit 2-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 1
  5-bit 4-to-1 multiplexer                              : 1
@@ -725,33 +725,24 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_16> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_0> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_21> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_0> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_4> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_4> 
+INFO:Xst:2261 - The FF/Latch <data_imm_exe_16> in Unit <DATAPATH> is equivalent to the following 15 FFs/Latches, which will be removed : <data_imm_exe_17> <data_imm_exe_18> <data_imm_exe_19> <data_imm_exe_20> <data_imm_exe_21> <data_imm_exe_22> <data_imm_exe_23> <data_imm_exe_24> <data_imm_exe_25> <data_imm_exe_26> <data_imm_exe_27> <data_imm_exe_28> <data_imm_exe_29> <data_imm_exe_30> <data_imm_exe_31> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_10> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_10> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_9> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_9> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_15> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_15> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_20> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_4> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_3> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_3> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_25> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_4> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_8> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_8> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_14> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_14> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_2> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_2> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_19> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_3> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_24> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_3> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_7> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_7> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_13> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_13> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_1> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_1> 
-INFO:Xst:2261 - The FF/Latch <data_imm_exe_16> in Unit <DATAPATH> is equivalent to the following 15 FFs/Latches, which will be removed : <data_imm_exe_17> <data_imm_exe_18> <data_imm_exe_19> <data_imm_exe_20> <data_imm_exe_21> <data_imm_exe_22> <data_imm_exe_23> <data_imm_exe_24> <data_imm_exe_25> <data_imm_exe_26> <data_imm_exe_27> <data_imm_exe_28> <data_imm_exe_29> <data_imm_exe_30> <data_imm_exe_31> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_18> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_2> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_23> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_2> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_6> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_6> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_12> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_12> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_0> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_0> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_17> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_1> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_22> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_1> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_5> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_5> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_11> in Unit <DATAPATH> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_11> 
+WARNING:Xst:1710 - FF/Latch <exe_a_src_exe_1> (without init value) has a constant value of 0 in block <DATAPATH>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <exe_alu_oper_exe_3> (without init value) has a constant value of 0 in block <DATAPATH>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <result_0> of sequential type is unconnected in block <BTN_SCAN>.
 WARNING:Xst:2677 - Node <result_1> of sequential type is unconnected in block <BTN_SCAN>.
@@ -771,7 +762,6 @@ WARNING:Xst:2677 - Node <result_14> of sequential type is unconnected in block <
 WARNING:Xst:2677 - Node <result_15> of sequential type is unconnected in block <BTN_SCAN>.
 WARNING:Xst:2677 - Node <result_17> of sequential type is unconnected in block <BTN_SCAN>.
 WARNING:Xst:2677 - Node <result_18> of sequential type is unconnected in block <BTN_SCAN>.
-WARNING:Xst:2677 - Node <exe_a_src_exe_0> of sequential type is unconnected in block <DATAPATH>.
 WARNING:Xst:2677 - Node <ascii_code_7> of sequential type is unconnected in block <VGA_DEBUG>.
 
 Synthesizing (advanced) Unit <btn_scan>.
@@ -909,7 +899,6 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_current_display_reg_addr[4]_GND_20_o
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
 Unit <vga_debug> synthesized (advanced).
-WARNING:Xst:2677 - Node <exe_a_src_exe_0> of sequential type is unconnected in block <datapath>.
 WARNING:Xst:2677 - Node <ascii_code_7> of sequential type is unconnected in block <vga_debug>.
 
 =========================================================================
@@ -922,10 +911,10 @@ Macro Statistics
  32x57-bit single-port distributed Read Only RAM       : 1
  4x32-bit dual-port distributed RAM                    : 1
  64x32-bit single-port distributed Read Only RAM       : 1
-# Adders/Subtractors                                   : 30
+# Adders/Subtractors                                   : 31
  10-bit subtractor                                     : 2
  3-bit subtractor                                      : 4
- 32-bit adder                                          : 1
+ 32-bit adder                                          : 2
  32-bit addsub                                         : 1
  5-bit adder                                           : 1
  5-bit subtractor                                      : 1
@@ -938,8 +927,8 @@ Macro Statistics
  22-bit up counter                                     : 1
  4-bit up counter                                      : 1
  6-bit up counter                                      : 1
-# Registers                                            : 878
- Flip-Flops                                            : 878
+# Registers                                            : 828
+ Flip-Flops                                            : 828
 # Comparators                                          : 39
  10-bit comparator greater                             : 9
  10-bit comparator lessequal                           : 4
@@ -953,13 +942,14 @@ Macro Statistics
  7-bit comparator lessequal                            : 6
  8-bit comparator lessequal                            : 2
  9-bit comparator lessequal                            : 2
-# Multiplexers                                         : 190
- 1-bit 2-to-1 multiplexer                              : 115
+# Multiplexers                                         : 193
+ 1-bit 2-to-1 multiplexer                              : 116
  1-bit 24-to-1 multiplexer                             : 32
  17-bit 2-to-1 multiplexer                             : 2
  2-bit 2-to-1 multiplexer                              : 8
- 32-bit 2-to-1 multiplexer                             : 17
- 32-bit 4-to-1 multiplexer                             : 3
+ 32-bit 2-to-1 multiplexer                             : 19
+ 32-bit 3-to-1 multiplexer                             : 1
+ 32-bit 4-to-1 multiplexer                             : 2
  5-bit 2-to-1 multiplexer                              : 1
  5-bit 4-to-1 multiplexer                              : 1
  57-bit 4-to-1 multiplexer                             : 1
@@ -976,31 +966,21 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_16> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_0> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_21> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_0> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_4> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_4> 
+INFO:Xst:2261 - The FF/Latch <data_imm_exe_16> in Unit <datapath> is equivalent to the following 15 FFs/Latches, which will be removed : <data_imm_exe_17> <data_imm_exe_18> <data_imm_exe_19> <data_imm_exe_20> <data_imm_exe_21> <data_imm_exe_22> <data_imm_exe_23> <data_imm_exe_24> <data_imm_exe_25> <data_imm_exe_26> <data_imm_exe_27> <data_imm_exe_28> <data_imm_exe_29> <data_imm_exe_30> <data_imm_exe_31> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_10> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_10> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_9> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_9> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_15> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_15> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_20> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_4> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_3> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_3> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_25> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_4> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_8> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_8> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_14> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_14> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_2> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_2> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_19> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_3> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_24> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_3> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_7> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_7> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_13> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_13> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_1> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_1> 
-INFO:Xst:2261 - The FF/Latch <data_imm_exe_16> in Unit <datapath> is equivalent to the following 15 FFs/Latches, which will be removed : <data_imm_exe_17> <data_imm_exe_18> <data_imm_exe_19> <data_imm_exe_20> <data_imm_exe_21> <data_imm_exe_22> <data_imm_exe_23> <data_imm_exe_24> <data_imm_exe_25> <data_imm_exe_26> <data_imm_exe_27> <data_imm_exe_28> <data_imm_exe_29> <data_imm_exe_30> <data_imm_exe_31> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_18> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_2> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_23> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_2> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_6> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_6> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_12> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_12> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_0> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_0> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_17> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rt_exe_1> 
-INFO:Xst:2261 - The FF/Latch <inst_data_exe_22> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <addr_rs_exe_1> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_5> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_5> 
 INFO:Xst:2261 - The FF/Latch <inst_data_exe_11> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <data_imm_exe_11> 
 Analyzing FSM <MFsm> for best encoding.
@@ -1036,16 +1016,14 @@ WARNING:Xst:2677 - Node <strdata_39> of sequential type is unconnected in block 
 WARNING:Xst:2677 - Node <strdata_47> of sequential type is unconnected in block <vga_debug>.
 WARNING:Xst:2677 - Node <strdata_55> of sequential type is unconnected in block <vga_debug>.
 INFO:Xst:1901 - Instance BRAM_PC_VGA_0 in unit BRAM_PC_VGA_0 of type RAMB16_S1 has been replaced by RAMB18E1
-INFO:Xst:2261 - The FF/Latch <inst_addr_next_id_1> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_id_1> 
-INFO:Xst:2261 - The FF/Latch <inst_addr_next_id_0> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_id_0> 
+INFO:Xst:2261 - The FF/Latch <inst_addr_id_1> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_next_id_1> 
+INFO:Xst:2261 - The FF/Latch <inst_addr_id_0> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_next_id_0> 
+INFO:Xst:2261 - The FF/Latch <inst_addr_exe_1> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_next_exe_1> 
+INFO:Xst:2261 - The FF/Latch <inst_addr_exe_0> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_next_exe_0> 
 INFO:Xst:2261 - The FF/Latch <strdata_13> in Unit <vga_debug> is equivalent to the following FF/Latch, which will be removed : <strdata_21> 
 INFO:Xst:2261 - The FF/Latch <strdata_14> in Unit <vga_debug> is equivalent to the following FF/Latch, which will be removed : <strdata_22> 
 INFO:Xst:2261 - The FF/Latch <strdata_45> in Unit <vga_debug> is equivalent to the following FF/Latch, which will be removed : <strdata_53> 
 INFO:Xst:2261 - The FF/Latch <strdata_46> in Unit <vga_debug> is equivalent to the following FF/Latch, which will be removed : <strdata_54> 
-INFO:Xst:2261 - The FF/Latch <inst_addr_next_exe_1> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_exe_1> 
-INFO:Xst:2261 - The FF/Latch <inst_addr_next_exe_0> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_exe_0> 
-INFO:Xst:2261 - The FF/Latch <inst_addr_next_mem_1> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_mem_1> 
-INFO:Xst:2261 - The FF/Latch <inst_addr_next_mem_0> in Unit <datapath> is equivalent to the following FF/Latch, which will be removed : <inst_addr_mem_0> 
 
 Optimizing unit <clk_diff> ...
 
@@ -1088,6 +1066,7 @@ Optimizing unit <div_7u_5u> ...
 Optimizing unit <mod_7u_5u> ...
 
 Optimizing unit <vga> ...
+WARNING:Xst:1710 - FF/Latch <exe_a_src_exe_1> (without init value) has a constant value of 0 in block <DATAPATH>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <exe_alu_oper_exe_3> (without init value) has a constant value of 0 in block <DATAPATH>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <inst_data_id_20> (without init value) has a constant value of 0 in block <DATAPATH>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <inst_data_id_30> (without init value) has a constant value of 0 in block <DATAPATH>. This FF/Latch will be trimmed during the optimization process.
@@ -1138,8 +1117,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 850
- Flip-Flops                                            : 850
+# Registers                                            : 811
+ Flip-Flops                                            : 811
 
 =========================================================================
 
@@ -1162,25 +1141,25 @@ Top Level Output File Name         : mips_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1892
-#      GND                         : 12
+# BELS                             : 1696
+#      GND                         : 11
 #      INV                         : 36
 #      LUT1                        : 85
-#      LUT2                        : 26
-#      LUT3                        : 150
-#      LUT4                        : 151
-#      LUT5                        : 380
-#      LUT6                        : 686
-#      MUXCY                       : 145
-#      MUXF7                       : 86
+#      LUT2                        : 12
+#      LUT3                        : 202
+#      LUT4                        : 178
+#      LUT5                        : 263
+#      LUT6                        : 541
+#      MUXCY                       : 171
+#      MUXF7                       : 32
 #      VCC                         : 13
-#      XORCY                       : 122
-# FlipFlops/Latches                : 850
+#      XORCY                       : 152
+# FlipFlops/Latches                : 811
 #      FD                          : 96
 #      FD_1                        : 30
 #      FDE                         : 90
 #      FDR                         : 68
-#      FDRE                        : 566
+#      FDRE                        : 527
 # RAMS                             : 30
 #      RAM32M                      : 20
 #      RAM32X1D                    : 8
@@ -1201,17 +1180,17 @@ Selected Device : 7k325tfbg676-2l
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             850  out of  407600     0%  
- Number of Slice LUTs:                 1610  out of  203800     0%  
-    Number used as Logic:              1514  out of  203800     0%  
+ Number of Slice Registers:             811  out of  407600     0%  
+ Number of Slice LUTs:                 1413  out of  203800     0%  
+    Number used as Logic:              1317  out of  203800     0%  
     Number used as Memory:               96  out of  64000     0%  
        Number used as RAM:               96
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2083
-   Number with an unused Flip Flop:    1233  out of   2083    59%  
-   Number with an unused LUT:           473  out of   2083    22%  
-   Number of fully used LUT-FF pairs:   377  out of   2083    18%  
+ Number of LUT Flip Flop pairs used:   1826
+   Number with an unused Flip Flop:    1015  out of   1826    55%  
+   Number with an unused LUT:           413  out of   1826    22%  
+   Number of fully used LUT-FF pairs:   398  out of   1826    21%  
    Number of unique control sets:        28
 
 IO Utilization: 
@@ -1244,7 +1223,7 @@ Clock Information:
 -------------------------------------+------------------------------------------------------+-------+
 Clock Signal                         | Clock buffer(FF name)                                | Load  |
 -------------------------------------+------------------------------------------------------+-------+
-CLK_GEN/clkout3                      | BUFG                                                 | 646   |
+CLK_GEN/clkout3                      | BUFG                                                 | 607   |
 CLK_GEN/clkout2                      | BUFG                                                 | 234   |
 VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N01| NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/BRAM_PC_VGA_0)| 1     |
 -------------------------------------+------------------------------------------------------+-------+
@@ -1257,15 +1236,15 @@ Control Signal                                                                  
 ----------------------------------------------------------------------------------+------------------------------------------------------+-------+
 VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N01(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/XST_GND:G)| NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/BRAM_PC_VGA_0)| 12    |
 VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/N11(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/XST_VCC:P)| NONE(VGA_DEBUG/FONT_8X16/BRAM_PC_VGA_0/BRAM_PC_VGA_0)| 8     |
-MIPS/DATA_RAM/we_GND_18_o_AND_70_o(MIPS/DATA_RAM/we_GND_18_o_AND_70_o1:O)         | NONE(MIPS/DATA_RAM/Mram_data1)                       | 2     |
+MIPS/DATA_RAM/we_GND_18_o_AND_79_o(MIPS/DATA_RAM/we_GND_18_o_AND_79_o1:O)         | NONE(MIPS/DATA_RAM/Mram_data1)                       | 2     |
 ----------------------------------------------------------------------------------+------------------------------------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 10.005ns (Maximum Frequency: 99.947MHz)
-   Minimum input arrival time before clock: 1.363ns
+   Minimum period: 11.959ns (Maximum Frequency: 83.620MHz)
+   Minimum input arrival time before clock: 1.368ns
    Maximum output required time after clock: 0.711ns
    Maximum combinational path delay: 0.000ns
 
@@ -1275,48 +1254,85 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_GEN/clkout3'
-  Clock period: 10.005ns (frequency: 99.947MHz)
-  Total number of paths / destination ports: 573493 / 1998
+  Clock period: 11.959ns (frequency: 83.620MHz)
+  Total number of paths / destination ports: 18397047 / 1881
 -------------------------------------------------------------------------
-Delay:               5.003ns (Levels of Logic = 15)
+Delay:               5.979ns (Levels of Logic = 51)
   Source:            MIPS/DATA_RAM/Mram_data1 (RAM)
-  Destination:       MIPS/MIPS_CORE/DATAPATH/debug_data_signal_4 (FF)
+  Destination:       MIPS/MIPS_CORE/DATAPATH/inst_addr_31 (FF)
   Source Clock:      CLK_GEN/clkout3 falling
   Destination Clock: CLK_GEN/clkout3 rising
 
-  Data Path: MIPS/DATA_RAM/Mram_data1 to MIPS/MIPS_CORE/DATAPATH/debug_data_signal_4
+  Data Path: MIPS/DATA_RAM/Mram_data1 to MIPS/MIPS_CORE/DATAPATH/inst_addr_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      RAMB18E1:CLKARDCLK->DOADO0    1   1.800   0.350  Mram_data1 (out<0>)
-     LUT6:I5->O            6   0.043   0.378  Mmux_dout11 (dout<0>)
+     LUT6:I5->O            4   0.043   0.367  Mmux_dout11 (dout<0>)
      end scope: 'MIPS/DATA_RAM:dout<0>'
      begin scope: 'MIPS/MIPS_CORE:mem_din<0>'
      begin scope: 'MIPS/MIPS_CORE/DATAPATH:mem_din<0>'
-     LUT6:I5->O            8   0.043   0.444  Mmux_opb_exe11 (opb_exe<0>)
-     begin scope: 'MIPS/MIPS_CORE/DATAPATH/ALU:b<0>'
-     LUT3:I1->O            1   0.043   0.000  Mmux__n00371_rs_lut<0> (Mmux__n00371_rs_lut<0>)
-     MUXCY:S->O            1   0.238   0.000  Mmux__n00371_rs_cy<0> (Mmux__n00371_rs_cy<0>)
-     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<1> (Mmux__n00371_rs_cy<1>)
-     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<2> (Mmux__n00371_rs_cy<2>)
-     MUXCY:CI->O           1   0.013   0.000  Mmux__n00371_rs_cy<3> (Mmux__n00371_rs_cy<3>)
-     XORCY:CI->O           1   0.262   0.350  Mmux__n00371_rs_xor<4> (Mmux__n00371_split<28>)
-     LUT6:I5->O            2   0.043   0.355  Mmux_result281 (result<4>)
-     end scope: 'MIPS/MIPS_CORE/DATAPATH/ALU:result<4>'
-     LUT6:I5->O            1   0.043   0.350  mux26_10 (mux26_10)
-     LUT6:I5->O            1   0.043   0.000  mux26_4 (mux26_4)
-     MUXF7:I0->O           1   0.176   0.000  mux26_2_f7 (debug_addr[4]_PWR_14_o_wide_mux_1_OUT<4>)
-     FD:D                     -0.000          debug_data_signal_4
+     LUT6:I5->O            3   0.043   0.625  Mmux_fwda_id110 (fwda_id<0>)
+     LUT6:I0->O            1   0.043   0.000  Mcompar_rs_rt_equal_lut<0> (Mcompar_rs_rt_equal_lut<0>)
+     MUXCY:S->O            1   0.238   0.000  Mcompar_rs_rt_equal_cy<0> (Mcompar_rs_rt_equal_cy<0>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<1> (Mcompar_rs_rt_equal_cy<1>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<2> (Mcompar_rs_rt_equal_cy<2>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<3> (Mcompar_rs_rt_equal_cy<3>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<4> (Mcompar_rs_rt_equal_cy<4>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<5> (Mcompar_rs_rt_equal_cy<5>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<6> (Mcompar_rs_rt_equal_cy<6>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<7> (Mcompar_rs_rt_equal_cy<7>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<8> (Mcompar_rs_rt_equal_cy<8>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_rs_rt_equal_cy<9> (Mcompar_rs_rt_equal_cy<9>)
+     MUXCY:CI->O           1   0.151   0.350  Mcompar_rs_rt_equal_cy<10> (rs_rt_equal)
+     end scope: 'MIPS/MIPS_CORE/DATAPATH:rs_rt_equal'
+     begin scope: 'MIPS/MIPS_CORE/CONTROLLER:rs_rt_equal'
+     LUT6:I5->O           91   0.043   0.491  pc_src<3>1 (pc_src<0>)
+     end scope: 'MIPS/MIPS_CORE/CONTROLLER:pc_src<0>'
+     begin scope: 'MIPS/MIPS_CORE/DATAPATH:pc_src_ctrl<0>'
+     LUT4:I3->O            1   0.043   0.000  Mmux__n02941_rs_lut<2> (Mmux__n02941_rs_lut<2>)
+     MUXCY:S->O            1   0.238   0.000  Mmux__n02941_rs_cy<2> (Mmux__n02941_rs_cy<2>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<3> (Mmux__n02941_rs_cy<3>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<4> (Mmux__n02941_rs_cy<4>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<5> (Mmux__n02941_rs_cy<5>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<6> (Mmux__n02941_rs_cy<6>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<7> (Mmux__n02941_rs_cy<7>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<8> (Mmux__n02941_rs_cy<8>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<9> (Mmux__n02941_rs_cy<9>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<10> (Mmux__n02941_rs_cy<10>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<11> (Mmux__n02941_rs_cy<11>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<12> (Mmux__n02941_rs_cy<12>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<13> (Mmux__n02941_rs_cy<13>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<14> (Mmux__n02941_rs_cy<14>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<15> (Mmux__n02941_rs_cy<15>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<16> (Mmux__n02941_rs_cy<16>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<17> (Mmux__n02941_rs_cy<17>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<18> (Mmux__n02941_rs_cy<18>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<19> (Mmux__n02941_rs_cy<19>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<20> (Mmux__n02941_rs_cy<20>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<21> (Mmux__n02941_rs_cy<21>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<22> (Mmux__n02941_rs_cy<22>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<23> (Mmux__n02941_rs_cy<23>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<24> (Mmux__n02941_rs_cy<24>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<25> (Mmux__n02941_rs_cy<25>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<26> (Mmux__n02941_rs_cy<26>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<27> (Mmux__n02941_rs_cy<27>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<28> (Mmux__n02941_rs_cy<28>)
+     MUXCY:CI->O           1   0.013   0.000  Mmux__n02941_rs_cy<29> (Mmux__n02941_rs_cy<29>)
+     MUXCY:CI->O           0   0.013   0.000  Mmux__n02941_rs_cy<30> (Mmux__n02941_rs_cy<30>)
+     XORCY:CI->O           1   0.262   0.350  Mmux__n02941_rs_xor<31> (Mmux__n02941_split<31>)
+     LUT5:I4->O            1   0.043   0.000  Mmux__n02943251 (Mmux__n02943_split<31>)
+     FDRE:D                   -0.000          inst_addr_31
     ----------------------------------------
-    Total                      5.003ns (2.775ns logic, 2.228ns route)
-                                       (55.5% logic, 44.5% route)
+    Total                      5.979ns (3.446ns logic, 2.533ns route)
+                                       (57.6% logic, 42.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_GEN/clkout2'
-  Clock period: 6.361ns (frequency: 157.204MHz)
+  Clock period: 6.351ns (frequency: 157.457MHz)
   Total number of paths / destination ports: 132459 / 477
 -------------------------------------------------------------------------
-Delay:               6.361ns (Levels of Logic = 12)
+Delay:               6.351ns (Levels of Logic = 12)
   Source:            VGA/h_count_3 (FF)
   Destination:       VGA_DEBUG/ascii_code_5 (FF)
   Source Clock:      CLK_GEN/clkout2 rising
@@ -1326,7 +1342,7 @@ Delay:               6.361ns (Levels of Logic = 12)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q            273   0.236   0.778  h_count_3 (h_count_3)
+     FDR:C->Q            218   0.236   0.767  h_count_3 (h_count_3)
      end scope: 'VGA:h_count<3>'
      begin scope: 'VGA_DEBUG:h_count<3>'
      LUT5:I0->O            1   0.043   0.522  h_count[9]_GND_20_o_LessThan_7_o1_SW0 (N2)
@@ -1343,39 +1359,39 @@ Delay:               6.361ns (Levels of Logic = 12)
      LUT4:I2->O            1   0.043   0.000  Mmux_GND_20_o_GND_20_o_mux_39_OUT64 (GND_20_o_GND_20_o_mux_39_OUT<5>)
      FDE:D                    -0.000          ascii_code_5
     ----------------------------------------
-    Total                      6.361ns (0.922ns logic, 5.439ns route)
+    Total                      6.351ns (0.922ns logic, 5.429ns route)
                                        (14.5% logic, 85.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_GEN/clkout3'
-  Total number of paths / destination ports: 637 / 637
+  Total number of paths / destination ports: 680 / 680
 -------------------------------------------------------------------------
-Offset:              1.296ns (Levels of Logic = 5)
+Offset:              1.341ns (Levels of Logic = 5)
   Source:            SW<0> (PAD)
-  Destination:       MIPS/MIPS_CORE/DATAPATH/pc_src_exe_0 (FF)
+  Destination:       MIPS/MIPS_CORE/DATAPATH/exe_a_src_exe_0 (FF)
   Destination Clock: CLK_GEN/clkout3 rising
 
-  Data Path: SW<0> to MIPS/MIPS_CORE/DATAPATH/pc_src_exe_0
+  Data Path: SW<0> to MIPS/MIPS_CORE/DATAPATH/exe_a_src_exe_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   0.000   0.534  SW_0_IBUF (SW_0_IBUF)
+     IBUF:I->O             4   0.000   0.539  SW_0_IBUF (SW_0_IBUF)
      begin scope: 'MIPS:debug_en'
      begin scope: 'MIPS/MIPS_CORE:debug_en'
      begin scope: 'MIPS/MIPS_CORE/CONTROLLER:debug_en'
-     LUT4:I0->O          544   0.043   0.558  exe_en1 (wb_en)
-     end scope: 'MIPS/MIPS_CORE/CONTROLLER:exe_en'
-     begin scope: 'MIPS/MIPS_CORE/DATAPATH:exe_en'
-     FDRE:CE                   0.161          pc_src_exe_0
+     LUT5:I1->O          174   0.043   0.495  Mmux_exe_rst11 (exe_rst)
+     end scope: 'MIPS/MIPS_CORE/CONTROLLER:exe_rst'
+     begin scope: 'MIPS/MIPS_CORE/DATAPATH:exe_rst'
+     FDRE:R                    0.264          exe_a_src_exe_0
     ----------------------------------------
-    Total                      1.296ns (0.204ns logic, 1.092ns route)
-                                       (15.7% logic, 84.3% route)
+    Total                      1.341ns (0.307ns logic, 1.034ns route)
+                                       (22.9% logic, 77.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_GEN/clkout2'
   Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              1.363ns (Levels of Logic = 5)
+Offset:              1.368ns (Levels of Logic = 5)
   Source:            SW<0> (PAD)
   Destination:       DISPLAY/P2S_LED/buff_0 (FF)
   Destination Clock: CLK_GEN/clkout2 rising
@@ -1384,7 +1400,7 @@ Offset:              1.363ns (Levels of Logic = 5)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             3   0.000   0.351  SW_0_IBUF (SW_0_IBUF)
+     IBUF:I->O             4   0.000   0.356  SW_0_IBUF (SW_0_IBUF)
      INV:I->O              1   0.054   0.339  btn_step_inv_3_OUT<0>1_INV_0 (btn_step_inv_3_OUT<0>)
      begin scope: 'DISPLAY:led<0>'
      INV:I->O              1   0.054   0.522  led[15]_inv_16_OUT<0>1_INV_0 (led[15]_inv_16_OUT<0>)
@@ -1392,8 +1408,8 @@ Offset:              1.363ns (Levels of Logic = 5)
      LUT5:I1->O            1   0.043   0.000  Mmux__n011018 (_n0110<0>)
      FDE:D                    -0.000          buff_0
     ----------------------------------------
-    Total                      1.363ns (0.151ns logic, 1.212ns route)
-                                       (11.1% logic, 88.9% route)
+    Total                      1.368ns (0.151ns logic, 1.217ns route)
+                                       (11.0% logic, 89.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_GEN/clkout2'
@@ -1446,8 +1462,8 @@ Clock to Setup on destination clock CLK_GEN/clkout2
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_GEN/clkout2|    6.361|         |         |         |
-CLK_GEN/clkout3|    1.739|    3.072|         |         |
+CLK_GEN/clkout2|    6.351|         |         |         |
+CLK_GEN/clkout3|    1.717|    3.072|         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CLK_GEN/clkout3
@@ -1455,21 +1471,21 @@ Clock to Setup on destination clock CLK_GEN/clkout3
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_GEN/clkout2|    3.436|         |    2.174|         |
-CLK_GEN/clkout3|    5.751|    5.003|    2.122|         |
+CLK_GEN/clkout2|    3.741|         |    2.172|         |
+CLK_GEN/clkout3|    7.000|    5.979|    2.095|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 15.18 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 20.41 secs
  
 --> 
 
-Total memory usage is 4646960 kilobytes
+Total memory usage is 4645320 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  114 (   0 filtered)
-Number of infos    :   88 (   0 filtered)
+Number of infos    :   68 (   0 filtered)
 
