@@ -66,16 +66,15 @@ module datapath (
 	input wire wb_rst,
 	input wire wb_en,
 	output reg wb_valid,
-	//--------------------------
 	//WB:we need 2 output：
 	output reg wb_wen_wb,
 	output reg [4:0] regw_addr_wb,
 	//我们需要在mem阶段是否有ren 信号
 	output reg mem_ren_mem, 
-	
-	//Exp5 new:
-	output wire rs_rt_equal,////
-	input wire fwd_m////
+	output wire rs_rt_equal,
+	input wire fwd_m,
+	//exp6 new:
+	input wire alu_sign//from controller's "sign"
 	);
 	
 	`include "mips_define.vh"
@@ -107,8 +106,9 @@ module datapath (
 	reg [31:0] opa_exe, opb_exe;
 	wire [31:0] alu_out_exe;
 	reg [31:0] fwda_exe,fwdb_exe;//bypass unit's multiplexer output in EXE
+	reg exe_fwd_m_exe;
 	//------------
-	reg exe_fwd_m_exe;////
+	reg alu_sign_exe;
 	
 	// MEM signals
 	reg [31:0] inst_addr_mem;
@@ -182,10 +182,10 @@ module datapath (
 		end
 		else if (if_en) begin
 			case(pc_src_ctrl)
-			PC_NEXT: inst_addr<=inst_addr_next;////0
-			PC_JR: inst_addr<=fwda_id;////1,=addr_rs
-			PC_BRANCH: inst_addr<=inst_addr_next_id[31:0]+{data_imm[29:0], 2'b0};////3
-			PC_JUMP: inst_addr<={inst_addr_id[31:28],inst_data_id[25:0],2'b0};////2
+			PC_NEXT: inst_addr<=inst_addr_next;//0
+			PC_JR: inst_addr<=fwda_id;//1,=addr_rs
+			PC_BRANCH: inst_addr<=inst_addr_next_id[31:0]+{data_imm[29:0], 2'b0};//3
+			PC_JUMP: inst_addr<={inst_addr_id[31:28],inst_data_id[25:0],2'b0};//2
 			endcase
 		end 
 	end
@@ -229,7 +229,7 @@ module datapath (
 			ID_B_FWD_RT: fwdb_id = data_rt;//3
 		endcase
 	end
-	assign rs_rt_equal = (fwda_id == fwdb_id);////judge whether BEQ or BNE
+	assign rs_rt_equal = (fwda_id == fwdb_id);//judge whether BEQ or BNE
 	
 	always @(*) begin
 		regw_addr_id = inst_data_id[15:11];
@@ -264,7 +264,6 @@ module datapath (
 			inst_data_exe <= 0;
 			inst_addr_next_exe <= 0;
 			regw_addr_exe <= 0;
-			//pc_src_exe <= 0;
 			exe_a_src_exe <= 0;
 			exe_b_src_exe <= 0;
 			//--------------------
@@ -276,10 +275,11 @@ module datapath (
 			mem_wen_exe <= 0;
 			wb_data_src_exe <= 0;
 			wb_wen_exe <= 0;
+			fwda_exe <= 0;
+			fwdb_exe <= 0;
+			exe_fwd_m_exe<=0;
 			//--------------
-			fwda_exe <= 0;//
-			fwdb_exe <= 0;//
-			exe_fwd_m_exe<=0;//
+			alu_sign_exe<=0;
 		end
 		else if (exe_en) begin
 		   is_load_exe<=is_load;
@@ -298,10 +298,11 @@ module datapath (
 			mem_wen_exe <= mem_wen_ctrl;
 			wb_data_src_exe <= wb_data_src_ctrl;
 			wb_wen_exe <= wb_wen_ctrl;
-			//---------------
-			fwda_exe <= fwda_id;//
-			fwdb_exe <= fwdb_id;//
-			exe_fwd_m_exe<=fwd_m;//
+			fwda_exe <= fwda_id;
+			fwdb_exe <= fwdb_id;
+			exe_fwd_m_exe<=fwd_m;
+			//------------------
+			alu_sign_exe<=alu_sign;
 		end
 	end
 	
@@ -311,6 +312,7 @@ module datapath (
 		case (exe_a_src_exe)//0-1
 			EXE_A_RS: opa_exe = fwda_exe;////0
 			EXE_A_NEXT: opa_exe = inst_addr_next_exe;////1
+			EXE_A_SA: opa_exe=???;////?
 			//EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
 			default:;
 		endcase
@@ -328,7 +330,8 @@ module datapath (
 		.a(opa_exe),
 		.b(opb_exe),
 		.oper(exe_alu_oper_exe),
-		.result(alu_out_exe)
+		.result(alu_out_exe),
+		.sign(alu_sign_exe)////
 		);
 	
 	// MEM stage
@@ -368,7 +371,7 @@ module datapath (
 		mem_ren = mem_ren_mem,
 		mem_wen = mem_wen_mem,
 		mem_addr = alu_out_mem,
-		mem_dout = mem_fwd_m_mem?data_rt_mem:regw_data_wb;////
+		mem_dout = mem_fwd_m_mem?data_rt_mem:regw_data_wb;
 	
 	// WB stage
 	always @(posedge clk) begin

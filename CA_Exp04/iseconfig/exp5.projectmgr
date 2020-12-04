@@ -20,7 +20,7 @@
       <SelectedItems>
          <SelectedItem>CONTROLLER - controller (D:/00a/CA/CA_Exp/CA_Exp04/controller.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >5</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000160000000020000000000000000000000000200000064ffffffff000000810000000300000002000001600000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
@@ -89,7 +89,6 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/Automatic `includes</ClosedNode>
-         <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp04|mips_top.v</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp04|mips_top.v/DISPLAY - display</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp04|mips_top.v/MIPS - mips/MIPS_CORE - mips_core/DATAPATH - datapath</ClosedNode>
          <ClosedNode>/mips_top D:|00a|CA|CA_Exp|CA_Exp04|mips_top.v/VGA_DEBUG - vga_debug</ClosedNode>
@@ -106,9 +105,9 @@
       <SelectedItems>
          <SelectedItem>sim_mips (D:/00a/CA/CA_Exp/CA_Exp04/sim_mips.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >10</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000000c3000000020000000000000000000000000200000064ffffffff000000810000000300000002000000c30000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000160000000020000000000000000000000000200000064ffffffff000000810000000300000002000001600000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>sim_mips (D:/00a/CA/CA_Exp/CA_Exp04/sim_mips.v)</CurrentItem>
    </ItemView>

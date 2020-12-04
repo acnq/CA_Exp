@@ -7,18 +7,11 @@ localparam
 //	PC_BEQ     = 1,
 //	PC_BNE     = 5;
 
-//IF PC address source
-//localparam
-//IF_PC_NEXT=0,
-//IF_PC_BRANCH=1,
-//IF_PC=2,
-//IF_PC_JUMP=3;
-
 // EXE A sources
 localparam
 	EXE_A_RS     = 0,
-	EXE_A_NEXT   = 1;
-	//EXE_A_SA     = 1,
+	EXE_A_NEXT   = 1,
+	EXE_A_SA     = 2;////
 	//EXE_A_LINK   = 2,
 	//EXE_A_BRANCH = 3;
 
@@ -32,16 +25,16 @@ localparam
 
 //ID A FWD sources
 localparam
-	ID_A_FWD_ALUOUT     = 0,//
-	ID_A_FWD_MEMIN   = 1,//
-	ID_A_FWD_MEMOUT   = 2,//
-	ID_A_FWD_RS = 3;//
+	ID_A_FWD_ALUOUT     = 0,
+	ID_A_FWD_MEMIN   = 1,
+	ID_A_FWD_MEMOUT   = 2,
+	ID_A_FWD_RS = 3;
 //ID FWD B sources
 localparam
-	ID_B_FWD_ALUOUT     = 0,//
-	ID_B_FWD_MEMIN    = 1,//
-	ID_B_FWD_MEMOUT   = 2,//
-	ID_B_FWD_RT = 3;//
+	ID_B_FWD_ALUOUT     = 0,
+	ID_B_FWD_MEMIN    = 1,
+	ID_B_FWD_MEMOUT   = 2,
+	ID_B_FWD_RT = 3;
 	
 
 // EXE ALU operations
@@ -49,13 +42,13 @@ localparam
 	EXE_ALU_ADD    = 0,
 	EXE_ALU_SUB    = 1,
 	EXE_ALU_SLT    = 2,
-	//EXE_ALU_LUI    = 3,
+	EXE_ALU_LUI    = 3,
 	EXE_ALU_AND    = 4,
-	EXE_ALU_OR     = 5;
-	//EXE_ALU_XOR    = 6,
-	//EXE_ALU_NOR    = 7,
-	//EXE_ALU_SL     = 8,
-	//EXE_ALU_SR     = 9;
+	EXE_ALU_OR     = 5,
+	EXE_ALU_XOR    = 6,
+	EXE_ALU_NOR    = 7,
+	EXE_ALU_SL     = 8,
+	EXE_ALU_SR     = 9;
 
 // WB address sources
 localparam
@@ -75,27 +68,27 @@ localparam
 // instructions
 localparam  // bit 31:26 for instruction type
 	INST_R          = 6'b000000,  // bit 5:0 for function type
-	//R_FUNC_SLL      = 6'b000000,
-	//R_FUNC_SRL      = 6'b000010,  // including ROTR(set bit 21)
-	//R_FUNC_SRA      = 6'b000011,
-	//R_FUNC_SLLV     = 6'b000100,
-	//R_FUNC_SRLV     = 6'b000110,  // including ROTRV(set bit 6)
-	//R_FUNC_SRAV     = 6'b000111,
+	R_FUNC_SLL      = 6'b000000,
+	R_FUNC_SRL      = 6'b000010,  // including ROTR(set bit 21)
+	R_FUNC_SRA      = 6'b000011,
+	R_FUNC_SLLV     = 6'b000100,
+	R_FUNC_SRLV     = 6'b000110,  // including ROTRV(set bit 6)
+	R_FUNC_SRAV     = 6'b000111,
 	R_FUNC_JR       = 6'b001000,
 	//R_FUNC_JALR     = 6'b001001,
 	//R_FUNC_MOVZ     = 6'b001010,
 	//R_FUNC_MOVN     = 6'b001011,
 	//R_FUNC_SYSCALL  = 6'b001100,
 	R_FUNC_ADD      = 6'b100000,
-	//R_FUNC_ADDU     = 6'b100001,
+	R_FUNC_ADDU     = 6'b100001,
 	R_FUNC_SUB      = 6'b100010,
-	//R_FUNC_SUBU     = 6'b100011,
+	R_FUNC_SUBU     = 6'b100011,
 	R_FUNC_AND      = 6'b100100,
 	R_FUNC_OR       = 6'b100101,
-	//R_FUNC_XOR      = 6'b100110,
-	//R_FUNC_NOR      = 6'b100111,
+	R_FUNC_XOR      = 6'b100110,
+	R_FUNC_NOR      = 6'b100111,
 	R_FUNC_SLT      = 6'b101010,
-	//R_FUNC_SLTU     = 6'b101011,
+	R_FUNC_SLTU     = 6'b101011,
 	//R_FUNC_TGE      = 6'b110000,
 	//R_FUNC_TGEU     = 6'b110001,
 	//R_FUNC_TLT      = 6'b110010,
@@ -120,13 +113,13 @@ localparam  // bit 31:26 for instruction type
 	//INST_BLEZ       = 6'b000110,
 	//INST_BGTZ       = 6'b000111,
 	INST_ADDI       = 6'b001000,
-	//INST_ADDIU      = 6'b001001,
-	//INST_SLTI       = 6'b001010,
-	//INST_SLTIU      = 6'b001011,
+	INST_ADDIU      = 6'b001001,
+	INST_SLTI       = 6'b001010,
+	INST_SLTIU      = 6'b001011,
 	INST_ANDI       = 6'b001100,
 	INST_ORI        = 6'b001101,
-	//INST_XORI       = 6'b001110,
-	//INST_LUI        = 6'b001111,
+	INST_XORI       = 6'b001110,
+	INST_LUI        = 6'b001111,
 	//INST_CP0        = 6'b010000,  // bit 24:21 for function type when bit 25 is not set, bit 5:0 for co type when bit 25 is set
 	//CP_FUNC_MF     = 4'b0000,
 	//CP_FUNC_MT     = 4'b0100,

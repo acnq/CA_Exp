@@ -59,7 +59,8 @@ module controller (/*AUTOARG*/
 
 	//!! added signla;
 	input wire rs_rt_equal,
-	output reg fwd_m
+	output reg fwd_m,
+	output reg sign////for signed or unsigned operation
 	);
 	
 	`include "mips_define.vh"
@@ -73,8 +74,9 @@ module controller (/*AUTOARG*/
 
 	
 	always @(*) begin
-	is_store=0;
-	is_load=0;
+		sign=0;////unsigned default
+		is_store=0;
+		is_load=0;
 		pc_src = PC_NEXT;
 		imm_ext = 0;
 		exe_a_src = EXE_A_RS;
@@ -107,25 +109,25 @@ module controller (/*AUTOARG*/
 						exe_alu_oper = EXE_ALU_SUB;//
 						wb_addr_src = WB_ADDR_RD;//
 						wb_data_src = WB_DATA_ALU;//
-						wb_wen = 1;////
-						rs_used = 1;////
-						rt_used = 1;////
+						wb_wen = 1;//
+						rs_used = 1;//
+						rt_used = 1;//
 					end
 					R_FUNC_AND: begin
 						exe_alu_oper = EXE_ALU_AND;//
 						wb_addr_src = WB_ADDR_RD;//
 						wb_data_src = WB_DATA_ALU;//
-						wb_wen = 1;////
-						rs_used = 1;////
-						rt_used = 1;////
+						wb_wen = 1;//
+						rs_used = 1;//
+						rt_used = 1;//
 					end
 					R_FUNC_OR: begin
 						exe_alu_oper = EXE_ALU_OR;//
 						wb_addr_src = WB_ADDR_RD;//
 						wb_data_src = WB_DATA_ALU;//
-						wb_wen = 1;////
-						rs_used = 1;////
-						rt_used = 1;////
+						wb_wen = 1;//
+						rs_used = 1;//
+						rt_used = 1;//
 					end
 					R_FUNC_SLT: begin
 						exe_alu_oper = EXE_ALU_SLT;//
@@ -135,6 +137,107 @@ module controller (/*AUTOARG*/
 						rs_used = 1;//
 						rt_used = 1;//
 					end
+					//---------new operation----------------
+					R_FUNC_ADDU:begin////
+						 exe_alu_oper = EXE_ALU_ADD;////
+                   wb_addr_src = WB_ADDR_RD;////
+                   wb_data_src = WB_DATA_ALU;////
+                   wb_wen = 1;////
+                   rs_used = 1;////
+                   rt_used = 1;////
+						 sign=0;////unsigned
+					end	
+					R_FUNC_SUBU:begin
+						 exe_alu_oper = EXE_ALU_SUB;////
+                   wb_addr_src = WB_ADDR_RD;////
+                   wb_data_src = WB_DATA_ALU;////
+                   wb_wen = 1;////
+                   rs_used = 1;////
+                   rt_used = 1;////
+						 sign=0;////unsigned
+					end
+					R_FUNC_XOR:begin
+						exe_alu_oper = EXE_ALU_XOR;////new ALU option
+						wb_addr_src = WB_ADDR_RD;////
+						wb_data_src = WB_DATA_ALU;////
+						wb_wen = 1;////
+						rs_used = 1;////
+						rt_used = 1;////
+						sign=0;////unsigned
+					end
+					R_FUNC_NOR:begin
+						exe_alu_oper = EXE_ALU_NOR;////new ALU option
+						wb_addr_src = WB_ADDR_RD;////
+						wb_data_src = WB_DATA_ALU;////
+						wb_wen = 1;////
+						rs_used = 1;////
+						rt_used = 1;////
+						sign=0;////unsigned
+					end
+					R_FUNC_SLTU:begin
+						exe_alu_oper = EXE_ALU_SLT;////new ALU option
+                  sign = 0;////??reference code fills "1" here
+						wb_addr_src = WB_ADDR_RD;////
+						wb_data_src = WB_DATA_ALU;////
+						wb_wen = 1;////
+						rs_used = 1;////
+						rt_used = 1;////
+					end
+					R_FUNC_SLL: begin////unsigned shift left, SLL $r1,$r2,10
+						exe_alu_oper = EXE_ALU_SL;////new ALU option
+                  wb_addr_src = WB_ADDR_RD;////
+						wb_data_src = WB_DATA_ALU;////
+                  exe_a_src = EXE_A_SA;////
+                  wb_wen = 1;////
+						rt_used = 1;////
+                  sign = 0;////unsigned
+					end
+               R_FUNC_SRL: begin////unsigned shift right, SRL $r1,$r2,$10
+						exe_alu_oper = EXE_ALU_SR;////new ALU option
+                  wb_addr_src = WB_ADDR_RD;////
+						wb_data_src = WB_DATA_ALU;////
+                  exe_a_src = EXE_A_SA;////
+                  wb_wen = 1;////
+						rt_used = 1;////
+                  sign = 0;////unsigned
+               end
+					 R_FUNC_SRA: begin////signed shift right, SRA $r1,$r2,10
+						exe_alu_oper = EXE_ALU_SR;////
+                  wb_addr_src = WB_ADDR_RD;////
+						wb_data_src = WB_DATA_ALU;////
+                  exe_a_src = EXE_A_SHIFT;////
+                  wb_wen = 1;////
+						rt_used = 1;////
+                  sign = 1;////signed
+                end
+                R_FUNC_SLLV: begin////unsigned shift left, SLLV $r1,$r2,$r3
+                  exe_alu_oper = EXE_ALU_SL;////
+						wb_addr_src = WB_ADDR_RD;////
+                  wb_data_src = WB_DATA_ALU;////
+                  wb_wen = 1;////
+                  rs_used = 1;////
+                  rt_used = 1;////
+						sign=0;////unsigned
+					end
+					R_FUNC_SRLV: begin////unsigned shift right, SRLV $r1,$r2,$r3
+						exe_alu_oper = EXE_ALU_SR;////
+                  wb_addr_src = WB_ADDR_RD;////
+                  wb_data_src = WB_DATA_ALU;////
+                  wb_wen = 1;////
+                  rs_used = 1;////
+                  rt_used = 1;////
+                  sign = 0;////unsigned
+               end
+               R_FUNC_SRAV: begin////signed shift right, SRAV $r1,$r2,$r3
+						exe_alu_oper = EXE_ALU_SR;////
+                  wb_addr_src = WB_ADDR_RD;////
+                  wb_data_src = WB_DATA_ALU;////
+                  wb_wen = 1;////
+                  rs_used = 1;////
+                  rt_used = 1;////
+                  sign = 1;////signed
+					end
+				  //--------------------------------------
 					default: begin
 						unrecognized = 1;
 					end
@@ -144,25 +247,25 @@ module controller (/*AUTOARG*/
 				pc_src = PC_JUMP;
 			end
 			INST_JAL: begin
-				pc_src = PC_JUMP;//
-				exe_a_src = EXE_A_NEXT;//
-				exe_b_src = EXE_B_FOUR;//
-				exe_alu_oper = EXE_ALU_ADD;//
-				wb_addr_src = WB_ADDR_LINK;//
-				wb_data_src = WB_DATA_ALU;//
+				pc_src = PC_JUMP;
+				exe_a_src = EXE_A_NEXT;
+				exe_b_src = EXE_B_FOUR;
+				exe_alu_oper = EXE_ALU_ADD;
+				wb_addr_src = WB_ADDR_LINK;
+				wb_data_src = WB_DATA_ALU;
 				wb_wen = 1;
 			end
 			INST_BEQ: begin
-				pc_src = rs_rt_equal ? PC_BRANCH:PC_NEXT;//
-				imm_ext = 1;//
-				rs_used = 1;////
-				rt_used = 1;////
+				pc_src = rs_rt_equal ? PC_BRANCH:PC_NEXT;
+				imm_ext = 1;
+				rs_used = 1;
+				rt_used = 1;
 			end
 			INST_BNE: begin
-				pc_src = rs_rt_equal ? PC_NEXT:PC_BRANCH;//
-				imm_ext = 1;//
-				rs_used = 1;//
-				rt_used = 1;//
+				pc_src = rs_rt_equal ? PC_NEXT:PC_BRANCH;
+				imm_ext = 1;
+				rs_used = 1;
+				rt_used = 1;
 			end
 			INST_ADDI: begin
 				imm_ext = 1;
@@ -175,12 +278,12 @@ module controller (/*AUTOARG*/
 			end
 			INST_ANDI: begin
 				imm_ext = 0;//n<0 not considered
-				exe_b_src = EXE_B_IMM;//
-				exe_alu_oper =EXE_ALU_AND;//
-				wb_addr_src = WB_ADDR_RT;//
-				wb_data_src = WB_DATA_ALU;//
-				wb_wen = 1;//
-				rs_used = 1;////
+				exe_b_src = EXE_B_IMM;
+				exe_alu_oper =EXE_ALU_AND;
+				wb_addr_src = WB_ADDR_RT;
+				wb_data_src = WB_DATA_ALU;
+				wb_wen = 1;
+				rs_used = 1;
 			end
 			INST_ORI: begin
 				imm_ext = 0;//n<0 not considered
@@ -188,8 +291,8 @@ module controller (/*AUTOARG*/
 				exe_alu_oper = EXE_ALU_OR;//
 				wb_addr_src = WB_ADDR_RT;//
 				wb_data_src = WB_DATA_ALU;//
-				wb_wen = 1;///
-				rs_used = 1;////
+				wb_wen = 1;
+				rs_used = 1;
 			end
 			INST_LW: begin
 				imm_ext = 1;//
@@ -199,8 +302,8 @@ module controller (/*AUTOARG*/
 				wb_addr_src = WB_ADDR_RT;//
 				wb_data_src = WB_DATA_MEM;//
 				wb_wen = 1;//
-				rs_used = 1;////
-				is_load = 1; //!!
+				rs_used = 1;//
+				is_load = 1; //
 			end
 			INST_SW: begin
 				imm_ext = 1;//
@@ -209,8 +312,59 @@ module controller (/*AUTOARG*/
 				mem_wen = 1;//
 				rs_used = 1;//
 				rt_used = 1;//
-				is_store = 1;//!!
+				is_store = 1;//
 			end
+			//--------new operation-----------
+			INST_ADDIU:begin
+				imm_ext = 1;////
+				exe_b_src = EXE_B_IMM;////
+				exe_alu_oper = EXE_ALU_ADD;////
+				wb_addr_src = WB_ADDR_RT;////
+				wb_data_src = WB_DATA_ALU;////
+				wb_wen = 1;////
+				rs_used = 1;////
+				sign=0;////unsigned
+			end
+			INST_XORI: begin
+				imm_ext = 0;////
+				exe_b_src = EXE_B_IMM;////
+				exe_alu_oper = EXE_ALU_XOR;////
+				wb_addr_src = WB_ADDR_RT;////
+				wb_data_src = WB_DATA_ALU;////
+				wb_wen = 1;////
+				rs_used = 1;////
+				sign=0;////unsigned
+			end
+         INST_SLTI: begin
+				imm_ext = 1;////
+				exe_b_src = EXE_B_IMM;////
+				exe_alu_oper = EXE_ALU_SLT;////
+				wb_addr_src = WB_ADDR_RT;////
+				wb_data_src = WB_DATA_ALU;////
+				wb_wen = 1;////
+				rs_used = 1;////
+            sign = 1;////signed
+			end
+         INST_SLTIU: begin
+				imm_ext = 1;////
+				exe_b_src = EXE_B_IMM;////
+				exe_alu_oper = EXE_ALU_SLT;////
+				wb_addr_src = WB_ADDR_RT;////
+				wb_data_src = WB_DATA_ALU;////
+				wb_wen = 1;////
+				rs_used = 1;////
+            sign = 0;////unsigned
+			end
+			INST_LUI: begin
+				exe_b_src = EXE_B_IMM;////
+				exe_alu_oper = EXE_ALU_LUI;////
+				wb_wen = 1;////
+				rt_used = 1;////
+            wb_wen = 1;////
+            wb_addr_src =  WB_ADDR_RT;////
+            wb_data_src = WB_DATA_ALU;////
+			end
+			//--------------------------------------
 			default: begin
 				unrecognized = 1;
 			end
@@ -220,20 +374,18 @@ module controller (/*AUTOARG*/
 	// pipeline control
 	//! reg reg_stall;
 	reg branch_stall;
-	wire [4:0] addr_rs, addr_rt;///
+	wire [4:0] addr_rs, addr_rt;//
 	
 	assign
 		addr_rs = inst[25:21],
 		addr_rt = inst[20:16];
 	
-	always @(*) begin////PPT27ҳ
+	always @(*) begin//PPT27ҳ
 		exe_fwd_a_ctrl = ID_A_FWD_RS;
 		exe_fwd_b_ctrl = ID_B_FWD_RT;
-		//exe_fwd_a_ctrl is parallel to fwd_a_ctrl
-		//so is exe_fwd_b_ctrl is parrel to fwd_b_ctrl
 		fwd_m = 1'b0;
 		load_stall = 1'b0;
-		if (wb_wen_mem && regw_addr_mem != 0) begin////
+		if (wb_wen_mem && regw_addr_mem != 0) begin
 			if (regw_addr_mem == addr_rs)
 				exe_fwd_a_ctrl = ID_A_FWD_MEMIN;
 			if(regw_addr_mem == addr_rt)
@@ -243,12 +395,12 @@ module controller (/*AUTOARG*/
 			if(regw_addr_mem == addr_rt && mem_ren_mem)
 				exe_fwd_b_ctrl = ID_B_FWD_MEMOUT;
 		end
-		if(wb_wen_exe && regw_addr_exe != 0) begin////
-			if(regw_addr_exe == addr_rs)////
-				exe_fwd_a_ctrl = ID_A_FWD_ALUOUT;////
-			if(regw_addr_exe == addr_rt)////
-				exe_fwd_b_ctrl = ID_B_FWD_ALUOUT;////
-		end	////
+		if(wb_wen_exe && regw_addr_exe != 0) begin
+			if(regw_addr_exe == addr_rs)
+				exe_fwd_a_ctrl = ID_A_FWD_ALUOUT;
+			if(regw_addr_exe == addr_rt)
+				exe_fwd_b_ctrl = ID_B_FWD_ALUOUT;
+		end	
 
 		if (rt_used && regw_addr_exe == addr_rt && wb_wen_exe && is_load_exe && is_store) begin
 			fwd_m = 1;
@@ -259,14 +411,6 @@ module controller (/*AUTOARG*/
 				load_stall = 1;
 			end
 	end
-
-	always @(*) begin////PPT28
-	/*!!	branch_stall = 0;
-		if (pc_src != PC_NEXT || is_branch_mem || is_branch_exe)////
-			branch_stall = 1;
-	*/
-	end
-	
 	`ifdef DEBUG
 	reg debug_step_prev;
 	
