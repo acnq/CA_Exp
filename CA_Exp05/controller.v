@@ -54,12 +54,15 @@ module controller (/*AUTOARG*/
 	input wire mem_ren_mem,
 	input wire wb_wen_wb,
 	
+	// exp 3 added signal
 	output reg [1:0] exe_fwd_a_ctrl,
 	output reg [1:0] exe_fwd_b_ctrl,
 
-	//!! added signla;
+	// exp 4 added signal;
 	input wire rs_rt_equal,
 	output reg fwd_m,
+
+	//exp5 added
 	output reg sign////for signed or unsigned operation
 	);
 	
@@ -139,22 +142,22 @@ module controller (/*AUTOARG*/
 					end
 					//---------new operation----------------
 					R_FUNC_ADDU:begin////
-						 exe_alu_oper = EXE_ALU_ADD;////
-                   wb_addr_src = WB_ADDR_RD;////
-                   wb_data_src = WB_DATA_ALU;////
-                   wb_wen = 1;////
-                   rs_used = 1;////
-                   rt_used = 1;////
-						 sign=0;////unsigned
+						exe_alu_oper = EXE_ALU_ADD;////
+                  wb_addr_src = WB_ADDR_RD;////
+                  wb_data_src = WB_DATA_ALU;////
+                  wb_wen = 1;////
+                  rs_used = 1;////
+                  rt_used = 1;////
+						sign=0;////unsigned
 					end	
 					R_FUNC_SUBU:begin
-						 exe_alu_oper = EXE_ALU_SUB;////
-                   wb_addr_src = WB_ADDR_RD;////
-                   wb_data_src = WB_DATA_ALU;////
-                   wb_wen = 1;////
-                   rs_used = 1;////
-                   rt_used = 1;////
-						 sign=0;////unsigned
+						exe_alu_oper = EXE_ALU_SUB;////
+                  wb_addr_src = WB_ADDR_RD;////
+                  wb_data_src = WB_DATA_ALU;////
+                  wb_wen = 1;////
+                  rs_used = 1;////
+                  rt_used = 1;////
+						sign=0;////unsigned
 					end
 					R_FUNC_XOR:begin
 						exe_alu_oper = EXE_ALU_XOR;////new ALU option
@@ -174,7 +177,7 @@ module controller (/*AUTOARG*/
 						rt_used = 1;////
 						sign=0;////unsigned
 					end
-					R_FUNC_SLTU:begin
+					R_FUNC_SLTU:begin//sktu $rs $rt $rd #:if(rs < rt)rd = 1;else rd=0;(< unsigned)
 						exe_alu_oper = EXE_ALU_SLT;////new ALU option
                   sign = 0;////??reference code fills "1" here
 						wb_addr_src = WB_ADDR_RD;////
@@ -183,7 +186,7 @@ module controller (/*AUTOARG*/
 						rs_used = 1;////
 						rt_used = 1;////
 					end
-					R_FUNC_SLL: begin////unsigned shift left, SLL $r1,$r2,10
+					R_FUNC_SLL: begin////unsigned shift left, SLL $rt,$rd,sa # rd = rt << sa
 						exe_alu_oper = EXE_ALU_SL;////new ALU option
                   wb_addr_src = WB_ADDR_RD;////
 						wb_data_src = WB_DATA_ALU;////
@@ -192,7 +195,7 @@ module controller (/*AUTOARG*/
 						rt_used = 1;////
                   sign = 0;////unsigned
 					end
-               R_FUNC_SRL: begin////unsigned shift right, SRL $r1,$r2,$10
+               R_FUNC_SRL: begin////unsigned shift right, SRL $rt,$rd,sa # rd = rt >> sa (logical)
 						exe_alu_oper = EXE_ALU_SR;////new ALU option
                   wb_addr_src = WB_ADDR_RD;////
 						wb_data_src = WB_DATA_ALU;////
@@ -201,17 +204,17 @@ module controller (/*AUTOARG*/
 						rt_used = 1;////
                   sign = 0;////unsigned
                end
-					 R_FUNC_SRA: begin////signed shift right, SRA $r1,$r2,10
+					R_FUNC_SRA: begin////signed shift right, SRA $rt,$rd,sa # rd = rt >> sa (arithmetic)
 						exe_alu_oper = EXE_ALU_SR;////
                   wb_addr_src = WB_ADDR_RD;////
 						wb_data_src = WB_DATA_ALU;////
-                  exe_a_src = EXE_A_SHIFT;////
+                  exe_a_src = EXE_A_SA;////
                   wb_wen = 1;////
 						rt_used = 1;////
                   sign = 1;////signed
                 end
-                R_FUNC_SLLV: begin////unsigned shift left, SLLV $r1,$r2,$r3
-                  exe_alu_oper = EXE_ALU_SL;////
+                R_FUNC_SLLV: begin////unsigned shift left, SLLV $rs,$rt,$rd # rd = rt << rs                 
+						exe_alu_oper = EXE_ALU_SL;//!! mistake
 						wb_addr_src = WB_ADDR_RD;////
                   wb_data_src = WB_DATA_ALU;////
                   wb_wen = 1;////
@@ -219,7 +222,7 @@ module controller (/*AUTOARG*/
                   rt_used = 1;////
 						sign=0;////unsigned
 					end
-					R_FUNC_SRLV: begin////unsigned shift right, SRLV $r1,$r2,$r3
+					R_FUNC_SRLV: begin////unsigned shift right, SRLV $rs,$rt,$rd # rd= rt >> rs (logical)
 						exe_alu_oper = EXE_ALU_SR;////
                   wb_addr_src = WB_ADDR_RD;////
                   wb_data_src = WB_DATA_ALU;////
@@ -228,14 +231,14 @@ module controller (/*AUTOARG*/
                   rt_used = 1;////
                   sign = 0;////unsigned
                end
-               R_FUNC_SRAV: begin////signed shift right, SRAV $r1,$r2,$r3
+               R_FUNC_SRAV: begin////signed shift right, SRAV $rs,$rt,$rd # rd = rt >> rs (arithmetic)
 						exe_alu_oper = EXE_ALU_SR;////
-                  wb_addr_src = WB_ADDR_RD;////
-                  wb_data_src = WB_DATA_ALU;////
-                  wb_wen = 1;////
-                  rs_used = 1;////
-                  rt_used = 1;////
-                  sign = 1;////signed
+               	wb_addr_src = WB_ADDR_RD;////
+               	wb_data_src = WB_DATA_ALU;////
+               	wb_wen = 1;////
+               	rs_used = 1;////
+               	rt_used = 1;////
+               	sign = 1;////signed
 					end
 				  //--------------------------------------
 					default: begin
@@ -335,7 +338,7 @@ module controller (/*AUTOARG*/
 				rs_used = 1;////
 				sign=0;////unsigned
 			end
-         INST_SLTI: begin
+         	INST_SLTI: begin
 				imm_ext = 1;////
 				exe_b_src = EXE_B_IMM;////
 				exe_alu_oper = EXE_ALU_SLT;////
@@ -343,9 +346,9 @@ module controller (/*AUTOARG*/
 				wb_data_src = WB_DATA_ALU;////
 				wb_wen = 1;////
 				rs_used = 1;////
-            sign = 1;////signed
+            	sign = 1;////signed
 			end
-         INST_SLTIU: begin
+        	INST_SLTIU: begin
 				imm_ext = 1;////
 				exe_b_src = EXE_B_IMM;////
 				exe_alu_oper = EXE_ALU_SLT;////
@@ -353,16 +356,16 @@ module controller (/*AUTOARG*/
 				wb_data_src = WB_DATA_ALU;////
 				wb_wen = 1;////
 				rs_used = 1;////
-            sign = 0;////unsigned
+            	sign = 0;////unsigned
 			end
 			INST_LUI: begin
 				exe_b_src = EXE_B_IMM;////
 				exe_alu_oper = EXE_ALU_LUI;////
 				wb_wen = 1;////
 				rt_used = 1;////
-            wb_wen = 1;////
-            wb_addr_src =  WB_ADDR_RT;////
-            wb_data_src = WB_DATA_ALU;////
+            	wb_wen = 1;////
+            	wb_addr_src =  WB_ADDR_RT;////
+            	wb_data_src = WB_DATA_ALU;////
 			end
 			//--------------------------------------
 			default: begin
@@ -411,6 +414,8 @@ module controller (/*AUTOARG*/
 				load_stall = 1;
 			end
 	end
+
+	//stall in exp2 and exp3 is deleted
 	`ifdef DEBUG
 	reg debug_step_prev;
 	
@@ -447,7 +452,7 @@ module controller (/*AUTOARG*/
 			wb_en = 0;
 		end
 		`endif
-
+		//stall in exp2 and exp3 is deleted (control hazard)
 		else if (load_stall) begin
 			if_en = 0;
 			id_en = 0;

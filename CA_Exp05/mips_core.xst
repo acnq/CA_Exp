@@ -1,5 +1,5 @@
-set -tmpdir "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/xst/projnav.tmp"
-set -xsthdpdir "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/xst"
+set -tmpdir "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap5Exp/work/xst/projnav.tmp"
+set -xsthdpdir "D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap5Exp/work/xst"
 run -compileonly yes
 -p xc7k325t-2L-fbg676
 -top mips_core

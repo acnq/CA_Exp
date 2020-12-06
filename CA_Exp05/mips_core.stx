@@ -1,16 +1,16 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/xst/projnav.tmp
+--> Parameter TMPDIR set to D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap5Exp/work/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.35 secs
  
---> Parameter xsthdpdir set to D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap3Exp/2018_topic3_student_2/xst
+--> Parameter xsthdpdir set to D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap5Exp/work/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.35 secs
  
 --> Reading design: mips_core.prj
 
@@ -39,34 +39,29 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\regfile.v" into library work
+Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\regfile.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <regfile>.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\alu.v" into library work
+Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\alu.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <alu>.
-Parsing verilog file "mips_define.vh" included at line 14.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\datapath.v" into library work
+Parsing verilog file "mips_define.vh" included at line 15.
+Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\datapath.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <datapath>.
-Parsing verilog file "mips_define.vh" included at line 77.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\controller.v" into library work
+Parsing verilog file "mips_define.vh" included at line 80.
+Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\controller.v" into library work
 Parsing verilog file "define.vh" included at line 1.
 Parsing module <controller>.
-Parsing verilog file "mips_define.vh" included at line 66.
-Analyzing Verilog file "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\mips_core.v" into library work
-Parsing verilog file "define.vh" included at line 1.
-Parsing module <mips_core>.
-
-
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.13 secs
- 
+Parsing verilog file "mips_define.vh" included at line 69.
+ERROR:HDLCompiler:69 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\controller.v" Line 211: <EXE_A_SHIFT> is not declared.
+ERROR:HDLCompiler:598 - "D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\controller.v" Line 8: Module <controller> ignored due to previous errors.
+Verilog file D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\controller.v ignored due to errors
 --> 
 
-Total memory usage is 4504824 kilobytes
+Total memory usage is 4504828 kilobytes
 
-Number of errors   :    0 (   0 filtered)
+Number of errors   :    2 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

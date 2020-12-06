@@ -40,7 +40,7 @@ module mips_core (
 	wire wb_data_src_ctrl;
 	wire wb_wen_ctrl;
 	
-	wire is_branch_exe, is_branch_mem;
+	//wire is_branch_exe, is_branch_mem;
 	wire [4:0] regw_addr_exe, regw_addr_mem;
 	wire wb_wen_exe, wb_wen_mem;
 	
@@ -61,6 +61,7 @@ module mips_core (
 	wire wb_wen_wb;
 	//--------------------------
 	wire rs_rt_equal, fwd_m;////
+	wire sign;
 	
 	// controller
 	controller CONTROLLER (
@@ -106,14 +107,17 @@ module mips_core (
 		.wb_en(wb_en),
 		.wb_valid(wb_valid),
 		
-		//port added:
+		//port added in exp3 and exp4:
 		.regw_addr_wb(regw_addr_wb),
 		.wb_wen_wb(wb_wen_wb),
 		.mem_ren_mem(mem_ren_mem),
 		.exe_fwd_a_ctrl(exe_fwd_a_ctrl),
 		.exe_fwd_b_ctrl(exe_fwd_b_ctrl),
 		.rs_rt_equal(rs_rt_equal),
-		.fwd_m(fwd_m)
+		.fwd_m(fwd_m),
+
+		//port added in exp5:
+		.sign(sign)
 	);
 	
 	// data path
@@ -124,10 +128,10 @@ module mips_core (
 		.debug_data(debug_data),
 		`endif
 		.inst_data_id(inst_data_ctrl),
-		.is_branch_exe(is_branch_exe),
+		//.is_branch_exe(is_branch_exe),
 		.regw_addr_exe(regw_addr_exe),
 		.wb_wen_exe(wb_wen_exe),
-		.is_branch_mem(is_branch_mem),
+		//.is_branch_mem(is_branch_mem),
 		.regw_addr_mem(regw_addr_mem),
 		.wb_wen_mem(wb_wen_mem),
 		.pc_src_ctrl(pc_src_ctrl),
@@ -171,9 +175,11 @@ module mips_core (
 		.regw_addr_wb(regw_addr_wb),
 		.mem_ren_mem(mem_ren_mem),
 		.wb_wen_wb(wb_wen_wb),
-		//exp5 added:
+		//exp4 added:
 		.rs_rt_equal(rs_rt_equal),
-		.fwd_m(fwd_m)
+		.fwd_m(fwd_m),
+		//exp5 added:
+		.alu_sign(sign)
 	);
 	
 endmodule

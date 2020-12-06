@@ -1,5 +1,5 @@
 `include "define.vh"
-/*¹¤³ÌµÄ±äÁ¿ÃüÃû¹æÔò£º
+/*ï¿½ï¿½ï¿½ÌµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 xxx_: works in xxx stage
 _xxx: generated from xxx stage
 */
@@ -17,10 +17,10 @@ module datapath (
 	`endif
 	// control signals
 	output reg [31:0] inst_data_id,  // instruction
-	output reg is_branch_exe,  // whether instruction in EXE stage is jump/branch instruction
+	// not needed output reg is_branch_exe,  // whether instruction in EXE stage is jump/branch instruction
 	output reg [4:0] regw_addr_exe,  // register write address from EXE stage
 	output reg wb_wen_exe,  // register write enable signal feedback from EXE stage
-	output reg is_branch_mem,  // whether instruction in MEM stage is jump/branch instruction
+	// not needed output reg is_branch_mem,  // whether instruction in MEM stage is jump/branch instruction
 	output reg [4:0] regw_addr_mem,  // register write address from MEM stage
 	output reg wb_wen_mem, 	// register write enable signal feedback from MEM stage
 	output reg is_load_exe,
@@ -66,14 +66,14 @@ module datapath (
 	input wire wb_rst,
 	input wire wb_en,
 	output reg wb_valid,
-	//WB:we need 2 output£º
+	//WB:we need 2 outputï¿½ï¿½
 	output reg wb_wen_wb,
 	output reg [4:0] regw_addr_wb,
-	//ÎÒÃÇÐèÒªÔÚmem½×¶ÎÊÇ·ñÓÐren ÐÅºÅ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½memï¿½×¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ren ï¿½Åºï¿½
 	output reg mem_ren_mem, 
 	output wire rs_rt_equal,
 	input wire fwd_m,
-	//exp6 new:
+	//exp5 new:
 	input wire alu_sign//from controller's "sign"
 	);
 	
@@ -212,7 +212,7 @@ module datapath (
 		addr_rd = inst_data_id[15:11],
 		data_imm = imm_ext_ctrl ? {{16{inst_data_id[15]}}, inst_data_id[15:0]} : {16'b0, inst_data_id[15:0]};
 	
-	//new bypass unit£º
+	//new bypass unitï¿½ï¿½
 	always @(*) begin
 		fwda_id = data_rs_exe;
 		fwdb_id = data_rt_exe;
@@ -312,7 +312,7 @@ module datapath (
 		case (exe_a_src_exe)//0-1
 			EXE_A_RS: opa_exe = fwda_exe;////0
 			EXE_A_NEXT: opa_exe = inst_addr_next_exe;////1
-			EXE_A_SA: opa_exe=???;////?
+			EXE_A_SA: opa_exe={27'b0, inst_data_exe[10:6]};////?
 			//EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
 			default:;
 		endcase
@@ -356,6 +356,7 @@ module datapath (
 			inst_addr_mem <= inst_addr_exe;
 			inst_data_mem <= inst_data_exe;
 			regw_addr_mem <= regw_addr_exe;
+			data_rs_mem <= fwda_exe;//why not keep this?
 			data_rt_mem <= fwdb_exe;
 			alu_out_mem <= alu_out_exe;
 			mem_ren_mem <= mem_ren_exe;

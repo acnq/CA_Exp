@@ -1,8 +1,8 @@
 INTSTYLE=impact
-INFILE=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\impact.xsl
-OUTFILE=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2\impact.xsl
+INFILE=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\impact.xsl
+OUTFILE=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work\impact.xsl
 FAMILY=Single
 PART=Single
-WORKINGDIR=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap3Exp\2018_topic3_student_2
+WORKINGDIR=D:\AAuniversityTasks\CSComputerArch\TRUECourse\chap5Exp\work
 LICENSE=iMPACT
 USER_INFO=iMPACT

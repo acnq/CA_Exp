@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Nov 30 14:42:16 2020
+// Written by: Map P.20131013 on Sun Dec 06 14:48:48 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -53,11 +53,13 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "rst_count_9" BEL "rst_count_10" BEL "rst_count_11" BEL "rst_count_12"
         BEL "rst_count_13" BEL "rst_count_14" BEL "rst_count_15" BEL "rst_all"
         BEL "MIPS/MIPS_CORE/DATAPATH/exe_a_src_exe_0" BEL
+        "MIPS/MIPS_CORE/DATAPATH/exe_a_src_exe_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_b_src_exe_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_b_src_exe_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_alu_oper_exe_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_alu_oper_exe_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_alu_oper_exe_2" BEL
+        "MIPS/MIPS_CORE/DATAPATH/exe_alu_oper_exe_3" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_id_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_id_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_data_id_2" BEL
@@ -190,6 +192,7 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/fwda_exe_30" BEL
         "MIPS/MIPS_CORE/DATAPATH/fwda_exe_31" BEL
         "MIPS/MIPS_CORE/DATAPATH/exe_fwd_m_exe" BEL
+        "MIPS/MIPS_CORE/DATAPATH/alu_sign_exe" BEL
         "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/alu_out_mem_2" BEL
