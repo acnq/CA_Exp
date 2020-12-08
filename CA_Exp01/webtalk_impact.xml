@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="impact" timeStamp="Tue Nov 03 16:15:55 2020">
+<application name="impact" timeStamp="Tue Dec 08 16:02:56 2020">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="8f575db9cd0246d68455aa601803ccb6"/>
+<property name="ProjectID" value="435ba07c84884a759b5d53bfe1f442ca"/>
 <property name="ProjectIteration" value="1"/>
 </section>
 <section name="iMPACT Project Info" visible="true">
@@ -14,24 +14,20 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="OS Name" value="Microsoft Windows NT"/>
 <property name="User Lic. Info" value="__0_0_0"/>
 </section>
-<section name="iMPACT One Step SVF File Mode" visible="true">
+<section name="iMPACT Boundary Scan Mode" visible="true">
 <item name="Chain Summary">
-<property name="Number of device" value="1"/>
-<property name="Number of Xilinx device" value="1"/>
+<property name="Number of device" value="0"/>
+<property name="Number of Xilinx device" value="0"/>
 <property name="Number of Non-Xilinx device" value="0"/>
 </item>
 <item name="Chain Description">
-<property name="Device1" value="kintex7"/>
-<property name="Part1" value="xc7k325t"/>
 </item>
 <item name="Boundary Scan Operations Statistics">
-<property name="BSCAN Operation" value="Program -p 0
-"/>
 </item>
 <item name="Cable Summary">
-<property name="Cable Type" value="Digilent JTAG-HS2"/>
-<property name="Cable Speed" value="10000000"/>
-<property name="Port" value="Plugin Cable"/>
+<property name="Cable Type" value=""/>
+<property name="Cable Speed" value="0"/>
+<property name="Port" value="NULL"/>
 <property name="Local_Server_Mode" value="Local"/>
 </item>
 </section>
