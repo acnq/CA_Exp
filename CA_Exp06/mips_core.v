@@ -24,7 +24,15 @@ module mips_core (
 	output wire mem_wen,  // memory write enable signal
 	output wire [31:0] mem_addr,  // address of memory
 	output wire [31:0] mem_dout,  // data writing to memory
-	input wire [31:0] mem_din  // data read from memory
+	input wire [31:0] mem_din,  // data read from memory
+	
+	//!! cp0 and interrupt interface added in exp 6
+	input wire interrupter,
+	output wire ir,
+	output wire ir_en,
+	output wire ir_valid,
+	output wire ir_wait,
+	output wire jump_en
 	);
 	
 	// control signals
@@ -62,6 +70,17 @@ module mips_core (
 	//--------------------------
 	wire rs_rt_equal, fwd_m;////
 	wire sign;
+	
+	//!! control line in cp0
+	wire [1:0] oper;
+	wire [4:0] addr_r;
+	wire [31:0] data_r;
+	wire [4:0] addr_w;
+	wire [31:0] data_w;
+	wire ir_in;
+	wire [31:0] ret_addr;
+	wire [31:0] jump_addr;
+	
 	
 	// controller
 	controller CONTROLLER (
@@ -117,7 +136,11 @@ module mips_core (
 		.fwd_m(fwd_m),
 
 		//port added in exp5:
-		.sign(sign)
+		.sign(sign),
+		
+		//interrupt signal in exp6:
+		.oper(oper),
+		.jump_en(jump_en)
 	);
 	
 	// data path
@@ -179,7 +202,42 @@ module mips_core (
 		.rs_rt_equal(rs_rt_equal),
 		.fwd_m(fwd_m),
 		//exp5 added:
-		.alu_sign(sign)
+		.alu_sign(sign),
+		
+		//!! interrupt signal in exp6
+		.addr_r(addr_r),
+		.data_r(data_r),
+		.addr_w(addr_w),
+		.data_w(data_w),
+		
+		.ir_en(ir_en),
+		.ret_addr(ret_addr),
+		.jump_en(jump_en),
+		.jump_addr(jump_addr)
 	);
 	
+	cp0 CP0(
+		 .clk(clk),//main clock
+		 `ifdef DEBUG
+		 .debug_addr(debug_addr[4:0]),
+		 //.debug_data(debug_data),
+		 `endif
+		 //operations (read in ID stage and write in EXE stage)
+		 .oper(oper), //CP0 operation type
+		 .addr_r(addr_r), //read address
+		 .data_r(data_r), //read data
+		 .addr_w(addr_w), //write address
+		 .data_w(data_w), //write data
+		 
+		 //exceptions (check exceptions in MEM stage)
+		 .rst(rst),//syncronous reset
+		 .ir_en(ir_en), //interrupt enable
+		 .ir_in(ir_in), //external interrupt input
+		 .ret_addr(ret_addr),//target instruction address to store when interrupt occured
+		 .jump_en(jump_en),//force jump enable signal when interrupt authorised or ERET occured
+		 .jump_addr(jump_addr),//target instruction address to jump to
+		 .ir(ir),
+		 .ir_valid(ir_valid),
+		 .ir_wait(ir_wait)
+	);
 endmodule

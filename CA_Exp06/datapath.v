@@ -74,7 +74,17 @@ module datapath (
 	output wire rs_rt_equal,
 	input wire fwd_m,
 	//exp5 new:
-	input wire alu_sign//from controller's "sign"
+	input wire alu_sign,//from controller's "sign"
+	
+	//exp6 new
+	output wire [4:0] addr_r,
+	input wire [31:0] data_r,
+	output wire [4:0] addr_w,
+	output wire [31:0] data_w,
+	output wire ir_en,
+	output wire [31:0] ret_addr,
+	input wire jump_en, //epc_strl
+	input wire [31:0] jump_addr //epc
 	);
 	
 	`include "mips_define.vh"
@@ -109,6 +119,8 @@ module datapath (
 	reg exe_fwd_m_exe;
 	//------------
 	reg alu_sign_exe;
+	//------------
+	reg [31:0] cp0_data_r_exe; //added in exp6
 	
 	// MEM signals
 	reg [31:0] inst_addr_mem;
@@ -181,12 +193,19 @@ module datapath (
 			inst_addr <= 0;
 		end
 		else if (if_en) begin
-			case(pc_src_ctrl)
-			PC_NEXT: inst_addr<=inst_addr_next;//0
-			PC_JR: inst_addr<=fwda_id;//1,=addr_rs
-			PC_BRANCH: inst_addr<=inst_addr_next_id[31:0]+{data_imm[29:0], 2'b0};//3
-			PC_JUMP: inst_addr<={inst_addr_id[31:28],inst_data_id[25:0],2'b0};//2
-			endcase
+			//add another branch in chap6 interruption
+			if(jump_en) begin
+				inst_addr <= jump_addr;
+			end
+			else begin
+			//the remaining is the same as the exp previously done
+				case(pc_src_ctrl)
+					PC_NEXT: inst_addr<=inst_addr_next;//0
+					PC_JR: inst_addr<=fwda_id;//1,=addr_rs
+					PC_BRANCH: inst_addr<=inst_addr_next_id[31:0]+{data_imm[29:0], 2'b0};//3
+					PC_JUMP: inst_addr<={inst_addr_id[31:28],inst_data_id[25:0],2'b0};//2
+				endcase
+			end
 		end 
 	end
 	
@@ -240,6 +259,17 @@ module datapath (
 		endcase
 	end
 	
+	assign 
+		//MTC0
+		data_w = fwdb_id,
+		addr_w = inst_data_id[15:11],
+		
+		//MFC0
+		addr_r = inst_data_id[15:11],
+		
+		ir_en = 1,
+		ret_addr = pc_src_ctrl ? inst_addr_id : inst_addr;
+	
 	regfile REGFILE (
 		.clk(clk),
 		`ifdef DEBUG
@@ -280,6 +310,8 @@ module datapath (
 			exe_fwd_m_exe<=0;
 			//--------------
 			alu_sign_exe<=0;
+			//---------------
+			cp0_data_r_exe <= 0;
 		end
 		else if (exe_en) begin
 		   is_load_exe<=is_load;
@@ -303,16 +335,20 @@ module datapath (
 			exe_fwd_m_exe<=fwd_m;
 			//------------------
 			alu_sign_exe<=alu_sign;
+			//------------------
+			cp0_data_r_exe <= data_r;
 		end
 	end
 	
-	always @(*) begin
+	//changed -------------------------------------
+	always @(*) begin //addded EXE_A/B_IR; in chap 6
 		opa_exe = fwda_exe;
 		opb_exe = fwdb_exe;
 		case (exe_a_src_exe)//0-1
 			EXE_A_RS: opa_exe = fwda_exe;////0
 			EXE_A_NEXT: opa_exe = inst_addr_next_exe;////1
 			EXE_A_SA: opa_exe={27'b0, inst_data_exe[10:6]};////?
+			EXE_A_IR: opa_exe = cp0_data_r_exe;
 			//EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
 			default:;
 		endcase
@@ -320,10 +356,12 @@ module datapath (
 			EXE_B_IMM: opb_exe = data_imm_exe;////0
 			EXE_B_FOUR: opb_exe = 3'h4;  ////1
 			EXE_B_RT: opb_exe = fwdb_exe;////2
+			EXE_B_IR: opb_exe = 0;
 			//EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};
 			//default:opb_exe = 32'h0;////
 		endcase
 	end
+	//-------------------------------------------------------
 
 	
 	alu ALU (

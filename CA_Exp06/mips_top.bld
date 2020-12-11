@@ -6,7 +6,7 @@ Command Line: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 mips_top.ngc mips_top.ngd
 
 Reading NGO file
-"D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap5Exp/work/mips_top.ngc" ...
+"D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap6Exp/work/mips_top.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -30,6 +30,10 @@ INFO:ConstraintSystem:178 - TNM 'TM_CLK', used in period specification
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'MIPS/ir' has no driver
+WARNING:NgdBuild:452 - logical net 'MIPS/ir_valid' has no driver
+WARNING:NgdBuild:452 - logical net 'MIPS/ir_wait' has no driver
+WARNING:NgdBuild:452 - logical net 'MIPS/jump_en' has no driver
 WARNING:NgdBuild:452 - logical net 'MIPS/MIPS_CORE/if_valid' has no driver
 WARNING:NgdBuild:452 - logical net 'MIPS/MIPS_CORE/inst_ren' has no driver
 WARNING:NgdBuild:452 - logical net 'MIPS/MIPS_CORE/id_valid' has no driver
@@ -51,12 +55,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   9
+  Number of warnings:  13
 
-Total memory usage is 4487540 kilobytes
+Total memory usage is 4487496 kilobytes
 
 Writing NGD file "mips_top.ngd" ...
-Total REAL time to NGDBUILD completion:  21 sec
-Total CPU time to NGDBUILD completion:   21 sec
+Total REAL time to NGDBUILD completion:  9 sec
+Total CPU time to NGDBUILD completion:   7 sec
 
 Writing NGDBUILD log file "mips_top.bld"...

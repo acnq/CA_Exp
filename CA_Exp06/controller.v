@@ -63,7 +63,11 @@ module controller (/*AUTOARG*/
 	output reg fwd_m,
 
 	//exp5 added
-	output reg sign////for signed or unsigned operation
+	output reg sign,////for signed or unsigned operation
+	
+	//exp6 added
+	output reg [1:0] oper,
+	input wire jump_en //epc_ctrl
 	);
 	
 	`include "mips_define.vh"
@@ -366,6 +370,31 @@ module controller (/*AUTOARG*/
             	wb_wen = 1;////
             	wb_addr_src =  WB_ADDR_RT;////
             	wb_data_src = WB_DATA_ALU;////
+			end
+			//--------------------------------------
+			
+			//Exp6 interrupt -----------------------
+			INST_CP0: begin
+				if(inst[25]) begin
+					if(inst[5:0] == CP0_CO_ERET) begin
+						oper = EXE_CP0_ERET;
+					end
+				end
+				else begin
+					case(inst[24:21])
+						CP_FUNC_MT: begin //MTC0
+							oper = EXE_CP_STORE;
+						end
+						CP_FUNC_MF:begin //MFC0
+							exe_a_src = EXE_A_IR;
+							exe_b_src = EXE_B_IR;
+							exe_alu_oper =  EXE_ALU_ADD;
+							wb_addr_src = WB_ADDR_RT;
+							wb_data_src = WB_DATA_ALU;
+							wb_wen = 1;
+						end
+					endcase
+				end
 			end
 			//--------------------------------------
 			default: begin

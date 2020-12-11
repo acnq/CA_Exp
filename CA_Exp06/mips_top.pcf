@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Dec 06 14:48:48 2020
+// Written by: Map P.20131013 on Fri Dec 11 20:59:24 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -122,7 +122,6 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_din_wb_29" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_din_wb_30" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_din_wb_31" BEL
-        "MIPS/MIPS_CORE/DATAPATH/is_load_exe" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_0" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_2" BEL
@@ -155,6 +154,7 @@ TIMEGRP CLK_GEN_clkout3 = BEL "rst_count_0" BEL "rst_count_1" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_29" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_30" BEL
         "MIPS/MIPS_CORE/DATAPATH/inst_addr_id_31" BEL
+        "MIPS/MIPS_CORE/DATAPATH/is_load_exe" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_ren_exe" BEL
         "MIPS/MIPS_CORE/DATAPATH/mem_wen_exe" BEL
         "MIPS/MIPS_CORE/DATAPATH/wb_data_src_exe" BEL

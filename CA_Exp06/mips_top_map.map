@@ -10,7 +10,7 @@ Target Device  : xc7k325t
 Target Package : fbg676
 Target Speed   : -2l
 Mapper Version : kintex7 -- $Revision: 1.55 $
-Mapped Date    : Sun Dec 06 14:45:20 2020
+Mapped Date    : Fri Dec 11 20:57:36 2020
 
 Mapping design into LUTs...
 Running directed packing...
@@ -19,85 +19,88 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 1 mins 11 secs 
-Total CPU  time at the beginning of Placer: 1 mins 9 secs 
+Total REAL time at the beginning of Placer: 41 secs 
+Total CPU  time at the beginning of Placer: 24 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:54bc3318) REAL time: 1 mins 24 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:248ba5d9) REAL time: 56 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:54bc3318) REAL time: 1 mins 25 secs 
+Phase 2.7  Design Feasibility Check (Checksum:248ba5d9) REAL time: 56 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:54bc3318) REAL time: 1 mins 25 secs 
+Phase 3.31  Local Placement Optimization (Checksum:248ba5d9) REAL time: 56 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:9f0d5f6e) REAL time: 1 mins 38 secs 
+(Checksum:ff804552) REAL time: 1 mins 4 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:9f0d5f6e) REAL time: 1 mins 38 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:ff804552) REAL time: 1 mins 4 secs 
 
 Phase 6.3  Local Placement Optimization
-Phase 6.3  Local Placement Optimization (Checksum:9f0d5f6e) REAL time: 1 mins 39 secs 
+Phase 6.3  Local Placement Optimization (Checksum:ff804552) REAL time: 1 mins 4 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:9f0d5f6e) REAL time: 1 mins 39 secs 
+Phase 7.5  Local Placement Optimization (Checksum:ff804552) REAL time: 1 mins 4 secs 
 
 Phase 8.8  Global Placement
-......................................
-...................................................
-............................
-....................
-Phase 8.8  Global Placement (Checksum:fce02df9) REAL time: 2 mins 49 secs 
+...............................
+..................................
+.................................
+.............................
+Phase 8.8  Global Placement (Checksum:8c3d1284) REAL time: 1 mins 34 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:fce02df9) REAL time: 2 mins 49 secs 
+Phase 9.5  Local Placement Optimization (Checksum:8c3d1284) REAL time: 1 mins 34 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:7426f399) REAL time: 3 mins 6 secs 
+Phase 10.18  Placement Optimization (Checksum:93b45444) REAL time: 1 mins 42 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:7426f399) REAL time: 3 mins 6 secs 
+Phase 11.5  Local Placement Optimization (Checksum:93b45444) REAL time: 1 mins 42 secs 
 
 Phase 12.34  Placement Validation
-Phase 12.34  Placement Validation (Checksum:7426f399) REAL time: 3 mins 6 secs 
+Phase 12.34  Placement Validation (Checksum:93b45444) REAL time: 1 mins 42 secs 
 
-Total REAL time to Placer completion: 3 mins 25 secs 
-Total CPU  time to Placer completion: 3 mins 21 secs 
+Total REAL time to Placer completion: 1 mins 47 secs 
+Total CPU  time to Placer completion: 1 mins 20 secs 
 Running post-placement packing...
 Writing output files...
-WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf2_RAMD_D1_O> is
+WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf4_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf3_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf1_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf4_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf5_RAMD_D1_O> is
+WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf2_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile21_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile22_RAMD_D1_O> is incomplete. The
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile23_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf5_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile11_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile1_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile11_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile23_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile3_RAMD_D1_O> is incomplete. The
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile22_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile24_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile15_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile25_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile12_RAMD_D1_O> is incomplete. The
@@ -109,19 +112,16 @@ WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile3_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile4_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile14_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile25_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile5_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile15_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 
 Design Summary
@@ -136,11 +136,11 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,495 out of 203,800    1%
+  Number of Slice LUTs:                      1,499 out of 203,800    1%
     Number used as logic:                    1,390 out of 203,800    1%
-      Number using O6 output only:           1,094
+      Number using O6 output only:           1,093
       Number using O5 output only:              80
-      Number using O5 and O6:                  216
+      Number using O5 and O6:                  217
       Number used as ROM:                        0
     Number used as Memory:                      92 out of  64,000    1%
       Number used as Dual Port RAM:             92
@@ -149,17 +149,17 @@ Slice Logic Utilization:
         Number using O5 and O6:                 84
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
-    Number used exclusively as route-thrus:     13
-      Number with same-slice register load:      8
+    Number used exclusively as route-thrus:     17
+      Number with same-slice register load:     12
       Number with same-slice carry load:         5
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   517 out of  50,950    1%
-  Number of LUT Flip Flop pairs used:        1,654
-    Number with an unused Flip Flop:           888 out of   1,654   53%
-    Number with an unused LUT:                 159 out of   1,654    9%
-    Number of fully used LUT-FF pairs:         607 out of   1,654   36%
+  Number of occupied Slices:                   479 out of  50,950    1%
+  Number of LUT Flip Flop pairs used:        1,646
+    Number with an unused Flip Flop:           901 out of   1,646   54%
+    Number with an unused LUT:                 147 out of   1,646    8%
+    Number of fully used LUT-FF pairs:         598 out of   1,646   36%
     Number of unique control sets:              24
     Number of slice register sites lost
       to control set restrictions:             106 out of 407,600    1%
@@ -213,11 +213,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.24
+Average Fanout of Non-Clock Nets:                4.22
 
-Peak Memory Usage:  5397 MB
-Total REAL time to MAP completion:  3 mins 34 secs 
-Total CPU time to MAP completion:   3 mins 29 secs 
+Peak Memory Usage:  5416 MB
+Total REAL time to MAP completion:  1 mins 51 secs 
+Total CPU time to MAP completion:   1 mins 23 secs 
 
 Mapping completed.
 See MAP report file "mips_top_map.mrp" for details.

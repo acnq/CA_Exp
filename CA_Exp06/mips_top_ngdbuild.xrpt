@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Sun Dec 06 14:45:17 2020">
+  <application stringID="NgdBuild" timeStamp="Fri Dec 11 20:57:28 2020">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="D:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;D:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;D:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;D:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;D:\Xilinx\14.7\ISE_DS\PlanAhead\bin;D:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;D:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;D:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;D:\Xilinx\14.7\ISE_DS\common\bin\nt64;D:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\MATLAB\R2019b\bin;C:\Program Files (x86)\Wolfram Research\WolframScript\;D:\Python;C:\Users\fyh\PycharmProjects\untitled\venv\Scripts\python.exe;C:\texlive\2019\bin\win32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\CMake\bin;D:\Git\cmd;C:\Program Files (x86)\Prince\engine\bin;C:\Program Files\Compiler\gcc\mingw64\bin;E:\beefLanguage\bin;%JAVA_HOME%\jdk1.8.0_241\bin;%JAVA_HOME%\jre1.8.0_241\bin;C:\Program Files\Java\jdk1.8.0_241\bin;C:\Library\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin;C:\Library\Swift-development\bin;C:\Library\icu-67\usr\bin;C:\Users\fanyu\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\fanyu\AppData\Local\Programs\Python\Python38\;C:\Users\fanyu\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;D:\PyCharm Community Edition 2020.1.2\bin;C:\python-3.8.1-amd64.exe;C:\Users\fanyu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\fanyu\AppData\Roaming\Python\Python38\Scripts;D:\IDEA\IntelliJ IDEA 2020.1\bin;C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;D:\IntelliJ IDEA Community Edition 2020.1\bin;D:\CLion 2020.1.2\bin;C:\Users\fanyu\AppData\Local\GitHubDesktop\bin"/>
+          <item stringID="value" value="D:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;D:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;D:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;D:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;D:\Xilinx\14.7\ISE_DS\PlanAhead\bin;D:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;D:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;D:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;D:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;D:\Xilinx\14.7\ISE_DS\common\bin\nt64;D:\Xilinx\14.7\ISE_DS\common\lib\nt64;E:\VMware\bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\MATLAB\R2019b\bin;C:\Program Files (x86)\Wolfram Research\WolframScript\;D:\Python;C:\Users\fyh\PycharmProjects\untitled\venv\Scripts\python.exe;C:\texlive\2019\bin\win32;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\CMake\bin;D:\Git\cmd;C:\Program Files (x86)\Prince\engine\bin;C:\Program Files\Compiler\gcc\mingw64\bin;E:\beefLanguage\bin;%JAVA_HOME%\jdk1.8.0_241\bin;%JAVA_HOME%\jre1.8.0_241\bin;C:\Program Files\Java\jdk1.8.0_241\bin;C:\Library\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin;C:\Library\Swift-development\bin;C:\Library\icu-67\usr\bin;C:\Users\fanyu\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\fanyu\AppData\Local\Programs\Python\Python38\;C:\Users\fanyu\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;D:\PyCharm Community Edition 2020.1.2\bin;C:\python-3.8.1-amd64.exe;C:\Users\fanyu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\fanyu\AppData\Roaming\Python\Python38\Scripts;D:\IDEA\IntelliJ IDEA 2020.1\bin;C:\Program Files\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;D:\IntelliJ IDEA Community Edition 2020.1\bin;D:\CLion 2020.1.2\bin;C:\Users\fanyu\AppData\Local\GitHubDesktop\bin"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -61,7 +61,7 @@
       <section stringID="NGDBUILD_DESIGN_SUMMARY">
         <item dataType="int" stringID="NGDBUILD_NUM_ERRORS" value="0"/>
         <item dataType="int" stringID="NGDBUILD_FILTERED_WARNINGS" value="0"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_WARNINGS" value="9"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_WARNINGS" value="13"/>
         <item dataType="int" stringID="NGDBUILD_FILTERED_INFOS" value="0"/>
         <item dataType="int" stringID="NGDBUILD_NUM_INFOS" value="2"/>
       </section>
@@ -77,14 +77,14 @@
         <item dataType="int" stringID="NGDBUILD_NUM_IBUFGDS" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_INV" value="36"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="85"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="17"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="199"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="274"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="334"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="14"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="203"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="272"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="336"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT6" value="686"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MMCME2_ADV" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="186"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="40"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="37"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="25"/>
         <item dataType="int" stringID="NGDBUILD_NUM_RAM32M" value="20"/>
         <item dataType="int" stringID="NGDBUILD_NUM_RAM32X1D" value="8"/>
@@ -104,14 +104,14 @@
         <item dataType="int" stringID="NGDBUILD_NUM_IBUFGDS" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_INV" value="36"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="85"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="17"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="199"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="274"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="334"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="14"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="203"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="272"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="336"/>
         <item dataType="int" stringID="NGDBUILD_NUM_LUT6" value="686"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MMCME2_ADV" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="186"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="40"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="37"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="25"/>
         <item dataType="int" stringID="NGDBUILD_NUM_PULLUP" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_RAM32M" value="20"/>

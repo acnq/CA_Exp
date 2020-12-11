@@ -1,6 +1,7 @@
 verilog work "regfile.v"
 verilog work "alu.v"
 verilog work "datapath.v"
+verilog work "cp0.v"
 verilog work "controller.v"
 verilog work "vga_8x16.v"
 verilog work "parallel2serial.v"

@@ -11,7 +11,8 @@ localparam
 localparam
 	EXE_A_RS     = 0,
 	EXE_A_NEXT   = 1,
-	EXE_A_SA     = 2;////
+	EXE_A_SA     = 2,////
+	EXE_A_IR     = 3;
 	//EXE_A_LINK   = 2,
 	//EXE_A_BRANCH = 3;
 
@@ -20,7 +21,7 @@ localparam
 	EXE_B_RT     = 2,
 	EXE_B_IMM    = 0,
 	EXE_B_FOUR   = 1,
-	EXE_B_LINK   = 2;
+	EXE_B_IR		 = 3;
 	//EXE_B_BRANCH = 3;
 
 //ID A FWD sources
@@ -120,10 +121,10 @@ localparam  // bit 31:26 for instruction type
 	INST_ORI        = 6'b001101,
 	INST_XORI       = 6'b001110,
 	INST_LUI        = 6'b001111,
-	//INST_CP0        = 6'b010000,  // bit 24:21 for function type when bit 25 is not set, bit 5:0 for co type when bit 25 is set
-	//CP_FUNC_MF     = 4'b0000,
-	//CP_FUNC_MT     = 4'b0100,
-	//CP0_CO_ERET     = 6'b011000,
+	INST_CP0        = 6'b010000,  // bit 24:21 for function type when bit 25 is not set, bit 5:0 for co type when bit 25 is set
+	CP_FUNC_MF     = 4'b0000,
+	CP_FUNC_MT     = 4'b0100,
+	CP0_CO_ERET     = 6'b011000,
 	//INST_LB         = 6'b100000,
 	//INST_LH         = 6'b100001,
 	INST_LW         = 6'b100011,
@@ -133,6 +134,25 @@ localparam  // bit 31:26 for instruction type
 	//INST_SH         = 6'b101001,
 	INST_SW         = 6'b101011;
 
+//CP0 registers
+localparam
+    //CP0_SR = 0,
+    //CP0_EAR = 1,
+    CP0_EPCR = 2,
+    CP0_EHBR = 3;
+    //CP0_IER = 4,
+    //CP0_ICR = 5,
+    //CP0_PDBR = 6,
+    //CP0_TIR = 7,
+    //CP0_WDR = 8;
+
+// EXE CP operations
+localparam
+    EXE_CP_NONE = 0,
+    EXE_CP_STORE = 1,
+    EXE_CP0_ERET = 2;
+
+	
 // general registers
 localparam
 	GPR_ZERO = 0,
