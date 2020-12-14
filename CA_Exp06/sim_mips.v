@@ -36,9 +36,15 @@ module sim_mips;
 
 		#100 rst = 1;
 		#100 rst = 0;
-
+		
+		#270; interrupter = 1;
+		#40; interrupter = 0;
+				
+		#40 interrupter = 1;
+		#40 interrupter = 0;
+		
+		#180;
 	end
-	
 	initial forever #10 clk = ~clk;
 	
 endmodule

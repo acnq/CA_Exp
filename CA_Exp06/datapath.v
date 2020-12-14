@@ -1,5 +1,5 @@
 `include "define.vh"
-/*���̵ı�����������
+/*name rules
 xxx_: works in xxx stage
 _xxx: generated from xxx stage
 */
@@ -23,8 +23,8 @@ module datapath (
 	// not needed output reg is_branch_mem,  // whether instruction in MEM stage is jump/branch instruction
 	output reg [4:0] regw_addr_mem,  // register write address from MEM stage
 	output reg wb_wen_mem, 	// register write enable signal feedback from MEM stage
-	output reg is_load_exe,
-	input wire is_load,
+	//output reg is_load_exe,
+	//input wire is_load,
 	input wire [2:0] pc_src_ctrl,  // how would PC change to next
 	input wire imm_ext_ctrl,  // whether using sign extended to immediate data
 	input wire [1:0] exe_a_src_ctrl,  // data source of operand A for ALU
@@ -66,23 +66,22 @@ module datapath (
 	input wire wb_rst,
 	input wire wb_en,
 	output reg wb_valid,
-	//WB:we need 2 output��
+	//WB:we need 2 output
 	output reg wb_wen_wb,
 	output reg [4:0] regw_addr_wb,
-	//������Ҫ��mem�׶��Ƿ���ren �ź�
 	output reg mem_ren_mem, 
 	output wire rs_rt_equal,
 	input wire fwd_m,
-	//exp5 new:
+	//exp5 new
 	input wire alu_sign,//from controller's "sign"
 	
 	//exp6 new
 	output wire [4:0] addr_r,
-	input wire [31:0] data_r,
+	input wire [31:0] data_r,//CPR[rd]
 	output wire [4:0] addr_w,
-	output wire [31:0] data_w,
+	output wire [31:0] data_w,//GPR[rt]
 	output wire ir_en,
-	output wire [31:0] ret_addr,
+	output wire [31:0] ret_addr,//target instruction address to store when interrupt occurred
 	input wire jump_en, //epc_strl
 	input wire [31:0] jump_addr //epc
 	);
@@ -90,7 +89,6 @@ module datapath (
 	`include "mips_define.vh"
 	
 	// control signals
-	//reg [2:0] pc_src_exe;
 	reg [1:0] exe_a_src_exe, exe_b_src_exe;
 	reg [3:0] exe_alu_oper_exe;
 	reg mem_ren_exe; //mem_ren_mem;output 
@@ -231,7 +229,7 @@ module datapath (
 		addr_rd = inst_data_id[15:11],
 		data_imm = imm_ext_ctrl ? {{16{inst_data_id[15]}}, inst_data_id[15:0]} : {16'b0, inst_data_id[15:0]};
 	
-	//new bypass unit��
+	//bypass unit
 	always @(*) begin
 		fwda_id = data_rs_exe;
 		fwdb_id = data_rt_exe;
@@ -261,15 +259,15 @@ module datapath (
 	
 	assign 
 		//MTC0
-		data_w = fwdb_id,
-		addr_w = inst_data_id[15:11],
+		data_w = fwdb_id,//GPR[rt] in graph
+		addr_w = inst_data_id[15:11],//cp_rd in graph
 		
 		//MFC0
 		addr_r = inst_data_id[15:11],
 		
 		ir_en = 1,
-		ret_addr = pc_src_ctrl ? inst_addr_id : inst_addr;
-	
+		ret_addr = pc_src_ctrl ? inst_addr_id : inst_addr;//new multiplexer for cp0
+
 	regfile REGFILE (
 		.clk(clk),
 		`ifdef DEBUG
@@ -288,7 +286,7 @@ module datapath (
 	// EXE stage
 	always @(posedge clk) begin
 		if (exe_rst) begin
-		   is_load_exe<=0;
+		   //is_load_exe<=0;
 			exe_valid <= 0;
 			inst_addr_exe <= 0;
 			inst_data_exe <= 0;
@@ -296,7 +294,6 @@ module datapath (
 			regw_addr_exe <= 0;
 			exe_a_src_exe <= 0;
 			exe_b_src_exe <= 0;
-			//--------------------
 			data_rs_exe <= 0;
 			data_rt_exe <= 0;
 			data_imm_exe <= 0;
@@ -314,7 +311,7 @@ module datapath (
 			cp0_data_r_exe <= 0;
 		end
 		else if (exe_en) begin
-		   is_load_exe<=is_load;
+		   //is_load_exe<=is_load;
 			exe_valid <= id_valid;
 			inst_addr_exe <= inst_addr_id;
 			inst_data_exe <= inst_data_id;
@@ -345,20 +342,19 @@ module datapath (
 		opa_exe = fwda_exe;
 		opb_exe = fwdb_exe;
 		case (exe_a_src_exe)//0-1
-			EXE_A_RS: opa_exe = fwda_exe;////0
-			EXE_A_NEXT: opa_exe = inst_addr_next_exe;////1
-			EXE_A_SA: opa_exe={27'b0, inst_data_exe[10:6]};////?
-			EXE_A_IR: opa_exe = cp0_data_r_exe;
+			EXE_A_RS: opa_exe = fwda_exe;//
+			EXE_A_NEXT: opa_exe = inst_addr_next_exe;//
+			EXE_A_SA: opa_exe={27'b0, inst_data_exe[10:6]};//?
+			EXE_A_IR: opa_exe = cp0_data_r_exe;////
 			//EXE_A_BRANCH: opa_exe = inst_addr_next_exe;
 			default:;
 		endcase
 		case (exe_b_src_exe)//0-2
-			EXE_B_IMM: opb_exe = data_imm_exe;////0
-			EXE_B_FOUR: opb_exe = 3'h4;  ////1
-			EXE_B_RT: opb_exe = fwdb_exe;////2
-			EXE_B_IR: opb_exe = 0;
+			EXE_B_IMM: opb_exe = data_imm_exe;//
+			EXE_B_FOUR: opb_exe = 3'h4;  //
+			EXE_B_RT: opb_exe = fwdb_exe;//
+			EXE_B_IR: opb_exe = 0;////
 			//EXE_B_BRANCH: opb_exe = {data_imm_exe[29:0], 2'b0};
-			//default:opb_exe = 32'h0;////
 		endcase
 	end
 	//-------------------------------------------------------
@@ -369,7 +365,7 @@ module datapath (
 		.b(opb_exe),
 		.oper(exe_alu_oper_exe),
 		.result(alu_out_exe),
-		.sign(alu_sign_exe)////
+		.sign(alu_sign_exe)
 		);
 	
 	// MEM stage
@@ -387,7 +383,7 @@ module datapath (
 			wb_data_src_mem <= 0;
 			wb_wen_mem <= 0;
 			//--------------------
-			mem_fwd_m_mem<=0;////
+			mem_fwd_m_mem<=0;
 		end
 		else if (mem_en) begin
 			mem_valid <= exe_valid;

@@ -60,7 +60,7 @@ module mips_top (
 	
 	assign
 		btn_step = btn[16],
-		btn_interrupt = btn[19];
+		btn_interrupt = btn[19];////interrupt button
 	
 
 	`ifndef SIMULATING

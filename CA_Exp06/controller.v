@@ -21,8 +21,6 @@ module controller (/*AUTOARG*/
 	//!! input wire is_branch_mem,  // whether instruction in MEM stage is jump/branch instruction
 	input wire [4:0] regw_addr_mem,  // register write address from MEM stage
 	input wire wb_wen_mem, 	// register write enable signal feedback from MEM stage
-	input wire is_load_exe,
-	output reg is_load,
 	output reg [2:0] pc_src,  // how would PC change to next
 	output reg imm_ext,  // whether using sign extended to immediate data
 	output reg [1:0] exe_a_src,  // data source of operand A for ALU
@@ -66,7 +64,7 @@ module controller (/*AUTOARG*/
 	output reg sign,////for signed or unsigned operation
 	
 	//exp6 added
-	output reg [1:0] oper,
+	output reg [1:0] oper,//cp_oper
 	input wire jump_en //epc_ctrl
 	);
 	
@@ -75,10 +73,12 @@ module controller (/*AUTOARG*/
 	// instruction decode
 	reg rs_used, rt_used;//used means read the value of the register(rs/rt)
 	//!! instruction decode append
-	reg is_store;
-	//reg is_load_exe;
+	reg is_load, is_store;
+	reg is_load_exe;
 	reg load_stall;
-
+	always@(posedge clk)begin
+		is_load_exe<=is_load;
+	end
 	
 	always @(*) begin
 		sign=0;////unsigned default
@@ -97,6 +97,9 @@ module controller (/*AUTOARG*/
 		rs_used = 0;
 		rt_used = 0;
 		unrecognized = 0;
+		//-----exp6 new---------
+		oper=EXE_CP_NONE;////
+		//----------------------
 		case (inst[31:26])
 			INST_R: begin
 				case (inst[5:0])
@@ -486,7 +489,10 @@ module controller (/*AUTOARG*/
 			if_en = 0;
 			id_en = 0;
 			exe_rst = 1;
-		end		
+		end	
+		else if(jump_en)begin
+			id_rst = 1;////reset id stage
+		end
 	end
 	
 endmodule

@@ -77,7 +77,6 @@ module mips_core (
 	wire [31:0] data_r;
 	wire [4:0] addr_w;
 	wire [31:0] data_w;
-	wire ir_in;
 	wire [31:0] ret_addr;
 	wire [31:0] jump_addr;
 	
@@ -90,8 +89,8 @@ module mips_core (
 		.debug_en(debug_en),
 		.debug_step(debug_step),
 		`endif
-		.is_load(is_load),
-		.is_load_exe(is_load_exe),
+		//.is_load(is_load),
+		//.is_load_exe(is_load_exe),
 		.inst(inst_data_ctrl),
 	//	.is_branch_exe(is_branch_exe),
 		.regw_addr_exe(regw_addr_exe),
@@ -161,8 +160,8 @@ module mips_core (
 		.imm_ext_ctrl(imm_ext_ctrl),
 		.exe_a_src_ctrl(exe_a_src_ctrl),
 		.exe_b_src_ctrl(exe_b_src_ctrl),
-		.is_load(is_load),
-		.is_load_exe(is_load_exe),
+		//.is_load(is_load),
+		//.is_load_exe(is_load_exe),
 		.exe_fwd_a_ctrl(exe_fwd_a_ctrl),
 		.exe_fwd_b_ctrl(exe_fwd_b_ctrl),
 		
@@ -218,10 +217,10 @@ module mips_core (
 	
 	cp0 CP0(
 		 .clk(clk),//main clock
-		 `ifdef DEBUG
-		 .debug_addr(debug_addr[4:0]),
+		 //`ifdef DEBUG
+		 //.debug_addr(debug_addr[4:0]),
 		 //.debug_data(debug_data),
-		 `endif
+		 //`endif
 		 //operations (read in ID stage and write in EXE stage)
 		 .oper(oper), //CP0 operation type
 		 .addr_r(addr_r), //read address
@@ -232,7 +231,7 @@ module mips_core (
 		 //exceptions (check exceptions in MEM stage)
 		 .rst(rst),//syncronous reset
 		 .ir_en(ir_en), //interrupt enable
-		 .ir_in(ir_in), //external interrupt input
+		 .ir_in(interrupter), //external interrupt input
 		 .ret_addr(ret_addr),//target instruction address to store when interrupt occured
 		 .jump_en(jump_en),//force jump enable signal when interrupt authorised or ERET occured
 		 .jump_addr(jump_addr),//target instruction address to jump to
