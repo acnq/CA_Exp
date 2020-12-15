@@ -1,0 +1,38 @@
+Running: D:\ISE\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/00a/CA/CA_Exp/CA_Exp06/sim_mips_isim_beh.exe -prj D:/00a/CA/CA_Exp/CA_Exp06/sim_mips_beh.prj work.sim_mips work.glbl 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/regfile.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/alu.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/datapath.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/cp0.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/controller.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/mips_core.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/inst_rom.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/data_ram.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/mips.v" into library work
+Analyzing Verilog file "D:/00a/CA/CA_Exp/CA_Exp06/sim_mips.v" into library work
+Analyzing Verilog file "D:/ISE/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "D:/00a/CA/CA_Exp/CA_Exp06/sim_mips.v" Line 18: Port ir is not connected to this instance
+Completed static elaboration
+Fuse Memory Usage: 159792 KB
+Fuse CPU Usage: 1202 ms
+Compiling module controller
+Compiling module regfile
+Compiling module alu
+Compiling module datapath
+Compiling module cp0
+Compiling module mips_core
+Compiling module inst_rom
+Compiling module data_ram
+Compiling module mips
+Compiling module sim_mips
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 4 sub-compilation(s) to finish...
+Compiled 11 Verilog Units
+Built simulation executable D:/00a/CA/CA_Exp/CA_Exp06/sim_mips_isim_beh.exe
+Fuse Memory Usage: 167420 KB
+Fuse CPU Usage: 1812 ms

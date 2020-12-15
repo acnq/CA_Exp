@@ -206,7 +206,8 @@ module datapath (
 			end
 		end 
 	end
-	
+	assign ret_addr = pc_src_ctrl ? inst_addr_id : inst_addr;//new multiplexer for cp0
+
 	// ID stage
 	always @(posedge clk) begin
 		if (id_rst) begin
@@ -265,8 +266,8 @@ module datapath (
 		//MFC0
 		addr_r = inst_data_id[15:11],
 		
-		ir_en = 1,
-		ret_addr = pc_src_ctrl ? inst_addr_id : inst_addr;//new multiplexer for cp0
+		ir_en = 1;
+		//ret_addr = pc_src_ctrl ? inst_addr_id : inst_addr;//new multiplexer for cp0
 
 	regfile REGFILE (
 		.clk(clk),

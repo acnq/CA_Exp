@@ -1,14 +1,14 @@
-Release 14.7 par P.20131013 (nt64)
+Release 14.7 par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-QM3QIFG::  Fri Dec 11 20:59:32 2020
+DESKTOP-DER3E7J::  Tue Dec 15 16:50:34 2020
 
 par -w -intstyle ise -ol high -mt off mips_top_map.ncd mips_top.ncd
 mips_top.pcf 
 
 
 Constraints file: mips_top.pcf.
-Loading device for application Rf_Device from file '7k325t.nph' in environment D:\Xilinx\14.7\ISE_DS\ISE\.
+Loading device for application Rf_Device from file '7k325t.nph' in environment D:\ISE\14.7\ISE_DS\ISE\.
    "mips_top" is an NCD, version 3.2, device xc7k325t, package fbg676, speed -2l
 
 Initializing temperature to 100.000 Celsius. (default - Range: 0.000 to 100.000 Celsius)
@@ -22,16 +22,16 @@ Device speed data version:  "PRODUCTION 1.10 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   814 out of 407,600    1%
-    Number used as Flip Flops:                 814
+  Number of Slice Registers:                   889 out of 407,600    1%
+    Number used as Flip Flops:                 889
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,499 out of 203,800    1%
-    Number used as logic:                    1,390 out of 203,800    1%
-      Number using O6 output only:           1,093
+  Number of Slice LUTs:                      1,586 out of 203,800    1%
+    Number used as logic:                    1,476 out of 203,800    1%
+      Number using O6 output only:           1,195
       Number using O5 output only:              80
-      Number using O5 and O6:                  217
+      Number using O5 and O6:                  201
       Number used as ROM:                        0
     Number used as Memory:                      92 out of  64,000    1%
       Number used as Dual Port RAM:             92
@@ -40,17 +40,17 @@ Slice Logic Utilization:
         Number using O5 and O6:                 84
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
-    Number used exclusively as route-thrus:     17
-      Number with same-slice register load:     12
+    Number used exclusively as route-thrus:     18
+      Number with same-slice register load:     13
       Number with same-slice carry load:         5
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   479 out of  50,950    1%
-  Number of LUT Flip Flop pairs used:        1,646
-    Number with an unused Flip Flop:           901 out of   1,646   54%
-    Number with an unused LUT:                 147 out of   1,646    8%
-    Number of fully used LUT-FF pairs:         598 out of   1,646   36%
+  Number of occupied Slices:                   462 out of  50,950    1%
+  Number of LUT Flip Flop pairs used:        1,623
+    Number with an unused Flip Flop:           874 out of   1,623   53%
+    Number with an unused LUT:                  37 out of   1,623    2%
+    Number of fully used LUT-FF pairs:         712 out of   1,623   43%
     Number of slice register sites lost
       to control set restrictions:               0 out of 407,600    0%
 
@@ -107,70 +107,70 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 19 secs 
-Finished initial Timing Analysis.  REAL time: 19 secs 
+Starting initial Timing Analysis.  REAL time: 47 secs 
+Finished initial Timing Analysis.  REAL time: 47 secs 
 
 WARNING:Par:288 - The signal BTN_Y<2>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal BTN_Y<1>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal VGA_DEBUG/Mram_data_buf4_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal VGA_DEBUG/Mram_data_buf3_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal VGA_DEBUG/Mram_data_buf1_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal VGA_DEBUG/Mram_data_buf2_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile21_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile23_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
 WARNING:Par:288 - The signal VGA_DEBUG/Mram_data_buf5_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile11_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile1_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile22_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile24_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile15_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile25_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile12_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile2_RAMD_D1_O has no load.  PAR will not attempt to route this
-   signal.
+WARNING:Par:288 - The signal VGA_DEBUG/Mram_data_buf4_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal VGA_DEBUG/Mram_data_buf3_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
 WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile3_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile4_RAMD_D1_O has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile21_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile23_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile24_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile25_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile2_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile12_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile22_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile1_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile11_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile15_RAMD_D1_O has no load.  PAR will not attempt to route this
+   signal.
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile5_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
 WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile14_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
-WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile5_RAMD_D1_O has no load.  PAR will not attempt to route this
+WARNING:Par:288 - The signal MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile4_RAMD_D1_O has no load.  PAR will not attempt to route this
    signal.
 Starting Router
 
 
-Phase  1  : 9297 unrouted;      REAL time: 23 secs 
+Phase  1  : 9709 unrouted;      REAL time: 57 secs 
 
-Phase  2  : 8356 unrouted;      REAL time: 24 secs 
+Phase  2  : 8665 unrouted;      REAL time: 59 secs 
 
-Phase  3  : 3694 unrouted;      REAL time: 27 secs 
+Phase  3  : 3957 unrouted;      REAL time: 1 mins 4 secs 
 
-Phase  4  : 3694 unrouted; (Setup:0, Hold:11231, Component Switching Limit:0)     REAL time: 37 secs 
+Phase  4  : 3957 unrouted; (Setup:0, Hold:8989, Component Switching Limit:0)     REAL time: 1 mins 26 secs 
 
 Updating file: mips_top.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:8327, Component Switching Limit:0)     REAL time: 41 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:7044, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:8327, Component Switching Limit:0)     REAL time: 41 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:7044, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:8327, Component Switching Limit:0)     REAL time: 41 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:7044, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:8327, Component Switching Limit:0)     REAL time: 41 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:7044, Component Switching Limit:0)     REAL time: 1 mins 38 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 41 secs 
-Total REAL time to Router completion: 42 secs 
-Total CPU time to Router completion: 41 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 1 mins 42 secs 
+Total REAL time to Router completion: 1 mins 42 secs 
+Total CPU time to Router completion: 1 mins 42 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -188,9 +188,9 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|            clk_disp | BUFGCTRL_X0Y0| No   |   83 |  0.257     |  1.811      |
+|            clk_disp | BUFGCTRL_X0Y0| No   |   82 |  0.318     |  1.865      |
 +---------------------+--------------+------+------+------------+-------------+
-|             clk_cpu | BUFGCTRL_X0Y2| No   |  205 |  0.312     |  1.873      |
+|             clk_cpu | BUFGCTRL_X0Y2| No   |  251 |  0.314     |  1.873      |
 +---------------------+--------------+------+------+------------+-------------+
 |CLK_GEN/clkfbout_buf |              |      |      |            |             |
 |                     | BUFGCTRL_X0Y1| No   |    1 |  0.000     |  1.936      |
@@ -220,12 +220,12 @@ Asterisk (*) preceding a constraint indicates it was not met.
   TS_CLKIN = PERIOD TIMEGRP "TM_CLK" 5 ns H | MINLOWPULSE |     2.200ns|     2.800ns|       0|           0
   IGH 50%                                   |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_CLK_GEN_clkout2 = PERIOD TIMEGRP "CLK_ | SETUP       |     6.692ns|    13.232ns|       0|           0
+  TS_CLK_GEN_clkout2 = PERIOD TIMEGRP "CLK_ | SETUP       |     6.905ns|    12.508ns|       0|           0
   GEN_clkout2" TS_CLKIN / 0.125 HIGH        | HOLD        |     0.101ns|            |       0|           0
     50%                                     |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_CLK_GEN_clkout3 = PERIOD TIMEGRP "CLK_ | SETUP       |    14.725ns|    26.375ns|       0|           0
-  GEN_clkout3" TS_CLKIN / 0.05 HIGH         | HOLD        |     0.004ns|            |       0|           0
+  TS_CLK_GEN_clkout3 = PERIOD TIMEGRP "CLK_ | SETUP       |    15.415ns|    22.925ns|       0|           0
+  GEN_clkout3" TS_CLKIN / 0.05 HIGH         | HOLD        |     0.119ns|            |       0|           0
    50%                                      |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
 
@@ -240,9 +240,9 @@ Derived Constraints for TS_CLKIN
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_CLKIN                       |      5.000ns|      2.800ns|      1.654ns|            0|            0|            0|     53142040|
-| TS_CLK_GEN_clkout3            |    100.000ns|     26.375ns|          N/A|            0|            0|     53009196|            0|
-| TS_CLK_GEN_clkout2            |     40.000ns|     13.232ns|          N/A|            0|            0|       132844|            0|
+|TS_CLKIN                       |      5.000ns|      2.800ns|      1.564ns|            0|            0|            0|     55823170|
+| TS_CLK_GEN_clkout3            |    100.000ns|     22.925ns|          N/A|            0|            0|     55690319|            0|
+| TS_CLK_GEN_clkout2            |     40.000ns|     12.508ns|          N/A|            0|            0|       132851|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -254,10 +254,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 22 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 43 secs 
-Total CPU time to PAR completion: 42 secs 
+Total REAL time to PAR completion: 1 mins 46 secs 
+Total CPU time to PAR completion: 1 mins 47 secs 
 
-Peak Memory Usage:  5167 MB
+Peak Memory Usage:  829 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

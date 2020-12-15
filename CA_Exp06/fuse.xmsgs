@@ -8,8 +8,5 @@
 <msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp06/sim_mips.v" Line 18: Port <arg fmt="%s" index="1">ir</arg> is not connected to this instance
 </msg>
 
-<msg type="error" file="Simulator" num="904" delta="unknown" >Unable to remove previous simulation file <arg fmt="%s" index="1">D:/00a/CA/CA_Exp/CA_Exp06/sim_mips_isim_beh.exe</arg>. Please check if you have another instance of this simulation running on your system, terminate it and then recompile your design. System Error Message: <arg fmt="%s" index="2">boost::filesystem::remove: ﾾￜﾾ￸ﾷￃￎￊﾡﾣ: &quot;D:\00a\CA\CA_Exp\CA_Exp06\sim_mips_isim_beh.exe&quot;</arg>
-</msg>
-
 </messages>
 

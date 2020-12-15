@@ -74,7 +74,7 @@ module cp0(
 	assign data_r = regs[addr_r];
 	
 	//jump determination
-	always @(posedge clk)begin
+	always @(negedge clk)begin
 		if(oper == EXE_CP0_ERET) begin //eret
 			jump_addr = regs[CP0_EPCR];
 			jump_en = 1;
