@@ -3,13 +3,21 @@ module data_ram (
 	input wire we,
 	input wire [31:0] addr,
 	input wire [31:0] din,
-	output reg [31:0] dout
+	output reg [31:0] dout,
+	//------------exp7 new---------
+	output wire ram_stall,////
+	input wire rst,////
+	input wire cs////
+	//-----------------------------
 	);
 	
 	parameter
 		ADDR_WIDTH = 5;
 	
 	reg [31:0] data [0:(1<<ADDR_WIDTH)-1];
+	reg [31:0] addr_previous;
+	reg [3:0] counter;
+	reg ack;
 	
 	initial	begin
 		$readmemh("data_mem.hex", data);
@@ -22,9 +30,29 @@ module data_ram (
 	
 	reg [31:0] out;
 	always @(negedge clk) begin
-		out <= data[addr[ADDR_WIDTH-1:0]];
+		if(rst)begin
+			counter=0;
+			ack=0;
+		end
+		else begin
+			if(addr_previous==addr)begin
+				counter=counter+1;
+				if(counter==8)begin
+					data[addr[ADDR_WIDTH-1:0]]=din;
+					out = data[addr[ADDR_WIDTH-1:0]];
+					ack=1;//finish
+				end
+			end	
+			else begin
+				counter=0;
+				ack=0;
+			end
+			addr_previous=addr;
+		end
 	end
 	
+	assign ram_stall=cs&~ack;
+	//--------------------------------
 	always @(*) begin
 		if (addr[31:ADDR_WIDTH] != 0)
 			dout = 32'h0;

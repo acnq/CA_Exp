@@ -35,7 +35,11 @@ module cp0(
 		output reg [31:0] jump_addr, //target instruction address to jump to
 		output reg ir,
 		output reg ir_valid,
-		output reg ir_wait
+		output reg ir_wait,
+		//---------exp7 new----------
+		input wire if_rst,
+		input wire if_en
+		//----------------------------
 	 );
 
 	`include "mips_define.vh"
@@ -75,21 +79,37 @@ module cp0(
 	
 	//jump determination
 	always @(negedge clk)begin
-		if(oper == EXE_CP0_ERET) begin //eret
-			jump_addr = regs[CP0_EPCR];
-			jump_en = 1;
+		if(if_rst)begin
+			jump_addr=0;
+			jump_en=0;
+		end 
+		else begin
+			if(oper == EXE_CP0_ERET) begin //eret
+				jump_addr = regs[CP0_EPCR];
+				jump_en = 1;
+			end
+			else if (oper == EXE_CP_STORE) begin
+				regs[addr_w] = data_w;
+			end
+			else if (ir) begin //external interrupt handling
+				jump_addr = regs[CP0_EHBR];
+				////regs[CP0_EPCR] = ret_addr;
+				jump_en = 1;
+			end
+			else begin
+				if(if_en)begin
+					jump_en = 0;
+					jump_addr = 32'b0;
+				end
+			end
 		end
-		else if (oper == EXE_CP_STORE) begin
-			regs[addr_w] = data_w;
-		end
-		else if (ir) begin //external interrupt handling
-			jump_addr = regs[CP0_EHBR];
-			regs[CP0_EPCR] = ret_addr;
-			jump_en = 1;
+		if(ir)
+			regs[CP0_EPCR]=ret_addr;
+		if(rst)begin
+			regs[CP0_TCR]=0;
 		end
 		else begin
-			jump_en = 0;
-			jump_addr = 32'b0;
+			regs[CP0_TCR]=regs[CP0_TCR]+1;
 		end
-	end	
+	end
 endmodule
