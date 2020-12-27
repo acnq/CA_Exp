@@ -32,7 +32,13 @@ module mips_core (
 	output wire ir_en,
 	output wire ir_valid,
 	output wire ir_wait,
-	output wire jump_en
+	output wire jump_en,
+	
+	//rom_stall and rom_cs added in exp7
+	input wire ram_stall,
+	input wire rom_stall,
+	output wire rom_cs,
+	output wire ram_cs
 	);
 	
 	// control signals
@@ -139,7 +145,13 @@ module mips_core (
 		
 		//interrupt signal in exp6:
 		.oper(oper),
-		.jump_en(jump_en)
+		.jump_en(jump_en),
+		
+		//stall added in exp7
+		.ram_stall(ram_stall),
+		.rom_stall(rom_stall),
+		.ram_cs(ram_cs),
+		.rom_cs(rom_cs)
 	);
 	
 	// data path
@@ -237,6 +249,9 @@ module mips_core (
 		 .jump_addr(jump_addr),//target instruction address to jump to
 		 .ir(ir),
 		 .ir_valid(ir_valid),
-		 .ir_wait(ir_wait)
+		 .ir_wait(ir_wait),
+		 //added in exp7
+		 .if_rst(if_rst),
+		 .if_en(if_en)
 	);
 endmodule

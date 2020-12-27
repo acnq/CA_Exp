@@ -1,4 +1,4 @@
-Release 14.7 Map P.20131013 (nt)
+Release 14.7 Map P.20131013 (nt64)
 Xilinx Mapping Report File for Design 'mips_top'
 
 Design Information
@@ -10,23 +10,23 @@ Target Device  : xc7k325t
 Target Package : fbg676
 Target Speed   : -2l
 Mapper Version : kintex7 -- $Revision: 1.55 $
-Mapped Date    : Tue Dec 15 16:46:42 2020
+Mapped Date    : Mon Dec 28 00:50:53 2020
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:   20
 Slice Logic Utilization:
-  Number of Slice Registers:                   889 out of 407,600    1%
-    Number used as Flip Flops:                 889
+  Number of Slice Registers:                 1,894 out of 407,600    1%
+    Number used as Flip Flops:               1,894
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,586 out of 203,800    1%
-    Number used as logic:                    1,476 out of 203,800    1%
-      Number using O6 output only:           1,195
+  Number of Slice LUTs:                      3,003 out of 203,800    1%
+    Number used as logic:                    2,898 out of 203,800    1%
+      Number using O6 output only:           2,564
       Number using O5 output only:              80
-      Number using O5 and O6:                  201
+      Number using O5 and O6:                  254
       Number used as ROM:                        0
     Number used as Memory:                      92 out of  64,000    1%
       Number used as Dual Port RAM:             92
@@ -35,20 +35,20 @@ Slice Logic Utilization:
         Number using O5 and O6:                 84
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
-    Number used exclusively as route-thrus:     18
-      Number with same-slice register load:     13
+    Number used exclusively as route-thrus:     13
+      Number with same-slice register load:      8
       Number with same-slice carry load:         5
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   462 out of  50,950    1%
-  Number of LUT Flip Flop pairs used:        1,623
-    Number with an unused Flip Flop:           874 out of   1,623   53%
-    Number with an unused LUT:                  37 out of   1,623    2%
-    Number of fully used LUT-FF pairs:         712 out of   1,623   43%
+  Number of occupied Slices:                 1,033 out of  50,950    2%
+  Number of LUT Flip Flop pairs used:        3,157
+    Number with an unused Flip Flop:         1,316 out of   3,157   41%
+    Number with an unused LUT:                 154 out of   3,157    4%
+    Number of fully used LUT-FF pairs:       1,687 out of   3,157   53%
     Number of unique control sets:              29
     Number of slice register sites lost
-      to control set restrictions:             119 out of 407,600    1%
+      to control set restrictions:             114 out of 407,600    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -63,9 +63,11 @@ IO Utilization:
     Number of LOCed IOBs:                       40 out of      40  100%
 
 Specific Feature Utilization:
-  Number of RAMB36E1/FIFO36E1s:                  0 out of     445    0%
-  Number of RAMB18E1/FIFO18E1s:                  2 out of     890    1%
-    Number using RAMB18E1 only:                  2
+  Number of RAMB36E1/FIFO36E1s:                  1 out of     445    1%
+    Number using RAMB36E1 only:                  1
+    Number using FIFO36E1 only:                  0
+  Number of RAMB18E1/FIFO18E1s:                  1 out of     890    1%
+    Number using RAMB18E1 only:                  1
     Number using FIFO18E1 only:                  0
   Number of BUFG/BUFGCTRLs:                      3 out of      32    9%
     Number used as BUFGs:                        3
@@ -99,11 +101,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.30
+Average Fanout of Non-Clock Nets:                4.51
 
-Peak Memory Usage:  912 MB
-Total REAL time to MAP completion:  3 mins 44 secs 
-Total CPU time to MAP completion:   3 mins 16 secs 
+Peak Memory Usage:  5462 MB
+Total REAL time to MAP completion:  2 mins 7 secs 
+Total CPU time to MAP completion:   1 mins 49 secs 
 
 Table of Contents
 -----------------
@@ -126,33 +128,21 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf1_RAMD_D1_O> is
+WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf3_RAMD_D1_O> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf4_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf2_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf5_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf4_RAMD_D1_O> is
-   incomplete. The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf3_RAMD_D1_O> is
+WARNING:PhysDesignRules:367 - The signal <VGA_DEBUG/Mram_data_buf1_RAMD_D1_O> is
    incomplete. The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile3_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile21_RAMD_D1_O> is incomplete. The
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile22_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile23_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile24_RAMD_D1_O> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile25_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile2_RAMD_D1_O> is incomplete. The
@@ -161,7 +151,10 @@ WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile12_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile22_RAMD_D1_O> is incomplete. The
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile21_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile24_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile1_RAMD_D1_O> is incomplete. The
@@ -170,28 +163,37 @@ WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile11_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile15_RAMD_D1_O> is incomplete. The
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile13_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile5_RAMD_D1_O> is incomplete. The
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile3_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile4_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile14_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile4_RAMD_D1_O> is incomplete. The
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile25_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile5_RAMD_D1_O> is incomplete. The
+   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS/MIPS_CORE/DATAPATH/REGFILE/Mram_regfile15_RAMD_D1_O> is incomplete. The
    signal does not drive any load pins in the design.
 
 Section 3 - Informational
 -------------------------
 INFO:LIT:243 - Logical network BTN_Y<2>_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 18 more times for the
+INFO:LIT:395 - The above info message is repeated 20 more times for the
    following (max. 5 shown):
    BTN_Y<1>_IBUF,
+   MIPS/rom_cs,
+   MIPS/ram_cs,
    MIPS/MIPS_CORE/if_valid,
-   MIPS/MIPS_CORE/inst_ren,
-   MIPS/MIPS_CORE/id_valid,
-   MIPS/MIPS_CORE/exe_valid
+   MIPS/MIPS_CORE/inst_ren
    To see the details of these info messages, please use the -detail switch.
 INFO:Pack:1716 - Initializing temperature to 100.000 Celsius. (default - Range:
    0.000 to 100.000 Celsius)
@@ -204,8 +206,8 @@ INFO:Pack:1650 - Map created a placed design.
 Section 4 - Removed Logic Summary
 ---------------------------------
    2 block(s) removed
-  25 block(s) optimized away
-   8 signal(s) removed
+  26 block(s) optimized away
+   7 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -220,7 +222,6 @@ To quickly locate the original cause for the removal of a chain of logic, look
 above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
-The signal "MIPS/MIPS_CORE/CP0/mux32_10" is sourceless and has been removed.
 The signal "CLK_GEN/clkout0" is sourceless and has been removed.
  Sourceless block "CLK_GEN/clkout1_buf" (CKBUF) removed.
   The signal "CLK_GEN/CLK_OUT1" is sourceless and has been removed.
@@ -245,7 +246,9 @@ VCC 		DISPLAY/XST_VCC
 GND 		MIPS/DATA_RAM/XST_GND
 VCC 		MIPS/DATA_RAM/XST_VCC
 GND 		MIPS/INST_ROM/XST_GND
+VCC 		MIPS/INST_ROM/XST_VCC
 GND 		MIPS/MIPS_CORE/CP0/XST_GND
+VCC 		MIPS/MIPS_CORE/CP0/XST_VCC
 GND 		MIPS/MIPS_CORE/DATAPATH/ALU/XST_GND
 VCC 		MIPS/MIPS_CORE/DATAPATH/ALU/XST_VCC
 GND 		MIPS/MIPS_CORE/DATAPATH/REGFILE/XST_GND
@@ -257,7 +260,6 @@ GND 		VGA_DEBUG/FONT_8X16/XST_GND
 VCC 		VGA_DEBUG/FONT_8X16/XST_VCC
 GND 		VGA_DEBUG/XST_GND
 VCC 		VGA_DEBUG/XST_VCC
-VCC 		XST_VCC
 
 To enable printing of redundant blocks removed and signals merged, set the
 detailed map report option and rerun map.

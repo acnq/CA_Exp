@@ -145,7 +145,7 @@ localparam
     //CP0_PDBR = 6,
     //CP0_TIR = 7,
     //CP0_WDR = 8;
-	 CP0 = 9;////
+	 CP0_TCR = 9;////
 
 // EXE CP operations
 localparam

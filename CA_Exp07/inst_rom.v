@@ -2,7 +2,7 @@ module inst_rom (
 	input wire clk,
 	input wire [31:0] addr,
 	output reg [31:0] dout,
-	//----exp6 new------
+	//----exp7 new------
 	output wire rom_stall,
 	input wire rst,
 	input wire cs//chip selector

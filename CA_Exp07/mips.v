@@ -35,6 +35,9 @@ module mips (
 	wire [31:0] mem_data_r;
 	wire [31:0] mem_data_w;
 	
+	wire rom_stall, ram_stall;
+	wire rom_cs, ram_cs;
+	
 	// mips core
 	mips_core MIPS_CORE (
 		.clk(clk),
@@ -60,14 +63,26 @@ module mips (
 		.ir_en(ir_en),
 		.ir_valid(ir_valid),
 		.ir_wait(ir_wait),
-		.jump_en(jump_en)
+		.jump_en(jump_en),
+		
+		//exp7 added port
+		.ram_stall(ram_stall),
+		.rom_stall(rom_stall),
+		.ram_cs(ram_cs),
+		.rom_cs(rom_cs)
+		
 		);
 	
 	inst_rom INST_ROM (
 		.clk(clk),
 		.addr({2'b0, inst_addr[31:2]}),
 		//.addr(inst_addr),
-		.dout(inst_data)
+		.dout(inst_data),
+		
+		//exp7 added
+		.rom_stall(rom_stall),
+		.cs(rom_cs),
+		.rst(rst)
 		);
 	
 	data_ram DATA_RAM (
@@ -76,7 +91,12 @@ module mips (
 		.addr({2'b0, mem_addr[31:2]}),
 		//.addr(mem_addr),
 		.din(mem_data_w),
-		.dout(mem_data_r)
+		.dout(mem_data_r),
+		
+		//exp7 added
+		.ram_stall(ram_stall),
+		.cs(ram_cs),
+		.rst(rst)
 		);
 	
 endmodule

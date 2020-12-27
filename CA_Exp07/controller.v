@@ -65,7 +65,13 @@ module controller (/*AUTOARG*/
 	
 	//exp6 added
 	output reg [1:0] oper,//cp_oper
-	input wire jump_en //epc_ctrl
+	input wire jump_en,//epc_ctrl
+	
+	//exp7 added
+	input wire rom_stall,
+	input wire ram_stall,
+	output wire rom_cs,
+	output reg ram_cs
 	);
 	
 	`include "mips_define.vh"
@@ -79,6 +85,8 @@ module controller (/*AUTOARG*/
 	always@(posedge clk)begin
 		is_load_exe<=is_load;
 	end
+	//added in exp7
+	assign rom_cs = 1;
 	
 	always @(*) begin
 		sign=0;////unsigned default
@@ -99,7 +107,9 @@ module controller (/*AUTOARG*/
 		unrecognized = 0;
 		//-----exp6 new---------
 		oper=EXE_CP_NONE;////
-		//----------------------
+		//------exp7 new--------
+		ram_cs = 0;
+		
 		case (inst[31:26])
 			INST_R: begin
 				case (inst[5:0])
@@ -314,6 +324,8 @@ module controller (/*AUTOARG*/
 				wb_wen = 1;//
 				rs_used = 1;//
 				is_load = 1; //
+				//added in exp7-------
+				ram_cs = 1;
 			end
 			INST_SW: begin
 				imm_ext = 1;//
@@ -323,6 +335,8 @@ module controller (/*AUTOARG*/
 				rs_used = 1;//
 				rt_used = 1;//
 				is_store = 1;//
+				//added in exp7 -----
+				ram_cs = 1;
 			end
 			//--------new operation-----------
 			INST_ADDIU:begin
@@ -484,6 +498,18 @@ module controller (/*AUTOARG*/
 			wb_en = 0;
 		end
 		`endif
+		else if(rom_stall) begin
+			if_en = 0;
+			id_en = 0;
+			exe_rst = 1;
+		end
+		else if (ram_stall) begin
+			if_en = 0;
+			id_en = 0;
+			exe_en = 0;
+			mem_en = 0;
+			wb_rst = 1;
+		end
 		//stall in exp2 and exp3 is deleted (control hazard)
 		else if (load_stall) begin
 			if_en = 0;

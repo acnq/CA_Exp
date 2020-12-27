@@ -35,7 +35,8 @@ module data_ram (
 			ack=0;
 		end
 		else begin
-			if(addr_previous==addr)begin
+			if(addr_previous==addr)begin //我怀疑这么实现有点问题，这里得有&& cs,不然data_ram即使没有被选择也在疯狂计数，这是
+			//没必要的，反而会有计数不同步的问题，但是这次实现我们没有任何sw和lw,所以这个问题可以先放着，也有可能是我想错了。
 				counter=counter+1;
 				if(counter==8)begin
 					data[addr[ADDR_WIDTH-1:0]]=din;

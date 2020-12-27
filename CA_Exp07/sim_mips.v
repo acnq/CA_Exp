@@ -37,7 +37,7 @@ module sim_mips;
 		#100 rst = 1;
 		#100 rst = 0;
 		
-		#270; interrupter = 1;
+		#27000; interrupter = 1;//exp7调试的断点要晚一点
 		#40; interrupter = 0;
 				
 		#40 interrupter = 1;
