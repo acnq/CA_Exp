@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2020-12-22T16:47:33</DateModified>
+  <DateModified>2021-01-05T13:53:50</DateModified>
   <ModuleName>mips_top</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2020-12-29T16:07:20</SummaryTimeStamp>
   <SavedFilePath>D:/00a/CA/CA_Exp/CA_Exp06/iseconfig/mips_top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/00a/CA/CA_Exp/CA_Exp06\</ImplementationReportsDirectory>
   <DateInitialized>2020-10-13T16:20:11</DateInitialized>

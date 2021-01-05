@@ -290,12 +290,10 @@
       <outfile xil_pn:name="mips_top_pad.txt"/>
       <outfile xil_pn:name="mips_top_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1608022558" xil_pn:in_ck="5675269429734101902" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="3160107541638749219" xil_pn:start_ts="1608022400">
-      <status xil_pn:value="AbortedRun"/>
+    <transform xil_pn:end_ts="1609229239" xil_pn:in_ck="5675269429734101902" xil_pn:name="TRANEXT_bitFile_virtex7" xil_pn:prop_ck="3160107541638749219" xil_pn:start_ts="1609229049">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="mips_top.bgn"/>
       <outfile xil_pn:name="mips_top.bit"/>
@@ -305,11 +303,9 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1607414218" xil_pn:in_ck="5675269429734089048" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="6552783135083104433" xil_pn:start_ts="1607414216">
+    <transform xil_pn:end_ts="1609232686" xil_pn:in_ck="5675269429734089048" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="6552783135083104433" xil_pn:start_ts="1609232685">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1607237832" xil_pn:in_ck="5675269429734089048" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="7333617237298376541" xil_pn:start_ts="1607237759">
       <status xil_pn:value="AbortedRun"/>

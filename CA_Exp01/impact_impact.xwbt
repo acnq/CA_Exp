@@ -1,8 +1,8 @@
 INTSTYLE=impact
 INFILE=D:\00a\CA\CA_Exp\CA_Exp01\impact.xsl
 OUTFILE=D:\00a\CA\CA_Exp\CA_Exp01\impact.xsl
-FAMILY=None
-PART=None
+FAMILY=Single
+PART=Single
 WORKINGDIR=D:\00a\CA\CA_Exp\CA_Exp01
 LICENSE=iMPACT
 USER_INFO=iMPACT
