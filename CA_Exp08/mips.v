@@ -88,7 +88,7 @@ module mips (
 	//exp8 added:
 	cmu CMU (
 		.stall(ram_stall),
-		.cs(ram_cs),
+		.ram_cs(ram_cs),
 		.rst(rst),
 		.clk(clk),
 		.we(mem_wen),

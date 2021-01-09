@@ -5,26 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp07/vga_debug.v" Line 59: Concatenation with unsized literal; will interpret as 32 bits
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="751" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp07/vga.v" Line 11: Redeclaration of ansi port <arg fmt="%s" index="1">h_count</arg> is not allowed
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="751" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp07/vga.v" Line 22: Redeclaration of ansi port <arg fmt="%s" index="1">v_count</arg> is not allowed
-</msg>
-
-<msg type="error" file="HDLCompiler" num="806" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp07/mips_top.v" Line 72: Syntax error near &quot;<arg fmt="%s" index="1">rst_all</arg>&quot;.
-</msg>
-
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp07/mips_top.v" Line 76: Procedural assignment to a non-register <arg fmt="%s" index="1">rst_all</arg> is not permitted, left-hand side should be reg/integer/time/genvar
-</msg>
-
-<msg type="error" file="HDLCompiler" num="1660" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp07/mips_top.v" Line 76: Procedural assignment to a non-register <arg fmt="%s" index="1">rst_all</arg> is not permitted, left-hand side should be reg/integer/time/genvar
-</msg>
-
-<msg type="error" file="HDLCompiler" num="598" delta="unknown" >"D:/00a/CA/CA_Exp/CA_Exp07/mips_top.v" Line 8: Module &lt;<arg fmt="%s" index="1">mips_top</arg>&gt; ignored due to previous errors.
-</msg>
-
 </messages>
 

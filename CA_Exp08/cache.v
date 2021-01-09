@@ -44,7 +44,7 @@ module cache (
         if (rst) begin
             inner_valid <= 0;
         end else begin
-            if (store || edit) begin
+            if (dirty || edit) begin
                 inner_data[addr[ADDR_BITS-TAG_BITS-1:WORD_BYTES_WIDTH]] <= din;
             end
             if (invalid) begin
@@ -56,7 +56,7 @@ module cache (
                 inner_tag[addr[ADDR_BITS-TAG_BITS-1:LINE_WORDS_WIDTH+WORD_BYTES_WIDTH]] <= addr[ADDR_BITS-1:ADDR_BITS-TAG_BITS];
             end else if (edit) begin
                 inner_dirty[addr[ADDR_BITS-TAG_BITS-1:LINE_WORDS_WIDTH+WORD_BYTES_WIDTH]] <= 1;
-                //inner_tag[addr[ADDR_BITS-TAG_BITS-1:LINE_WORDS_WIDTH+WORD_BYTES_WIDTH]] <= //TODO seems no need to set tag?
+                inner_tag[addr[ADDR_BITS-TAG_BITS-1:LINE_WORDS_WIDTH+WORD_BYTES_WIDTH]] <= 0;//TODO seems no need to set tag?
             end
         end
 

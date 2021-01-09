@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/00a/CA/CA_Exp/CA_Exp07/mips_top_isim_beh.exe" -prj "D:/00a/CA/CA_Exp/CA_Exp07/mips_top_beh.prj" "work.mips_top" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/00a/CA/CA_Exp/CA_Exp07/sim_mips_isim_beh.exe" -prj "D:/00a/CA/CA_Exp/CA_Exp07/sim_mips_beh.prj" "work.sim_mips" "work.glbl" 
