@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap8Exp/work/sim_top2_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sim_top2" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="29" />
+   <wvobject fp_name="/sim_top2/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/addr_rw" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_rw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_rw[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/clk_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_count[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/inst_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inst_count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_count[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/hit_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">hit_count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">hit_count[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/addr_rw" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_rw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_rw[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/en_r" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en_r</obj_property>
+      <obj_property name="ObjectShortName">en_r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/data_r" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_r[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_r[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/en_w" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en_w</obj_property>
+      <obj_property name="ObjectShortName">en_w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/data_w" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_w[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_w[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/stall" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">stall</obj_property>
+      <obj_property name="ObjectShortName">stall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_hit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_hit</obj_property>
+      <obj_property name="ObjectShortName">cache_hit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_valid</obj_property>
+      <obj_property name="ObjectShortName">cache_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_dirty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_dirty</obj_property>
+      <obj_property name="ObjectShortName">cache_dirty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_tag" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_tag[21:0]</obj_property>
+      <obj_property name="ObjectShortName">cache_tag[21:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_store" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_store</obj_property>
+      <obj_property name="ObjectShortName">cache_store</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_edit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_edit</obj_property>
+      <obj_property name="ObjectShortName">cache_edit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cache_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cache_din[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/cache_dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cache_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cache_dout[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/mem_cs_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_cs_o</obj_property>
+      <obj_property name="ObjectShortName">mem_cs_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/mem_we_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_we_o</obj_property>
+      <obj_property name="ObjectShortName">mem_we_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/mem_addr_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_addr_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addr_o[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/mem_data_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_data_i[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/mem_data_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_data_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_data_o[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/mem_ack_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mem_ack_i</obj_property>
+      <obj_property name="ObjectShortName">mem_ack_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim_top2/uut/CMU2/word_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">word_count[1:0]</obj_property>
+      <obj_property name="ObjectShortName">word_count[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

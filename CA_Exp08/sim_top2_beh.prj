@@ -1,0 +1,7 @@
+verilog work "cache.v"
+verilog work "inst.v"
+verilog work "data_ram2.v"
+verilog work "CMU2.v"
+verilog work "top2.v"
+verilog work "sim_top2.v"
+verilog work "D:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

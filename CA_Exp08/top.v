@@ -1,62 +1,38 @@
+
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    02:00:09 01/10/2021 
+// Design Name: 
+// Module Name:    top 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
 module top (
 	input wire clk,
 	input wire rst,
-	output reg [7:0] clk_count,
-	output reg [7:0] inst_count,
-	output reg [7:0] hit_count
+	output reg [7:0] clk_count = 0,
+	output reg [7:0] inst_count = 0,
+	output reg [7:0] hit_count = 0
 	);
-
-	// syntax error, TODO: 	
-	// initial begin
-	// 	clk_count = 0;
-	// 	inst_count = 0;
-	// 	hit_count = 0;
-
-	// end
-		// instruction
+	
+	// instruction
 	reg [3:0] index = 0;
 	wire valid;
 	wire write;
 	wire [31:0] addr;
 	wire stall;
-	always @(posedge clk) begin
-		if (rst)
-			index <= 0;
-		else if (valid && ~stall)
-			index <= index + 1'h1;
-	end
-	// ram
-	wire mem_cs;
-	wire mem_we;
-	wire [31:0] mem_addr;
-	wire [31:0] mem_din;
-	wire [31:0] mem_dout;
-	wire mem_ack;
-	
-	// counter
-	reg stall_prev;
-	
-	always @(posedge clk) begin
-		if (rst)
-			stall_prev <= 1;
-		else
-			stall_prev <= stall;
-	end
-	
-	always @(posedge clk) begin
-		if (rst) begin
-			clk_count <= 0;   // 时钟计数
-			inst_count <= 0;  // 指令计数
-			hit_count <= 0;   // 命中计数
-		end
-		else if (valid) begin
-			clk_count <= clk_count + 1'h1;
-			inst_count <= index + 1'h1;
-			if (~stall_prev && ~stall)
-				hit_count <= hit_count + 1'h1;
-		end
-	end
 	
 	inst INST (
 		.clk(clk),
@@ -67,7 +43,22 @@ module top (
 		.addr(addr)
 	);
 	
- 	data_ram #(
+	always @(posedge clk) begin
+		if (rst)
+			index <= 0;
+		else if (valid && ~stall)
+			index <= index + 1'h1;
+	end
+	
+	// ram
+	wire mem_cs;
+	wire mem_we;
+	wire [31:0] mem_addr;
+	wire [31:0] mem_din;
+	wire [31:0] mem_dout;
+	wire mem_ack;
+	
+	data_ram #(
 		.ADDR_WIDTH(5),
 		.CLK_DELAY(3)
 		) RAM (
@@ -81,22 +72,47 @@ module top (
 		.ram_stall(),
 		.ack(mem_ack)
 		);
+	
+	// cache
 	cmu CMU (
-		.stall(stall),
-		.rst(rst),
 		.clk(clk),
-		.we(write),
-		.addr(addr),
-		.dout(),
-		.din({16'h5678, clk_count, inst_count}),
-		.ram_stall(), // TODO:
-		.ram_rst(),
-		.ram_cs(mem_cs),
-		.ram_we(mem_we),
-		.ram_addr(mem_addr),
-		.ram_dout(mem_dout),
-		.ram_din(mem_din),
-		.ram_ack(mem_ack)
+		.rst(rst),
+		.addr_rw(addr),
+		.en_r(~write),
+		.data_r(),
+		.en_w(write),
+		.data_w({16'h5678, clk_count, inst_count}),
+		.stall(stall),
+		.mem_cs_o(mem_cs),
+		.mem_we_o(mem_we),
+		.mem_addr_o(mem_addr),
+		.mem_data_i(mem_dout),
+		.mem_data_o(mem_din),
+		.mem_ack_i(mem_ack)
 	);
-
+	
+	// counter
+	reg stall_prev;
+	
+	always @(posedge clk) begin
+		if (rst)
+			stall_prev <= 0;
+		else
+			stall_prev <= stall;
+	end
+	
+	always @(posedge clk) begin
+		if (rst) begin
+			clk_count <= 0;
+			inst_count <= 0;
+			hit_count <= 0;
+		end
+		else if (valid) begin
+			clk_count <= clk_count + 1'h1;
+			inst_count <= index + 1'h1;
+			if (~stall_prev && ~stall)
+				hit_count <= hit_count + 1'h1;
+		end
+	end
+	
 endmodule

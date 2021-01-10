@@ -4,10 +4,10 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   14:05:08 01/08/2018
+// Create Date:   18:11:47 01/09/2021
 // Design Name:   cache
-// Module Name:   /media/baislsl/others/ISE3/exp09/src/sim_cache.v
-// Project Name:  exp09
+// Module Name:   D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap8Exp/work/sim_cache.v
+// Project Name:  exp9
 // Target Device:  
 // Tool versions:  
 // Description: 
@@ -58,26 +58,42 @@ module sim_cache;
 
 	initial begin
 		// Initialize Inputs
-		clk = 0;
 		rst = 0;
 		addr = 0;
 		store = 0;
 		edit = 0;
 		invalid = 0;
 		din = 0;
-		
-		#210 store = 1; din = 32'h1111_1111; addr = 32'h0000_0000;
-		#20 addr = 32'h0000_0004;
-		#20 addr = 32'h0000_00A8;
-		#20 addr = 32'h0000_001C;
-		#20 store = 0; addr = 32'h0000_00B4; din = 0;
-		#100 edit = 1; din = 32'h2222_2222; addr = 32'h0000_0008;
-		#100 edit = 0; din = 0; addr = 0;
+		clk = 0;
+
+		// Wait 100 ns for global reset to finish
+//		#100;
         
 		// Add stimulus here
+//		#100;
+		#210;
+		store = 1;
+		din = 32'h11111111;
+		addr = 32'h00000000;
+		#20	addr = 32'h00000004;
+		#20 addr = 32'h000000a8;
+		#20 addr = 32'h0000001C;
+		#20;
+		store = 0;
+		addr = 32'h000000b4;;
+		din = 0;
+		#100;
+		edit = 1;
+		din = 32'h22222222;
+		addr = 32'h00000008;
+		#100;
+		edit = 0;
+		din = 0;
+		addr = 0;
+
 	end
 	
-   initial forever #10 clk = ~clk;
-
+	initial forever #10 clk = ~clk;
+      
 endmodule
 

@@ -4,10 +4,10 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   15:55:22 01/08/2018
+// Create Date:   02:01:35 01/10/2021
 // Design Name:   top
-// Module Name:   /media/baislsl/others/ISE3/exp09/src/sim_top.v
-// Project Name:  exp09
+// Module Name:   D:/AAuniversityTasks/CSComputerArch/TRUECourse/chap8Exp/work/sim_top.v
+// Project Name:  exp9
 // Target Device:  
 // Tool versions:  
 // Description: 
@@ -45,14 +45,16 @@ module sim_top;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		rst = 1;
+		rst = 0;
 
 		// Wait 100 ns for global reset to finish
 		#95 rst = 0;
-       
+        
 		// Add stimulus here
+		
 
 	end
+	
 	initial forever #10 clk = ~clk;
       
 endmodule
